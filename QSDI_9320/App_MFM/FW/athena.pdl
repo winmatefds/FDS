@@ -1,0 +1,2761 @@
+ ;    Copyright (c) 2003 Paradigm Systems.  All rights reserved.
+ ;    Portions Copyright (C) 1996, Borland International
+ ;    -- Machine generated for input - do not modify --
+{ Version = 400 }
+{ SubSystem = StyleSheets
+  { StyleSheet = "Default Project Options"
+    { IDE = "-O.\OBJECT -n.\OBJECT" }
+    { CppCompile = "-I$ENV(PCROOT)\INCLUDE; .\SYSTEM\; .\DEVICE\; -H=XROM.csm -D -ff- -1 -a -Oi -O-v -Z -O -Oe -Ol -Ob -w-rpt -wsig -wucp -wico -wpin -wnak -whsg -dc -wsel -Og -dx -wmre" }
+    { Link = "-L$ENV(PCROOT)\lib -l -i -Sd:0" }
+    { CreateLibrary = "-C -E" }
+    { Assemble = "-l -c -la" }
+  }
+  { StyleSheet = "Optimized (Speed)"
+    { CppCompile = "-O-d -O -Ob -Oe -Og -Oi -Ol -Om -Ot -Op -Ov -k- -Z" }
+  }
+  { StyleSheet = "Optimized (Size)"
+    { CppCompile = "-O-d -O -Ob -Oe -Os -Ol -Oc -k- -Z" }
+  }
+  { StyleSheet = "Optimized (Dead Code)"
+    { CppCompile = "-O-d -Z -Ob" }
+  }
+  { StyleSheet = "Debug Info (Full)"
+    { CppCompile = "-v -vi- -R" }
+    { Link = "-v" }
+    { Assemble = "-zi" }
+  }
+  { StyleSheet = "Debug Info (No browser)"
+    { CppCompile = "-v -vi- -R-" }
+    { Link = "-v" }
+    { Assemble = "-zi" }
+  }
+  { StyleSheet = "Debug Info (Inlines inline)"
+    { CppCompile = "-v -vi" }
+    { Link = "-v" }
+    { Assemble = "-zi" }
+  }
+}
+{ SubSystem = Tool
+  { Tool = "SourceInclude"
+    { Category = Translator }
+    { Path = "[Internal]" }
+    { HelpHint = "Include source file in target build" }
+    { SearchPath = SourcePath }
+    { ToolFlag = MakeTool | ReadOnly }
+    { AppliesTo = ".def;.rtf;" }
+    { DefaultFor = ".def;.rtf;" }
+    { DependencyChecker = NopDepend }
+  }
+  { Tool = "LinkLibrary"
+    { Category = Translator }
+    { Path = "[Internal]" }
+    { MenuText = "&Link and Implib" }
+    { HelpHint = "Link .dll then create import library" }
+    { SearchPath = OutputPath }
+    { ToolFlag = LocalMenu | TargetTranslator | ReadOnly }
+    { AppliesTo = ".dll;" }
+    { DefaultFor = ".dll;" }
+    { TranslateTo = ".lib" }
+    { DependencyChecker = CollectorDepend }
+  }
+  { Tool = "PrjLint"
+    { Category = Translator }
+    { Path = "[Internal]" }
+    { MenuText = "&Lint" }
+    { HelpHint = "Run lint on current target" }
+    { SearchPath = SourcePath }
+    { ToolFlag = LocalMenu | ReadOnly }
+    { DependencyChecker = NopDepend }
+  }
+  { Tool = "AxeDump"
+    { Category = Transfer }
+    { Path = "axe.exe" }
+    { CmdLine = "$NOSWAP$CAP MSG(GENERIC)$PROMPT `$TARGET`" }
+    { MenuText = "&Axe utility" }
+    { HelpHint = "Axe file dump utility" }
+    { SearchPath = 0 }
+    { ToolFlag = ToolsMenu | ReadOnly }
+  }
+  { Tool = "PdremTest"
+    { Category = Transfer }
+    { Path = "rttest.exe" }
+    { MenuText = "PDREMOTE/ROM &Test" }
+    { HelpHint = "PDREMOTE/ROM test utility" }
+    { SearchPath = 0 }
+    { ToolFlag = ToolsMenu | ReadOnly }
+  }
+  { Tool = "PdremLoader"
+    { Category = Transfer }
+    { Path = "rtload.exe" }
+    { MenuText = "PDREMOTE/ROM &Loader" }
+    { HelpHint = "PDREMOTE/ROM load utility" }
+    { SearchPath = 0 }
+    { ToolFlag = ToolsMenu | ReadOnly }
+  }
+  { Tool = "RunExecutable"
+    { Category = Viewer }
+    { CmdLine = "$ARGS" }
+    { MenuText = "&Run" }
+    { HelpHint = "Run executable using IDE Debugger" }
+    { SearchPath = OutputPath }
+    { ToolFlag = LocalMenu | ReadOnly }
+    { AppliesTo = ".axe;.exe;" }
+  }
+  { Tool = "TraceInto"
+    { Category = Viewer }
+    { CmdLine = "$ARGS" }
+    { MenuText = "&Debug" }
+    { HelpHint = "Trace into first instruction of executable" }
+    { SearchPath = OutputPath }
+    { ToolFlag = LocalMenu | ReadOnly }
+    { AppliesTo = ".axe;.exe;" }
+    { DefaultFor = ".axe;.exe;" }
+  }
+  { Tool = "DebugSymbolsOnly"
+    { Category = Viewer }
+    { CmdLine = "$ARGS" }
+    { MenuText = "Debug with &symbols only" }
+    { HelpHint = "Create a debug session using only the symbol table of the target node" }
+    { SearchPath = OutputPath }
+    { ToolFlag = LocalMenu | ReadOnly }
+    { AppliesTo = ".axe;.exe;" }
+  }
+  { Tool = "ViewEmuFile"
+    { Category = Viewer }
+    { CmdLine = "$ARGS" }
+    { MenuText = "&Current .emu file" }
+    { HelpHint = "Edit the .emu file that the debugger will load prior to creating a debug session" }
+    { SearchPath = OutputPath }
+    { ToolFlag = LocalMenu | ReadOnly }
+    { AppliesTo = ".axe;.exe;" }
+  }
+  { Tool = "EditText"
+    { Category = Viewer }
+    { CmdLine = "$EDNAME" }
+    { MenuText = "&Text Edit" }
+    { HelpHint = "Edit node's source file" }
+    { SearchPath = SourcePath }
+    { ToolFlag = LocalMenu | ReadOnly | FileOpen | FileNew }
+    { AppliesTo = ".cpp;.c;.cas;.h;.hpp;AutoDepend;.asm;.inc;.ash;.def;.mak;.hpj;.rc;.rh;.kb;.dlg;.txt;.spp;.cfg;.emu;.map;.loc;.hex;" }
+    { DefaultFor = ".cpp;.c;.cas;.h;.hpp;AutoDepend;.asm;.inc;.ash;.def;.mak;.hpj;.rh;.kb;.txt;.spp;.cfg;.emu;.map;.loc;.hex;" }
+  }
+  { Tool = "Project"
+    { Category = Viewer }
+    { CmdLine = "$EDNAME" }
+    { MenuText = "&Project" }
+    { SearchPath = 0 }
+    { ToolFlag = ReadOnly | FileOpen | FileNew }
+    { AppliesTo = ".ide;" }
+    { DefaultFor = ".ide;" }
+  }
+  { Tool = "PdremWizard"
+    { Category = Viewer }
+    { MenuText = "PDREMOTE/ROM &Wizard" }
+    { HelpHint = "Run the PDREMOTE/ROM configuration wizard" }
+    { SearchPath = 0 }
+    { ToolFlag = ReadOnly | FileNew }
+  }
+  { Tool = "HeaderInclude"
+    { Category = Translator }
+    { HelpHint = "Include C/C++ header file in source build" }
+    { SearchPath = IncludePath }
+    { ToolFlag = MakeTool | ReadOnly }
+    { AppliesTo = ".h;.hpp;AutoDepend;" }
+    { DefaultFor = ".h;.hpp;AutoDepend;" }
+    { DependencyChecker = NopDepend }
+  }
+  { Tool = "AsmInclude"
+    { Category = Translator }
+    { HelpHint = "Include assembler header file in source build" }
+    { SearchPath = IncludePath }
+    { ToolFlag = MakeTool | ReadOnly }
+    { AppliesTo = ".ash;.asi;.inc;" }
+    { DefaultFor = ".ash;.asi;.inc;" }
+    { DependencyChecker = NopDepend }
+  }
+  { Tool = "BinInclude"
+    { Category = Translator }
+    { HelpHint = "Include library file in target build" }
+    { SearchPath = LibPath }
+    { ToolFlag = MakeTool | ReadOnly }
+    { AppliesTo = ".obj;.lib;.res;" }
+    { DefaultFor = ".obj;.lib;.res;" }
+    { DependencyChecker = NopDepend }
+  }
+  { Tool = "MakeNode"
+    { Category = Translator }
+    { HelpHint = "Make node and dependencies" }
+    { SearchPath = 0 }
+    { ToolFlag = TargetTranslator | MakeTool | ReadOnly }
+    { AppliesTo = "SourcePool;.ide;" }
+    { DefaultFor = "SourcePool;.ide;" }
+    { DependencyChecker = CollectorDepend }
+  }
+  { Tool = "StripAutoDepends"
+    { Category = Translator }
+    { MenuText = "Remove &AutoDepends" }
+    { HelpHint = "Remove all [AutoDepend] nodes from a node" }
+    { SearchPath = SourcePath }
+    { ToolFlag = ReadOnly }
+    { AppliesTo = ".cpp;.rom;.exe;.axe;.hex;.bin;.dll;.lib;.c;" }
+    { DependencyChecker = NopDepend }
+  }
+  { Tool = "CppCompile"
+    { Category = Translator }
+    { MenuText = "&C++ Compile" }
+    { HelpHint = "C++ compile node to .obj" }
+    { SearchPath = SourcePath }
+    { ToolFlag = LocalMenu | ReadOnly }
+    { AppliesTo = ".cpp;.c;.cas;.h;" }
+    { DefaultFor = ".cpp;" }
+    { TranslateTo = ".obj" }
+    { DependencyChecker = AutoDepend }
+  }
+  { Tool = "CCompile"
+    { Category = Translator }
+    { MenuText = "&C Compile" }
+    { HelpHint = "C compile node to .obj" }
+    { SearchPath = SourcePath }
+    { ToolFlag = LocalMenu | ReadOnly }
+    { AppliesTo = ".c;.cas;.h;" }
+    { DefaultFor = ".c;.cas;" }
+    { TranslateTo = ".obj" }
+    { DependencyChecker = AutoDepend }
+  }
+  { Tool = "CtoAssembler"
+    { Category = Translator }
+    { MenuText = "&C to Assembler" }
+    { HelpHint = "Generate .asm from C node" }
+    { SearchPath = SourcePath }
+    { ToolFlag = LocalMenu }
+    { AppliesTo = ".c;.cpp;.h;" }
+    { TranslateTo = ".asm" }
+    { DependencyChecker = TimeStamp }
+  }
+  { Tool = "CppToAssembler"
+    { Category = Translator }
+    { MenuText = "C++ to &Assembler" }
+    { HelpHint = "Generate .asm from C++ node" }
+    { SearchPath = SourcePath }
+    { ToolFlag = LocalMenu }
+    { AppliesTo = ".c;.cpp;.h;" }
+    { TranslateTo = ".asm" }
+    { DependencyChecker = TimeStamp }
+  }
+  { Tool = "CViaAssembler"
+    { Category = Translator }
+    { MenuText = "C &via Assembler" }
+    { HelpHint = "Generate .obj from C node thru PASM" }
+    { SearchPath = SourcePath }
+    { AppliesTo = ".c;.cpp;.h;" }
+    { TranslateTo = ".obj" }
+    { DependencyChecker = AutoDepend }
+  }
+  { Tool = "CppViaAssembler"
+    { Category = Translator }
+    { MenuText = "C++ &via Assembler" }
+    { HelpHint = "Generate .obj from C++ node thru PASM" }
+    { SearchPath = SourcePath }
+    { AppliesTo = ".c;.cpp;.h;" }
+    { TranslateTo = ".obj" }
+    { DependencyChecker = AutoDepend }
+  }
+  { Tool = "LinkTarget"
+    { Category = Translator }
+    { MenuText = "&Link" }
+    { HelpHint = "Link target node" }
+    { SearchPath = OutputPath }
+    { ToolFlag = LocalMenu | TargetTranslator | ReadOnly }
+    { AppliesTo = ".rom;.exe;.dll;" }
+    { DefaultFor = ".rom;.exe;" }
+    { DependencyChecker = CollectorDepend }
+  }
+  { Tool = "LocateTarget"
+    { Category = Translator }
+    { MenuText = "&Locate" }
+    { HelpHint = "Locate target node" }
+    { SearchPath = OutputPath }
+    { ToolFlag = LocalMenu | TargetTranslator | ReadOnly }
+    { AppliesTo = ".axe;.hex;.bin;" }
+    { DefaultFor = ".axe;.hex;.bin;" }
+    { DependencyChecker = CollectorDepend }
+  }
+  { Tool = "LocateConfigFile"
+    { Category = Translator }
+    { HelpHint = "Include locate configuration file in target build" }
+    { SearchPath = SourcePath }
+    { ToolFlag = MakeTool | ReadOnly }
+    { AppliesTo = ".cfg;.rm;.rt;" }
+    { DefaultFor = ".cfg;.rm;.rt;" }
+    { DependencyChecker = NopDepend }
+  }
+  { Tool = "LibraryCreate"
+    { Category = Translator }
+    { MenuText = "&Create Library" }
+    { HelpHint = "Create a static library" }
+    { SearchPath = LibPath }
+    { ToolFlag = LocalMenu | TargetTranslator | ReadOnly }
+    { AppliesTo = ".lib;" }
+    { DependencyChecker = CollectorDepend }
+  }
+  { Tool = "Assemble"
+    { Category = Translator }
+    { MenuText = "&Assemble" }
+    { HelpHint = "Assemble current node to .obj" }
+    { SearchPath = SourcePath }
+    { ToolFlag = LocalMenu | ReadOnly }
+    { AppliesTo = ".asm;" }
+    { DefaultFor = ".asm;" }
+    { TranslateTo = ".obj" }
+    { DependencyChecker = AutoDepend }
+  }
+  { Tool = "CreateImportLibrary"
+    { Category = Translator }
+    { CmdLine = "$IMPLIB" }
+    { MenuText = "&Implib" }
+    { HelpHint = "Create an import library from node" }
+    { SearchPath = LibPath }
+    { ToolFlag = LocalMenu | TargetTranslator | ReadOnly }
+    { AppliesTo = ".dll;.def;.lib;" }
+    { TranslateTo = ".lib" }
+    { DependencyChecker = TimeStamp }
+  }
+  { Tool = "CppPreprocessor"
+    { Category = Translator }
+    { CmdLine = "$SAVE ACT $NOSWAP $CAP MSG(PARA2MSG) +$RSP(-I$INC -D$DEF -o$RELNAME($OUTNAME)) $RELNAME($EDNAME)" }
+    { MenuText = "&Preprocess" }
+    { HelpHint = "Preprocess C/C++ node to .i file" }
+    { SearchPath = SourcePath }
+    { ToolFlag = LocalMenu | ReadOnly }
+    { AppliesTo = ".cpp;.c;.cas;" }
+    { TranslateTo = ".i" }
+    { DependencyChecker = TimeStamp }
+  }
+  { Tool = "RunScriptFile"
+    { Category = Translator }
+    { MenuText = "&Load and Run Script" }
+    { HelpHint = "Load and run a cScript file" }
+    { SearchPath = SourcePath }
+    { ToolFlag = LocalMenu | ReadOnly }
+    { AppliesTo = ".spp;" }
+    { DefaultFor = ".spp;" }
+    { DependencyChecker = TimeStamp }
+  }
+  { Tool = "ConvertHeader"
+    { Category = Translator }
+    { CmdLine = "$SAVE ACT $NOSWAP $CAP MSG(PARA2MSG) +$RSP(-I$INC -D$DEF -n$DIR($RELNAME($EDNAME))) $RELNAME($EDNAME)" }
+    { MenuText = "&Convert Header" }
+    { HelpHint = "Convert a C/C++ header file to a .ASH assembler include file" }
+    { SearchPath = IncludePath }
+    { ToolFlag = LocalMenu | ReadOnly }
+    { AppliesTo = ".h;.hpp;" }
+    { TranslateTo = ".ash" }
+    { DependencyChecker = TimeStamp }
+  }
+  { Tool = "Lint"
+    { Category = Translator }
+    { MenuText = "&Lint" }
+    { HelpHint = "Run lint on current node" }
+    { SearchPath = SourcePath }
+    { ToolFlag = LocalMenu | ReadOnly }
+    { AppliesTo = ".cpp;.c;.cas;" }
+    { DependencyChecker = TimeStamp }
+  }
+}
+{ SubSystem = NodeGraph
+  { Dependencies = Auto }
+  { BreakOn = Errors }
+  { Node = "athena.pdl"
+    { NodeType = ".ide" }
+    { Id = 1 }
+  }
+  { Node = "Main"
+    { NodeType = "SourcePool" }
+    { Id = 2 }
+  }
+  { Node = "System"
+    { NodeType = "SourcePool" }
+    { Id = 3 }
+  }
+  { Node = "main\main.c"
+    { NodeType = ".c" }
+    { Id = 4 }
+  }
+  { Node = "main\c0startup.asm"
+    { NodeType = ".asm" }
+    { Id = 5 }
+  }
+  { Node = "Header"
+    { NodeType = "SourcePool" }
+    { Id = 6 }
+  }
+  { Node = "system\all.h"
+    { NodeType = ".h" }
+    { Id = 7 }
+  }
+  { Node = "main\version.c"
+    { NodeType = ".c" }
+    { Id = 8 }
+  }
+  { Node = "main\init.c"
+    { NodeType = ".c" }
+    { Id = 9 }
+  }
+  { Node = "CommLink"
+    { NodeType = "SourcePool" }
+    { Id = 10 }
+  }
+  { Node = "Display"
+    { NodeType = "SourcePool" }
+    { Id = 11 }
+  }
+  { Node = "board\panel.c"
+    { NodeType = ".c" }
+    { Id = 12 }
+  }
+  { Node = "system\modesetup.c"
+    { NodeType = ".c" }
+    { Id = 13 }
+  }
+  { Node = "system\ir.c"
+    { NodeType = ".c" }
+    { Id = 14 }
+  }
+  { Node = "system\timers.c"
+    { NodeType = ".c" }
+    { Id = 15 }
+  }
+  { Node = "display\osd_input.c"
+    { NodeType = ".c" }
+    { Id = 16 }
+  }
+  { Node = "OsdFiles"
+    { NodeType = "SourcePool" }
+    { Id = 17 }
+  }
+  { Node = "system\adckeypad.c"
+    { NodeType = ".c" }
+    { Id = 18 }
+  }
+  { Node = "main\osd_cmd_sram.c"
+    { NodeType = ".c" }
+    { Id = 19 }
+  }
+  { Node = "display\osd_adj.c"
+    { NodeType = ".c" }
+    { Id = 20 }
+  }
+  { Node = "Device"
+    { NodeType = "SourcePool" }
+    { Id = 21 }
+  }
+  { Node = "device\vdecoder\vpc3230.c"
+    { NodeType = ".c" }
+    { Id = 22 }
+  }
+  { Node = "system\system.h"
+    { NodeType = ".h" }
+    { Id = 23 }
+  }
+  { Node = "board\mode.c"
+    { NodeType = ".c" }
+    { Id = 24 }
+  }
+  { Node = "system\modedeterm.c"
+    { NodeType = ".c" }
+    { Id = 25 }
+  }
+  { Node = "system\modehandler.c"
+    { NodeType = ".c" }
+    { Id = 26 }
+  }
+  { Node = "board\portselection.c"
+    { NodeType = ".c" }
+    { Id = 27 }
+  }
+  { Node = "UserPref"
+    { NodeType = "SourcePool" }
+    { Id = 28 }
+  }
+  { Node = "userpref\userpref.c"
+    { NodeType = ".c" }
+    { Id = 29 }
+  }
+  { Node = "device\nvram\24lc32.c"
+    { NodeType = ".c" }
+    { Id = 30 }
+  }
+  { Node = "system\powerhandler.c"
+    { NodeType = ".c" }
+    { Id = 31 }
+  }
+  { Node = "device\ioexpander\ioexpander.c"
+    { NodeType = ".c" }
+    { Id = 32 }
+  }
+  { Node = "main\appglobalvariables.c"
+    { NodeType = ".c" }
+    { Id = 33 }
+  }
+  { Node = "system\timers.h"
+    { NodeType = ".h" }
+    { Id = 34 }
+  }
+  { Node = "main\debughandler.h"
+    { NodeType = ".h" }
+    { Id = 35 }
+  }
+  { Node = "display\osd_timer.c"
+    { NodeType = ".c" }
+    { Id = 36 }
+  }
+  { Node = "display\osd_audio.c"
+    { NodeType = ".c" }
+    { Id = 37 }
+  }
+  { Node = "display\osd_display.c"
+    { NodeType = ".c" }
+    { Id = 38 }
+  }
+  { Node = "display\osd_pip.c"
+    { NodeType = ".c" }
+    { Id = 39 }
+  }
+  { Node = "userpref\modedependpref.c"
+    { NodeType = ".c" }
+    { Id = 40 }
+  }
+  { Node = "system\filmmode.c"
+    { NodeType = ".c" }
+    { Id = 41 }
+  }
+  { Node = "system\scheduler.c"
+    { NodeType = ".c" }
+    { Id = 42 }
+  }
+  { Node = "display\osd_ports.c"
+    { NodeType = ".c" }
+    { Id = 43 }
+  }
+  { Node = "display\osd_inputcapture.c"
+    { NodeType = ".c" }
+    { Id = 44 }
+  }
+  { Node = "display\osd_factory.c"
+    { NodeType = ".c" }
+    { Id = 45 }
+  }
+  { Node = "display\osd_draw.c"
+    { NodeType = ".c" }
+    { Id = 46 }
+  }
+  { Node = "display\osd_util.c"
+    { NodeType = ".c" }
+    { Id = 47 }
+  }
+  { Node = "Adjusters"
+    { NodeType = "SourcePool" }
+    { Id = 48 }
+  }
+  { Node = "adjusters\adjustor.c"
+    { NodeType = ".c" }
+    { Id = 49 }
+  }
+  { Node = "adjusters\adj_inputcapture.c"
+    { NodeType = ".c" }
+    { Id = 50 }
+  }
+  { Node = "adjusters\adj_display.c"
+    { NodeType = ".c" }
+    { Id = 51 }
+  }
+  { Node = "adjusters\scalerdynamic.c"
+    { NodeType = ".c" }
+    { Id = 52 }
+  }
+  { Node = "adjusters\multi_pip.c"
+    { NodeType = ".c" }
+    { Id = 53 }
+  }
+  { Node = "system\sdram.h"
+    { NodeType = ".h" }
+    { Id = 54 }
+  }
+  { Node = "board\externaldeviceconfig.c"
+    { NodeType = ".c" }
+    { Id = 55 }
+  }
+  { Node = "system\audproc.c"
+    { NodeType = ".c" }
+    { Id = 56 }
+  }
+  { Node = "system\wsshandler.c"
+    { NodeType = ".c" }
+    { Id = 57 }
+  }
+  { Node = "device\vdecoder\saa7119.c"
+    { NodeType = ".c" }
+    { Id = 58 }
+  }
+  { Node = "app_mfm_ext.axe"
+    { NodeType = ".axe" }
+    { Id = 59 }
+    { Property = TargetInfo
+      { Target = AxeApplication }
+      { Platform = ExtendedMode }
+      { Libs = NOEH | AlternateStartup | RTL }
+      { Image = Medium }
+    }
+    { Property = "PdkEmulator"
+      { Data = '4e 6f 20 54 61 72 67 65 74 2f 52 4f 4d 5c 72 65 61
+           6c 00'
+      }
+    }
+    { Property = "CurrentRTOS"
+      { Data = '3c 6e 6f 6e 65 3e 00'
+      }
+    }
+  }
+  { Node = "app_mfm_ext.rom"
+    { NodeType = ".rom" }
+    { Id = 60 }
+  }
+  { Node = "StdLibExt"
+    { NodeType = "SourcePool" }
+    { Id = 61 }
+  }
+  { Node = "StdLibApps"
+    { NodeType = "SourcePool" }
+    { Id = 62 }
+  }
+  { Node = "app_mfm.cfg"
+    { NodeType = ".cfg" }
+    { Id = 63 }
+  }
+  { Node = "StdLibReplace"
+    { NodeType = "SourcePool" }
+    { Id = 64 }
+  }
+  { Node = "stdlibapps\gm_autoperiodiccall.c"
+    { NodeType = ".c" }
+    { Id = 65 }
+  }
+  { Node = "stdlibapps\gm_externaldevice.c"
+    { NodeType = ".c" }
+    { Id = 66 }
+  }
+  { Node = "stdlibapps\gm_system.c"
+    { NodeType = ".c" }
+    { Id = 67 }
+  }
+  { Node = "stdlibreplace\gm_updatesharpness.c"
+    { NodeType = ".c" }
+    { Id = 68 }
+  }
+  { Node = "stdlibinc\gm_ttxlib.h"
+    { NodeType = ".h" }
+    { Id = 69 }
+  }
+  { Node = "stdlibinc\gm_clocks.h"
+    { NodeType = ".h" }
+    { Id = 70 }
+  }
+  { Node = "stdlibinc\gm_decoder.h"
+    { NodeType = ".h" }
+    { Id = 71 }
+  }
+  { Node = "stdlibinc\gm_global.h"
+    { NodeType = ".h" }
+    { Id = 72 }
+  }
+  { Node = "stdlibinc\gm_globalvariables.h"
+    { NodeType = ".h" }
+    { Id = 73 }
+  }
+  { Node = "stdlibinc\gm_hostreg.h"
+    { NodeType = ".h" }
+    { Id = 74 }
+  }
+  { Node = "stdlibinc\gm_input.h"
+    { NodeType = ".h" }
+    { Id = 75 }
+  }
+  { Node = "stdlibinc\gm_inputconfigdefs.h"
+    { NodeType = ".h" }
+    { Id = 76 }
+  }
+  { Node = "stdlibinc\gm_ir.h"
+    { NodeType = ".h" }
+    { Id = 77 }
+  }
+  { Node = "stdlibinc\gm_mcu186.h"
+    { NodeType = ".h" }
+    { Id = 78 }
+  }
+  { Node = "stdlibinc\gm_modesetup.h"
+    { NodeType = ".h" }
+    { Id = 79 }
+  }
+  { Node = "stdlibinc\gm_multipip.h"
+    { NodeType = ".h" }
+    { Id = 80 }
+  }
+  { Node = "stdlibinc\gm_osd.h"
+    { NodeType = ".h" }
+    { Id = 81 }
+  }
+  { Node = "stdlibinc\gm_osdlib.h"
+    { NodeType = ".h" }
+    { Id = 82 }
+  }
+  { Node = "stdlibinc\gm_register.h"
+    { NodeType = ".h" }
+    { Id = 83 }
+  }
+  { Node = "stdlibinc\gm_stdlib.h"
+    { NodeType = ".h" }
+    { Id = 84 }
+  }
+  { Node = "stdlibinc\gm_timer.h"
+    { NodeType = ".h" }
+    { Id = 85 }
+  }
+  { Node = "stdlibinc\gm_cclib.h"
+    { NodeType = ".h" }
+    { Id = 86 }
+  }
+  { Node = "Board"
+    { NodeType = "SourcePool" }
+    { Id = 87 }
+  }
+  { Node = "board\autoscaninput.c"
+    { NodeType = ".c" }
+    { Id = 88 }
+  }
+  { Node = "board\panel.h"
+    { NodeType = ".h" }
+    { Id = 89 }
+  }
+  { Node = "TestHarness"
+    { NodeType = "SourcePool" }
+    { Id = 90 }
+  }
+  { Node = "testharness\appstest.c"
+    { NodeType = ".c" }
+    { Id = 91 }
+  }
+  { Node = "testharness\testhardware\extosdtest.c"
+    { NodeType = ".c" }
+    { Id = 93 }
+  }
+  { Node = "testharness\testhardware\fsb_osd_verification.c"
+    { NodeType = ".c" }
+    { Id = 94 }
+  }
+  { Node = "testharness\testhardware\fsb_osd_verification_pattern.c"
+    { NodeType = ".c" }
+    { Id = 95 }
+  }
+  { Node = "testharness\testhardware\extddrsdram.c"
+    { NodeType = ".c" }
+    { Id = 96 }
+  }
+  { Node = "board\boardcontrol.c"
+    { NodeType = ".c" }
+    { Id = 97 }
+  }
+  { Node = "testharness\testservices\isr_rs_signals_transfer.c"
+    { NodeType = ".c" }
+    { Id = 98 }
+  }
+  { Node = "system\modeprefs.c"
+    { NodeType = ".c" }
+    { Id = 99 }
+  }
+  { Node = "system\letterboxhandler.c"
+    { NodeType = ".c" }
+    { Id = 100 }
+  }
+  { Node = "stdlibreplace\acctbl.c"
+    { NodeType = ".c" }
+    { Id = 101 }
+  }
+  { Node = "testharness\testservices\debughandler.c"
+    { NodeType = ".c" }
+    { Id = 106 }
+  }
+  { Node = "board\osd_appdependent.c"
+    { NodeType = ".c" }
+    { Id = 107 }
+  }
+  { Node = "stdlibreplace\colorschemetbl.c"
+    { NodeType = ".c" }
+    { Id = 108 }
+  }
+  { Node = "board\board.h"
+    { NodeType = ".h" }
+    { Id = 109 }
+  }
+  { Node = "board\portattrib.c"
+    { NodeType = ".c" }
+    { Id = 110 }
+  }
+  { Node = "device\vdecoder\vpx32xx.c"
+    { NodeType = ".c" }
+    { Id = 111 }
+  }
+  { Node = "stdlibapps\gm_osdsystem.c"
+    { NodeType = ".c" }
+    { Id = 112 }
+  }
+  { Node = "StdLibAdapt"
+    { NodeType = "SourcePool" }
+    { Id = 113 }
+  }
+  { Node = "stdlibadapt\gm_adapt_modedetection.c"
+    { NodeType = ".c" }
+    { Id = 114 }
+  }
+  { Node = "system\cvt.c"
+    { NodeType = ".c" }
+    { Id = 115 }
+  }
+  { Node = "system\cvt.h"
+    { NodeType = ".h" }
+    { Id = 116 }
+  }
+  { Node = "commlink\ddc2bi.c"
+    { NodeType = ".c" }
+    { Id = 117 }
+  }
+  { Node = "commlink\gprobe.c"
+    { NodeType = ".c" }
+    { Id = 118 }
+  }
+  { Node = "testharness\testservices\calculate_crc.c"
+    { NodeType = ".c" }
+    { Id = 119 }
+  }
+  { Node = "device\hdmi\anx9021.c"
+    { NodeType = ".c" }
+    { Id = 120 }
+  }
+  { Node = "stdlib\cortezosd_ext.lib"
+    { NodeType = ".lib" }
+    { Id = 121 }
+  }
+  { Node = "system\memory.c"
+    { NodeType = ".c" }
+    { Id = 122 }
+  }
+  { Node = "stdlibreplace\gm_updateacc.c"
+    { NodeType = ".c" }
+    { Id = 123 }
+  }
+  { Node = "stdlibreplace\natureacctbl.c"
+    { NodeType = ".c" }
+    { Id = 124 }
+  }
+  { Node = "stdlibreplace\sportsacctbl.c"
+    { NodeType = ".c" }
+    { Id = 125 }
+  }
+  { Node = "stdlibreplace\theateracctbl.c"
+    { NodeType = ".c" }
+    { Id = 126 }
+  }
+  { Node = "stdlibreplace\vividacctbl.c"
+    { NodeType = ".c" }
+    { Id = 127 }
+  }
+  { Node = "testharness\testhardware\dramtestinittable.c"
+    { NodeType = ".c" }
+    { Id = 128 }
+  }
+  { Node = "noehm.lib"
+    { NodeType = ".lib" }
+    { Id = 129 }
+  }
+  { Node = "cm.lib"
+    { NodeType = ".lib" }
+    { Id = 130 }
+  }
+  { Node = "system\wdt.c"
+    { NodeType = ".c" }
+    { Id = 131 }
+  }
+  { Node = "system\multidisplay.c"
+    { NodeType = ".c" }
+    { Id = 132 }
+  }
+  { Node = "commlink\smt.c"
+    { NodeType = ".c" }
+    { Id = 133 }
+  }
+  { Node = "commlink\smt_colorcontrol.c"
+    { NodeType = ".c" }
+    { Id = 134 }
+  }
+  { Node = "commlink\smtportmapping.c"
+    { NodeType = ".c" }
+    { Id = 135 }
+  }
+  { Node = "commlink\smt_acm3.c"
+    { NodeType = ".c" }
+    { Id = 136 }
+  }
+  { Node = "adjusters\adj_adccalibration.c"
+    { NodeType = ".c" }
+    { Id = 137 }
+  }
+  { Node = "adjusters\adj_acm3d.c"
+    { NodeType = ".c" }
+    { Id = 138 }
+  }
+  { Node = "commlink\smt_filters.c"
+    { NodeType = ".c" }
+    { Id = 139 }
+  }
+  { Node = "stdlibreplace\gm_uploadsramblock.c"
+    { NodeType = ".c" }
+    { Id = 140 }
+  }
+  { Node = "userpref\portschemedependpref.c"
+    { NodeType = ".c" }
+    { Id = 141 }
+  }
+  { Node = "userpref\imageschemes.c"
+    { NodeType = ".c" }
+    { Id = 142 }
+  }
+  { Node = "board\gm_inputconfig.c"
+    { NodeType = ".c" }
+    { Id = 143 }
+  }
+  { Node = "stdlibreplace\gm_panoramictbl.c"
+    { NodeType = ".c" }
+    { Id = 144 }
+  }
+  { Node = "stdlibreplace\gm_displayisr.c"
+    { NodeType = ".c" }
+    { Id = 145 }
+  }
+  { Node = "stdlib\STDP93xxDrv_ext.lib"
+    { NodeType = ".lib" }
+    { Id = 146 }
+  }
+  { Node = "LowPowerMonitor"
+    { NodeType = "SourcePool" }
+    { Id = 147 }
+  }
+  { Node = "CEC"
+    { NodeType = "SourcePool" }
+    { Id = 148 }
+  }
+  { Node = "cec\cecpowerhandler.c"
+    { NodeType = ".c" }
+    { Id = 149 }
+  }
+  { Node = "cec\cechandler.c"
+    { NodeType = ".c" }
+    { Id = 150 }
+  }
+  { Node = "board\dipmapping.c"
+    { NodeType = ".c" }
+    { Id = 151 }
+  }
+  { Node = "testharness\testhardware\validationtests.c"
+    { NodeType = ".c" }
+    { Id = 152 }
+  }
+  { Node = "commlink\msg_fwd.c"
+    { NodeType = ".c" }
+    { Id = 153 }
+  }
+  { Node = "commlink\d_uart.c"
+    { NodeType = ".c" }
+    { Id = 154 }
+  }
+  { Node = "commlink\smt_master.c"
+    { NodeType = ".c" }
+    { Id = 155 }
+  }
+  { Node = "commlink\smt_msgfwd.c"
+    { NodeType = ".c" }
+    { Id = 156 }
+  }
+  { Node = "board\loadhdcpkey.c"
+    { NodeType = ".c" }
+    { Id = 157 }
+  }
+  { Node = "cec\ceclibreplace.c"
+    { NodeType = ".c" }
+    { Id = 158 }
+  }
+  { Node = "cec\cecipchandler.c"
+    { NodeType = ".c" }
+    { Id = 159 }
+  }
+  { Node = "cec\cecusercommandshandler.c"
+    { NodeType = ".c" }
+    { Id = 160 }
+  }
+  { Node = "osdfiles\osdfiles1.c"
+    { NodeType = ".c" }
+    { Id = 161 }
+  }
+  { Node = "osdfiles\osdfiles2.c"
+    { NodeType = ".c" }
+    { Id = 162 }
+  }
+  { Node = "osdfiles\osdfiles3.c"
+    { NodeType = ".c" }
+    { Id = 163 }
+  }
+  { Node = "system\i2cgpiomaster.c"
+    { NodeType = ".c" }
+    { Id = 164 }
+  }
+  { Node = "system\sha1.c"
+    { NodeType = ".c" }
+    { Id = 165 }
+  }
+  { Node = "SmartIsp"
+    { NodeType = "SourcePool" }
+    { Id = 166 }
+  }
+  { Node = "smartisp\smartispmain.c"
+    { NodeType = ".c" }
+    { Id = 167 }
+  }
+  { Node = "device\nvram\soft_i2c.c"
+    { NodeType = ".c" }
+    { Id = 168 }
+  }
+  { Node = "ColorFidelity"
+    { NodeType = "SourcePool" }
+    { Id = 169 }
+  }
+  { Node = "colorfidelity\colorfidelitycontrol.c"
+    { NodeType = ".c" }
+    { Id = 170 }
+  }
+  { Node = "colorfidelity\dynamicgamutmapping.c"
+    { NodeType = ".c" }
+    { Id = 171 }
+  }
+  { Node = "colorfidelity\predefinedgammalut.c"
+    { NodeType = ".c" }
+    { Id = 172 }
+  }
+  { Node = "system\multipiphandler.c"
+    { NodeType = ".c" }
+    { Id = 173 }
+  }
+  { Node = "lowpowermonitor\lpmstdp93xx_hex.c"
+    { NodeType = ".c" }
+    { Id = 174 }
+  }
+  { Node = "DP"
+    { NodeType = "SourcePool" }
+    { Id = 175 }
+  }
+  { Node = "dp\dpbrapp.c"
+    { NodeType = ".c" }
+    { Id = 176 }
+  }
+  { Node = "dp\dppwrstatecheck.c"
+    { NodeType = ".c" }
+    { Id = 177 }
+  }
+  { Node = "ComboPhy"
+    { NodeType = "SourcePool" }
+    { Id = 178 }
+  }
+  { Node = "combophy\cablestatus.c"
+    { NodeType = ".c" }
+    { Id = 179 }
+  }
+  { Node = "commlink\smt_tnr.c"
+    { NodeType = ".c" }
+    { Id = 180 }
+  }
+  { Node = "commlink\smt_acc3.c"
+    { NodeType = ".c" }
+    { Id = 181 }
+  }
+  { Node = "commlink\smt_afm.c"
+    { NodeType = ".c" }
+    { Id = 182 }
+  }
+  { Node = "commlink\smt_csc.c"
+    { NodeType = ".c" }
+    { Id = 183 }
+  }
+  { Node = "commlink\smt_madi.c"
+    { NodeType = ".c" }
+    { Id = 184 }
+  }
+  { Node = "commlink\smt_mnr.c"
+    { NodeType = ".c" }
+    { Id = 185 }
+  }
+  { Node = "commlink\smt_sharpness.c"
+    { NodeType = ".c" }
+    { Id = 186 }
+  }
+  { Node = "commlink\smt_gammacorrection.c"
+    { NodeType = ".c" }
+    { Id = 187 }
+  }
+  { Node = "dp\dprxedid.c"
+    { NodeType = ".c" }
+    { Id = 188 }
+  }
+  { Node = "dp\dprxddcci.c"
+    { NodeType = ".c" }
+    { Id = 189 }
+  }
+  { Node = "stdlib\stdp93xxsys_ext.lib"
+    { NodeType = ".lib" }
+    { Id = 190 }
+  }
+  { Node = "system\cablehandler.c"
+    { NodeType = ".c" }
+    { Id = 191 }
+  }
+  { Node = "smartisp\stdp93xxsisp_ext.lib"
+    { NodeType = ".lib" }
+    { Id = 192 }
+  }
+  { Node = "adjusters\adj_colorwrap.c"
+    { NodeType = ".c" }
+    { Id = 193 }
+  }
+  { Node = "DP1_2LibExport"
+    { NodeType = "SourcePool" }
+    { Id = 194 }
+  }
+  { Node = "DP1_2LibDevice"
+    { NodeType = "SourcePool" }
+    { Id = 195 }
+  }
+  { Node = "dp\dp1_2libexport\dp12libx186.lib"
+    { NodeType = ".lib" }
+    { Id = 196 }
+  }
+  { Node = "dp\dp1_2libdevice\dplibinterface.c"
+    { NodeType = ".c" }
+    { Id = 197 }
+  }
+  { Node = "system\vwd.c"
+    { NodeType = ".c" }
+    { Id = 198 }
+  }
+  { Node = "stdlib\stdp93xxcec_ext.lib"
+    { NodeType = ".lib" }
+    { Id = 199 }
+  }
+  { Node = "stdlib\stdp93xxlpm_ipc_ext.lib"
+    { NodeType = ".lib" }
+    { Id = 200 }
+  }
+  { Node = "display\dum.c"
+    { NodeType = ".c" }
+    { Id = 201 }
+  }
+  { Node = "display\dither.c"
+    { NodeType = ".c" }
+    { Id = 202 }
+  }
+  { Node = "HdmiDvi"
+    { NodeType = "SourcePool" }
+    { Id = 203 }
+  }
+  { Node = "hdmidvi\hdmiapp.c"
+    { NodeType = ".c" }
+    { Id = 204 }
+  }
+  { Node = "hdmidvi\athenalib.lib"
+    { NodeType = ".lib" }
+    { Id = 205 }
+  }
+  { Node = "commlink\smt_lbc_lct.c"
+    { NodeType = ".c" }
+    { Id = 206 }
+  }
+  { Node = "device\vdecoder\tvp5160.c"
+    { NodeType = ".c" }
+    { Id = 207 }
+  }
+  { Node = "system\acr_handler.c"
+    { NodeType = ".c" }
+    { Id = 208 }
+  }
+  { Node = "system\sdram.c"
+    { NodeType = ".c" }
+    { Id = 209 }
+  }
+  { Node = "device\spiflash\flashspiplus.c"
+    { NodeType = ".c" }
+    { Id = 92 }
+  }
+  { Node = "commlink\socipc.c"
+    { NodeType = ".c" }
+    { Id = 102 }
+  }
+  { Node = "HDCP"
+    { NodeType = "SourcePool" }
+    { Id = 103 }
+  }
+  { Node = "hdcp\hdcpapp.c"
+    { NodeType = ".c" }
+    { Id = 104 }
+  }
+  { Node = "hdcp\hdcprepeaterlibexport\hdcprepeater.lib"
+    { NodeType = ".lib" }
+    { Id = 105 }
+  }
+  { Node = "HDCP"
+    { NodeType = "SourcePool" }
+    { Id = 210 }
+  }
+  { Node = "hdcp\hdcpapp.c"
+    { NodeType = ".c" }
+    { Id = 211 }
+  }
+  { Node = "hdcp\hdcprepeaterlibexport\hdcprepeater.lib"
+    { NodeType = ".lib" }
+    { Id = 212 }
+  }
+  { Node = "stdlibreplace\tnrtbl.c"
+    { NodeType = ".c" }
+    { Id = 213 }
+  }
+  { Node = "stdlibreplace\linearacctbl.c"
+    { NodeType = ".c" }
+    { Id = 214 }
+  }
+  { Node = "device\audio\tda7491.c"
+    { NodeType = ".c" }
+    { Id = 216 }
+  }
+}
+{ SubSystem = Tree
+    { Node = 1 ; athena.pdl [.ide]
+      { NodeFlag = BuildDepends | FatFile }
+      { StyleSheet = "Default Project Options" }
+        { Node = 59 ; app_mfm_ext.axe [.axe]
+          { NodeFlag = BuildDepends | FatFile | UserGen }
+          { Builder = "LocateTarget" }
+          { Overrides = "ASFN:app_mfm_ext.axe0"
+            { IDE = "-O.\OBJECT_EXT -n.\OBJECT_EXT" }
+            { CppCompile = "-D__ADDR24__;$INHERIT;FLI8532=8532;FLI8538=8538;FLI8668=8668;FLI30436=30436;FLI326xx=32600;FLI326xxBx=32601;STDP93xx=9300;CHIP_ID=STDP93xx;__JTAG__; -mm -f- -Y" }
+            { Link = "-Tee" }
+            { Assemble = "-d__ADDR24__;$INHERIT;FLI326xxBx=32601;CHIP_ID=STDP93xx;__JTAG__;" }
+            { Locate = "-D__ADDR24__;$INHERIT;FLI8532=8532;FLI8538=8538;FLI8668=8668;FLI30436=30436;FLI326xx=32600;FLI326xxBx=32601;STDP93xx=9300;CHIP_ID=STDP93xx;__JTAG__;" }
+          }
+            { Node = 63 ; app_mfm.cfg [.cfg]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "LocateConfigFile" }
+            }
+            { Node = 60 ; app_mfm_ext.rom [.rom]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "LinkTarget" }
+                { Node = 178 ; ComboPhy [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 179 ; combophy\cablestatus.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 175 ; DP [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 195 ; DP1_2LibDevice [SourcePool]
+                      { NodeFlag = BuildDepends | Reference | UserGen }
+                        { Node = 197 ; dp\dp1_2libdevice\dplibinterface.c [.c]
+                          { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                          { Builder = "CCompile" }
+                        }
+                    }
+                    { Node = 194 ; DP1_2LibExport [SourcePool]
+                      { NodeFlag = BuildDepends | Reference | UserGen }
+                        { Node = 196 ; dp\dp1_2libexport\dp12libx186.lib [.lib]
+                          { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                          { Builder = "BinInclude" }
+                        }
+                    }
+                    { Node = 189 ; dp\dprxddcci.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 188 ; dp\dprxedid.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 177 ; dp\dppwrstatecheck.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 176 ; dp\dpbrapp.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 169 ; ColorFidelity [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 172 ; colorfidelity\predefinedgammalut.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 171 ; colorfidelity\dynamicgamutmapping.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 170 ; colorfidelity\colorfidelitycontrol.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 113 ; StdLibAdapt [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 114 ; stdlibadapt\gm_adapt_modedetection.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 2 ; Main [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 33 ; main\appglobalvariables.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 5 ; main\c0startup.asm [.asm]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "Assemble" }
+                    }
+                    { Node = 9 ; main\init.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 4 ; main\main.c [.c]
+                      { NodeFlag = BuildAlways | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 19 ; main\osd_cmd_sram.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 8 ; main\version.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 87 ; Board [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 88 ; board\autoscaninput.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 97 ; board\boardcontrol.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 151 ; board\dipmapping.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 55 ; board\externaldeviceconfig.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 143 ; board\gm_inputconfig.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 157 ; board\loadhdcpkey.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 24 ; board\mode.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 107 ; board\osd_appdependent.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 12 ; board\panel.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 110 ; board\portattrib.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 27 ; board\portselection.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 48 ; Adjusters [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 193 ; adjusters\adj_colorwrap.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 138 ; adjusters\adj_acm3d.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 49 ; adjusters\adjustor.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 51 ; adjusters\adj_display.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 50 ; adjusters\adj_inputcapture.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 137 ; adjusters\adj_adccalibration.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 53 ; adjusters\multi_pip.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 52 ; adjusters\scalerdynamic.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 11 ; Display [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 202 ; display\dither.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 201 ; display\dum.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 20 ; display\osd_adj.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 37 ; display\osd_audio.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 38 ; display\osd_display.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 46 ; display\osd_draw.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 45 ; display\osd_factory.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 16 ; display\osd_input.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 44 ; display\osd_inputcapture.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 39 ; display\osd_pip.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 43 ; display\osd_ports.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 36 ; display\osd_timer.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 47 ; display\osd_util.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 3 ; System [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 208 ; system\acr_handler.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 198 ; system\vwd.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 191 ; system\cablehandler.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 173 ; system\multipiphandler.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 165 ; system\sha1.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 164 ; system\i2cgpiomaster.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 132 ; system\multidisplay.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 131 ; system\wdt.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 122 ; system\memory.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 115 ; system\cvt.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 100 ; system\letterboxhandler.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 99 ; system\modeprefs.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 25 ; system\modedeterm.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 26 ; system\modehandler.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 57 ; system\wsshandler.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 31 ; system\powerhandler.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 13 ; system\modesetup.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 18 ; system\adckeypad.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 56 ; system\audproc.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 41 ; system\filmmode.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 14 ; system\ir.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 42 ; system\scheduler.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 15 ; system\timers.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 209 ; system\sdram.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 10 ; CommLink [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 102 ; commlink\socipc.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 117 ; commlink\ddc2bi.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 154 ; commlink\d_uart.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 118 ; commlink\gprobe.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 153 ; commlink\msg_fwd.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 133 ; commlink\smt.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 135 ; commlink\smtportmapping.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 181 ; commlink\smt_acc3.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 136 ; commlink\smt_acm3.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 182 ; commlink\smt_afm.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 134 ; commlink\smt_colorcontrol.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 183 ; commlink\smt_csc.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 139 ; commlink\smt_filters.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 187 ; commlink\smt_gammacorrection.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 206 ; commlink\smt_lbc_lct.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 184 ; commlink\smt_madi.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 155 ; commlink\smt_master.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 185 ; commlink\smt_mnr.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 156 ; commlink\smt_msgfwd.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 186 ; commlink\smt_sharpness.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 180 ; commlink\smt_tnr.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 17 ; OsdFiles [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 161 ; osdfiles\osdfiles1.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 162 ; osdfiles\osdfiles2.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 163 ; osdfiles\osdfiles3.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 21 ; Device [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 216 ; device\audio\tda7491.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 92 ; device\spiflash\flashspiplus.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 207 ; device\vdecoder\tvp5160.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 168 ; device\nvram\soft_i2c.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 120 ; device\hdmi\anx9021.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 32 ; device\ioexpander\ioexpander.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 30 ; device\nvram\24lc32.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 58 ; device\vdecoder\saa7119.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 22 ; device\vdecoder\vpc3230.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 111 ; device\vdecoder\vpx32xx.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 147 ; LowPowerMonitor [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 174 ; lowpowermonitor\lpmstdp93xx_hex.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 28 ; UserPref [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 142 ; userpref\imageschemes.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 141 ; userpref\portschemedependpref.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 40 ; userpref\modedependpref.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 29 ; userpref\userpref.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 90 ; TestHarness [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 152 ; testharness\testhardware\validationtests.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 128 ; testharness\testhardware\dramtestinittable.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 119 ; testharness\testservices\calculate_crc.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 106 ; testharness\testservices\debughandler.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 98 ; testharness\testservices\isr_rs_signals_transfer.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 96 ; testharness\testhardware\extddrsdram.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 95 ; testharness\testhardware\fsb_osd_verification_pattern.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 94 ; testharness\testhardware\fsb_osd_verification.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 93 ; testharness\testhardware\extosdtest.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 91 ; testharness\appstest.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 62 ; StdLibApps [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 112 ; stdlibapps\gm_osdsystem.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 67 ; stdlibapps\gm_system.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 66 ; stdlibapps\gm_externaldevice.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 65 ; stdlibapps\gm_autoperiodiccall.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 61 ; StdLibExt [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 200 ; stdlib\stdp93xxlpm_ipc_ext.lib [.lib]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "BinInclude" }
+                    }
+                    { Node = 199 ; stdlib\stdp93xxcec_ext.lib [.lib]
+                      { NodeFlag = BuildDepends | FatFile | UserGen }
+                      { Builder = "BinInclude" }
+                    }
+                    { Node = 190 ; stdlib\stdp93xxsys_ext.lib [.lib]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "BinInclude" }
+                    }
+                    { Node = 121 ; stdlib\cortezosd_ext.lib [.lib]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "BinInclude" }
+                    }
+                    { Node = 146 ; stdlib\STDP93xxDrv_ext.lib [.lib]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "BinInclude" }
+                    }
+                }
+                { Node = 64 ; StdLibReplace [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 214 ; stdlibreplace\linearacctbl.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 213 ; stdlibreplace\tnrtbl.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 101 ; stdlibreplace\acctbl.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 108 ; stdlibreplace\colorschemetbl.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 145 ; stdlibreplace\gm_displayisr.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 144 ; stdlibreplace\gm_panoramictbl.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 123 ; stdlibreplace\gm_updateacc.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 68 ; stdlibreplace\gm_updatesharpness.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 140 ; stdlibreplace\gm_uploadsramblock.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 124 ; stdlibreplace\natureacctbl.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 125 ; stdlibreplace\sportsacctbl.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 126 ; stdlibreplace\theateracctbl.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 127 ; stdlibreplace\vividacctbl.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 148 ; CEC [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 160 ; cec\cecusercommandshandler.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 159 ; cec\cecipchandler.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 158 ; cec\ceclibreplace.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 150 ; cec\cechandler.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                    { Node = 149 ; cec\cecpowerhandler.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 166 ; SmartIsp [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 192 ; smartisp\stdp93xxsisp_ext.lib [.lib]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "BinInclude" }
+                    }
+                    { Node = 167 ; smartisp\smartispmain.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 203 ; HdmiDvi [SourcePool]
+                  { NodeFlag = BuildDepends | Reference | UserGen }
+                    { Node = 205 ; hdmidvi\athenalib.lib [.lib]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "BinInclude" }
+                    }
+                    { Node = 204 ; hdmidvi\hdmiapp.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | Reference | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 103 ; HDCP [SourcePool]
+                  { NodeFlag = BuildDepends | UserGen }
+                    { Node = 105 ; hdcp\hdcprepeaterlibexport\hdcprepeater.lib [.lib]
+                      { NodeFlag = BuildDepends | FatFile | UserGen }
+                      { Builder = "BinInclude" }
+                    }
+                    { Node = 104 ; hdcp\hdcpapp.c [.c]
+                      { NodeFlag = BuildDepends | FatFile | UserGen }
+                      { Builder = "CCompile" }
+                    }
+                }
+                { Node = 129 ; noehm.lib [.lib]
+                  { NodeFlag = BuildDepends | FatFile | Skeleton }
+                }
+                { Node = 130 ; cm.lib [.lib]
+                  { NodeFlag = BuildDepends | FatFile | Skeleton }
+                }
+            }
+        }
+        { Node = 2 ; Main [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 33 ; main\appglobalvariables.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 5 ; main\c0startup.asm [.asm]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "Assemble" }
+            }
+            { Node = 9 ; main\init.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 4 ; main\main.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 19 ; main\osd_cmd_sram.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 8 ; main\version.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 87 ; Board [SourcePool]
+          { NodeFlag = BuildDepends | CantBuild | Exclude | UserGen }
+            { Node = 88 ; board\autoscaninput.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 97 ; board\boardcontrol.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 151 ; board\dipmapping.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 55 ; board\externaldeviceconfig.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 143 ; board\gm_inputconfig.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 157 ; board\loadhdcpkey.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 24 ; board\mode.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 107 ; board\osd_appdependent.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 12 ; board\panel.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 110 ; board\portattrib.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 27 ; board\portselection.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 48 ; Adjusters [SourcePool]
+          { NodeFlag = BuildDepends | CantBuild | Exclude | UserGen }
+            { Node = 193 ; adjusters\adj_colorwrap.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 138 ; adjusters\adj_acm3d.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 49 ; adjusters\adjustor.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 51 ; adjusters\adj_display.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 50 ; adjusters\adj_inputcapture.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 137 ; adjusters\adj_adccalibration.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 53 ; adjusters\multi_pip.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 52 ; adjusters\scalerdynamic.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 11 ; Display [SourcePool]
+          { NodeFlag = BuildDepends | CantBuild | Exclude | UserGen }
+            { Node = 202 ; display\dither.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 201 ; display\dum.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 20 ; display\osd_adj.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 37 ; display\osd_audio.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 38 ; display\osd_display.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 46 ; display\osd_draw.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 45 ; display\osd_factory.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 16 ; display\osd_input.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 44 ; display\osd_inputcapture.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 39 ; display\osd_pip.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 43 ; display\osd_ports.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 36 ; display\osd_timer.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 47 ; display\osd_util.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 3 ; System [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 208 ; system\acr_handler.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 198 ; system\vwd.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 191 ; system\cablehandler.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 173 ; system\multipiphandler.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 165 ; system\sha1.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 164 ; system\i2cgpiomaster.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 132 ; system\multidisplay.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 131 ; system\wdt.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 122 ; system\memory.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 115 ; system\cvt.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 100 ; system\letterboxhandler.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 99 ; system\modeprefs.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 25 ; system\modedeterm.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 26 ; system\modehandler.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 57 ; system\wsshandler.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 31 ; system\powerhandler.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 13 ; system\modesetup.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 18 ; system\adckeypad.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 56 ; system\audproc.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 41 ; system\filmmode.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 14 ; system\ir.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 42 ; system\scheduler.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 15 ; system\timers.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 209 ; system\sdram.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 10 ; CommLink [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 102 ; commlink\socipc.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 117 ; commlink\ddc2bi.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 154 ; commlink\d_uart.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 118 ; commlink\gprobe.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 153 ; commlink\msg_fwd.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 133 ; commlink\smt.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 135 ; commlink\smtportmapping.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 181 ; commlink\smt_acc3.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 136 ; commlink\smt_acm3.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 182 ; commlink\smt_afm.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 134 ; commlink\smt_colorcontrol.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 183 ; commlink\smt_csc.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 139 ; commlink\smt_filters.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 187 ; commlink\smt_gammacorrection.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 206 ; commlink\smt_lbc_lct.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 184 ; commlink\smt_madi.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 155 ; commlink\smt_master.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 185 ; commlink\smt_mnr.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 156 ; commlink\smt_msgfwd.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 186 ; commlink\smt_sharpness.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 180 ; commlink\smt_tnr.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 17 ; OsdFiles [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 161 ; osdfiles\osdfiles1.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 162 ; osdfiles\osdfiles2.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 163 ; osdfiles\osdfiles3.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 21 ; Device [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 216 ; device\audio\tda7491.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 92 ; device\spiflash\flashspiplus.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 207 ; device\vdecoder\tvp5160.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 168 ; device\nvram\soft_i2c.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 120 ; device\hdmi\anx9021.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 32 ; device\ioexpander\ioexpander.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 30 ; device\nvram\24lc32.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 58 ; device\vdecoder\saa7119.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 22 ; device\vdecoder\vpc3230.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 111 ; device\vdecoder\vpx32xx.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 147 ; LowPowerMonitor [SourcePool]
+          { NodeFlag = BuildDepends | CantBuild | Exclude | UserGen }
+            { Node = 174 ; lowpowermonitor\lpmstdp93xx_hex.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 28 ; UserPref [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 142 ; userpref\imageschemes.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 141 ; userpref\portschemedependpref.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 40 ; userpref\modedependpref.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 29 ; userpref\userpref.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 90 ; TestHarness [SourcePool]
+          { NodeFlag = BuildDepends | CantBuild | Exclude | UserGen }
+            { Node = 152 ; testharness\testhardware\validationtests.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 128 ; testharness\testhardware\dramtestinittable.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 119 ; testharness\testservices\calculate_crc.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 106 ; testharness\testservices\debughandler.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 98 ; testharness\testservices\isr_rs_signals_transfer.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 96 ; testharness\testhardware\extddrsdram.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 95 ; testharness\testhardware\fsb_osd_verification_pattern.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 94 ; testharness\testhardware\fsb_osd_verification.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 93 ; testharness\testhardware\extosdtest.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 91 ; testharness\appstest.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 62 ; StdLibApps [SourcePool]
+          { NodeFlag = BuildDepends | CantBuild | Exclude | UserGen }
+            { Node = 112 ; stdlibapps\gm_osdsystem.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 67 ; stdlibapps\gm_system.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 66 ; stdlibapps\gm_externaldevice.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 65 ; stdlibapps\gm_autoperiodiccall.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 61 ; StdLibExt [SourcePool]
+          { NodeFlag = BuildDepends | CantBuild | Exclude | UserGen }
+            { Node = 200 ; stdlib\stdp93xxlpm_ipc_ext.lib [.lib]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "BinInclude" }
+            }
+            { Node = 190 ; stdlib\stdp93xxsys_ext.lib [.lib]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "BinInclude" }
+            }
+            { Node = 121 ; stdlib\cortezosd_ext.lib [.lib]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "BinInclude" }
+            }
+            { Node = 146 ; stdlib\STDP93xxDrv_ext.lib [.lib]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "BinInclude" }
+            }
+        }
+        { Node = 64 ; StdLibReplace [SourcePool]
+          { NodeFlag = BuildDepends | CantBuild | Exclude | UserGen }
+            { Node = 214 ; stdlibreplace\linearacctbl.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 213 ; stdlibreplace\tnrtbl.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 101 ; stdlibreplace\acctbl.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 108 ; stdlibreplace\colorschemetbl.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 145 ; stdlibreplace\gm_displayisr.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 144 ; stdlibreplace\gm_panoramictbl.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 123 ; stdlibreplace\gm_updateacc.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 68 ; stdlibreplace\gm_updatesharpness.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 140 ; stdlibreplace\gm_uploadsramblock.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 124 ; stdlibreplace\natureacctbl.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 125 ; stdlibreplace\sportsacctbl.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 126 ; stdlibreplace\theateracctbl.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 127 ; stdlibreplace\vividacctbl.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 113 ; StdLibAdapt [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 114 ; stdlibadapt\gm_adapt_modedetection.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 6 ; Header [SourcePool]
+          { NodeFlag = BuildDepends | CantBuild | Exclude | UserGen }
+            { Node = 109 ; board\board.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 89 ; board\panel.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 7 ; system\all.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 54 ; system\sdram.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 23 ; system\system.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 116 ; system\cvt.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 34 ; system\timers.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 35 ; main\debughandler.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 86 ; stdlibinc\gm_cclib.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 85 ; stdlibinc\gm_timer.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 84 ; stdlibinc\gm_stdlib.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 83 ; stdlibinc\gm_register.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 82 ; stdlibinc\gm_osdlib.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 81 ; stdlibinc\gm_osd.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 80 ; stdlibinc\gm_multipip.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 79 ; stdlibinc\gm_modesetup.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 78 ; stdlibinc\gm_mcu186.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 77 ; stdlibinc\gm_ir.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 76 ; stdlibinc\gm_inputconfigdefs.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 75 ; stdlibinc\gm_input.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 74 ; stdlibinc\gm_hostreg.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 73 ; stdlibinc\gm_globalvariables.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 72 ; stdlibinc\gm_global.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 71 ; stdlibinc\gm_decoder.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 70 ; stdlibinc\gm_clocks.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+            { Node = 69 ; stdlibinc\gm_ttxlib.h [.h]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "HeaderInclude" }
+            }
+        }
+        { Node = 148 ; CEC [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 160 ; cec\cecusercommandshandler.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 159 ; cec\cecipchandler.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 158 ; cec\ceclibreplace.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 150 ; cec\cechandler.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 149 ; cec\cecpowerhandler.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 166 ; SmartIsp [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 192 ; smartisp\stdp93xxsisp_ext.lib [.lib]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "BinInclude" }
+            }
+            { Node = 167 ; smartisp\smartispmain.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 169 ; ColorFidelity [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 172 ; colorfidelity\predefinedgammalut.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 171 ; colorfidelity\dynamicgamutmapping.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 170 ; colorfidelity\colorfidelitycontrol.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 175 ; DP [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 195 ; DP1_2LibDevice [SourcePool]
+              { NodeFlag = BuildDepends | CantBuild | Exclude | UserGen }
+                { Node = 197 ; dp\dp1_2libdevice\dplibinterface.c [.c]
+                  { NodeFlag = BuildDepends | FatFile | UserGen }
+                  { Builder = "CCompile" }
+                }
+            }
+            { Node = 194 ; DP1_2LibExport [SourcePool]
+              { NodeFlag = BuildDepends | CantBuild | Exclude | UserGen }
+                { Node = 196 ; dp\dp1_2libexport\dp12libx186.lib [.lib]
+                  { NodeFlag = BuildDepends | FatFile | UserGen }
+                  { Builder = "BinInclude" }
+                }
+            }
+            { Node = 189 ; dp\dprxddcci.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 188 ; dp\dprxedid.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 177 ; dp\dppwrstatecheck.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+            { Node = 176 ; dp\dpbrapp.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 178 ; ComboPhy [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 179 ; combophy\cablestatus.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 203 ; HdmiDvi [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 205 ; hdmidvi\athenalib.lib [.lib]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "BinInclude" }
+            }
+            { Node = 204 ; hdmidvi\hdmiapp.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+        { Node = 210 ; HDCP [SourcePool]
+          { NodeFlag = CantBuild | Exclude | UserGen }
+            { Node = 212 ; hdcp\hdcprepeaterlibexport\hdcprepeater.lib [.lib]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "BinInclude" }
+            }
+            { Node = 211 ; hdcp\hdcpapp.c [.c]
+              { NodeFlag = BuildDepends | FatFile | UserGen }
+              { Builder = "CCompile" }
+            }
+        }
+    }
+}

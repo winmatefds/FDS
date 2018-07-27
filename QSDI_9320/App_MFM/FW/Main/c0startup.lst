@@ -1,0 +1,574 @@
+Paradigm C++ Assembler 5.0	  09/12/13 13:30:14	    Page 1
+main\C0STAR~1.ASM
+
+
+
+      1				     ;/*
+      2				     ;	  $Workfile:   C0startup.asm  $
+      3				     ;	  $Revision: 1.14 $
+      4				     ;	  $Date: 2013/06/14 08:21:13 $
+      5				     ;*/
+      6				     ;//******************************************************************************
+      7				     ;// COPYRIGHT (C) STMicroelectronics 2011.
+      8				     ;//
+      9				     ;// All rights reserved. This document contains proprietary and
+     10				     ;// confidential information of the STMicroelectronics Group. This
+     11				     ;// document is not to be copied in whole or part.	STMicroelectronics
+     12				     ;// assumes no responsibility for the consequences	of use of such
+     13				     ;// information nor for any infringement of patents or other rights of
+     14				     ;// third parties which may result	from its use. No license is granted by
+     15				     ;// implication or	otherwise under	any patent or patent rights of
+     16				     ;// STMicroelectronics.
+     17				     ;// STMicroelectronics
+     18				     ;// products are not authorized for use as	critical components in life
+     19				     ;// support devices or systems without express written approval of
+     20				     ;// STMicroelectronics.
+     21				     ;//==============================================================================
+     22				     ;//
+     23				     ;// MODULE:      C0Startup.asm
+     24				     ;//
+     25				     ;// USAGE:	      This module contains system and External ROM data	initialization
+     26				     ;//
+     27				     ;//	      The __ADDR24__ is	automatically defined for the project
+     28				     ;//	      when the Extended	Address	Mode option is choosen in the IDE file
+     29				     ;//
+     30				     ;//******************************************************************************
+     31
+     32				     .186			     ; Required	for target independence
+     33
+     34				     include main/Define.Inc
+1    35				     ;//================================================================
+1    36				     ;//
+1    37				     ;// MODULE:      Define.Inc
+1    38				     ;//
+1    39				     ;// USAGE :      definitions for dual bank	flash size and firmware	version
+1    40				     ;//
+1    41				     ;//******************************************************************
+1    42				     ; dual bank flash size
+1    43	      =	200000h		     FLASH_BANK_SIZE EQU 200000h     ; // ROM_SIZE_2MB:	200000h	/ ROM_SIZE_4MB:	400000h
+1    44
+1    45				     ; firmware	version
+1    46	      =0001		     FW_VER_MAJOR     EQU 1
+1    47	      =0001		     FW_VER_MINOR     EQU 1
+1    48	      =0001		     FW_VER_BUILD     EQU 1
+1    49
+1    50
+     51				     ;//******************************************************************************
+     52				     ;//  L O C	A L    D E F I N I T I O N S
+     53				     ;//******************************************************************************
+     54				     ; Some options can	be disabled to reduce the size of the startup code
+     55				     ; and run-time library helper code.  Simply place a semicolon in front
+     56				     ; of the following	definitions to remove support for selected item.
+     57				     ;
+Paradigm C++ Assembler 5.0	  09/12/13 13:30:14	    Page 2
+main\C0STAR~1.ASM
+
+
+
+     58				     ;	  __ENABLE_EXCEPTIONS	   Includes C++	exception handling support
+     59				     ;__ENABLE_EXCEPTIONS	     =	   1	;
+     60
+     61	      =0400		     STACK_SIZE_WORD		  EQU 0400h    ;default	2KB(0x400*2) stack
+     62
+     63	      =8000		     IRAM_SIZE		      EQU 08000h
+     64	      =C9C0		     EXT_ROM_BASE_ADDR	      EQU 0C9C0h
+     65	      =C9CC		     EXT_CS2_BASE_ADDR	      EQU 0C9CCh
+     66
+     67				     ;//******************************************************************************
+     68				     ;//  S E G	M E N T	S    D E F I N I T I O N S
+     69				     ;//******************************************************************************
+     70				     IFNDEF __ADDR24__
+     71				     _PAD_ = 16
+     72				     _ALIGN_ equ <para>
+     73				     ELSE
+     74	      =0100		     _PAD_ = 256
+     75	      =	page		     _ALIGN_ equ <page>
+     76				     ENDIF
+     77
+     78				     ; Segment and group declarations.	The order of these declarations	is
+     79				     ; used to control the order of segments in	the .ROM file since the
+     80				     ; Paradigm	linker copies segments in the same order they
+     81				     ; are encountered in the object files.
+     82				     ; Make sure that this startup module is specified first when linking
+     83				     ; the application.
+     84				     % _TEXT segment _ALIGN_ public use16 'CODE'    ;Default code
+1    85	0000			      _TEXT segment page public	use16 'CODE'	;Default code
+     86	0000			     _TEXT ends
+     87
+     88				     ; These are segment definitions for the classes ROMDATA and ENDROMDATA.  Class
+     89				     ; ROMDATA never contains anything (it is filled in	by a Paradigm LOCATE DUP
+     90				     ; directive).  Class ENDROMDATA is	used to	mark the end of	class ROMDATA and
+     91				     ; prevent a segment alias (since class ROMDATA will have zero length).
+     92				     ;
+     93				     ; NOTE: You can't take the	address	of segments in class ENDROMDATA	as they	are
+     94				     ;	     aliased with class	ROMDATA.
+     95				     ;
+     96				     % _RD segment _ALIGN_ public use16	'ROMDATA'
+1    97	0000			      _RD segment page public use16 'ROMDATA'
+     98				     public _romdata_start ;Mark the start of class ROMDATA
+     99	0000			     _romdata_start label byte
+    100	0000			     _RD ends
+    101
+    102				     % _ERD segment _ALIGN_ public use16 'ENDROMDATA'
+1   103	0000			      _ERD segment page	public use16 'ENDROMDATA'
+    104				     public _romdata_end ;Mark the end of class	ROMDATA
+    105	0000			     _romdata_end label	byte
+    106	0000  0100*(??)			 db _PAD_ dup (?) ;Force the next segment to a new paragraph/page
+    107	0100			     _ERD ends
+    108
+    109
+    110				     ; This segment is dedicated for IROM usage.
+    111				     ; Note: The start address of the segment is specified in the cfg file.
+    112				     % _IROM_DATA segment _ALIGN_ public use16 'IROM_DATA'
+1   113	0000			      _IROM_DATA segment page public use16 'IROM_DATA'
+    114
+Paradigm C++ Assembler 5.0	  09/12/13 13:30:14	    Page 3
+main\C0STAR~1.ASM
+
+
+
+    115	0000			     _IROM_DATA	ends
+    116				     DGROUP group _IROM_DATA
+    117
+    118				     ; This segment is dedicated for OSD Command Buffer	usage.
+    119				     ; Note: This segment is not initalized by system.
+    120				     % _OSD_CMDBUF segment _ALIGN_ public use16	'OSD_CMDBUF'
+1   121	0000			      _OSD_CMDBUF segment page public use16 'OSD_CMDBUF'
+    122	0000			     _OSD_CMDBUF ends
+    123				     DGROUP group _OSD_CMDBUF
+    124
+    125				     ; Initialized data
+    126				     % _DATA segment _ALIGN_ public use16 'DATA'
+1   127	0000			      _DATA segment page public	use16 'DATA'
+    128				     public _initialized_data_start
+    129	0000			     _initialized_data_start label byte
+    130	0000			     _DATA ends
+    131				     DGROUP group _DATA
+    132
+    133				     ; Uninitialized data
+    134	0000			     _BSS segment word public use16 'BSS'
+    135				     public _uninitialized_data_start
+    136	0000			     _uninitialized_data_start label byte
+    137	0000			     _BSS ends
+    138				     DGROUP group _BSS
+    139
+    140				     ;Dummy NVRAM para to make linker happy
+    141				     % _NVRAM segment word public use16	'NVRAM'
+1   142	0000			      _NVRAM segment word public use16 'NVRAM'
+    143				     public _NVRAM_data_start
+    144	0000			     _NVRAM_data_start label byte
+    145	0000  ????			 dw  ?
+    146	0002			     _NVRAM ends
+    147				     DGROUP group _NVRAM
+    148
+    149				     ;Dummy STACK para to make linker happy
+    150				     % _STACK segment para stack use16 'STACK'
+1   151	0000			      _STACK segment para stack	use16 'STACK'
+    152	0000			     _stack_end	     label   byte
+    153	0000  0400*(????)		 dw STACK_SIZE_WORD dup	(?)
+    154	0800			     _STACK ends
+    155				     DGROUP group _STACK
+    156
+    157				     ;IFDEF FLI326xxBx
+    158				     % _FARBSS segment _ALIGN_ public use16  'FAR_BSS'	      ;	uninitialized far data
+1   159	0000			      _FARBSS segment page public use16	 'FAR_BSS'	  ; uninitialized far data
+    160	0000				 _uninitialized_far_data_start label byte
+    161	0000  ????			 dw ?
+    162	0002			     _FARBSS ends
+    163				     ;ENDIF
+    164
+    165				     % _FAR_CONST segment _ALIGN_ public 'FAR_CONST'
+1   166	0000			      _FAR_CONST segment page public 'FAR_CONST'
+    167	0000			     _W_StackStart   label   word
+    168	0000  8000			      dw IRAM_SIZE
+    169	0002			     _W_StackEnd     label   word
+    170	0002  0000r			      dw _stack_end
+    171	0004			     _FAR_CONST	ends
+Paradigm C++ Assembler 5.0	  09/12/13 13:30:14	    Page 4
+main\C0STAR~1.ASM
+
+
+
+    172
+    173				     public _W_StackStart
+    174				     public _W_StackEnd
+    175
+    176				     ;//******************************************************************************
+    177				     ;//  E X T	E R N A	L    F U N C T I O N S
+    178				     ;//******************************************************************************
+    179				     IFDEF __ENABLE_EXCEPTIONS
+    180					 extrn __ExceptInit:far	;Exception handling initialization
+    181				     ENDIF
+    182
+    183				     extrn _main:far ;User application entry point
+    184
+    185				     ;//******************************************************************************
+    186				     ;//  C O D	E
+    187				     ;//******************************************************************************
+    188	0000			     _TEXT    segment
+    189					 assume	   cs:_TEXT
+    190	      =0001		     CUT_2_0 = 1
+    191				     IF	CUT_2_0
+    192					 ;---------------------------------------------------------------------------
+    193					 ; Start of bootup block
+    194					 ;---------------------------------------------------------------------------
+    195					    org	000h		;Bootup	Address	= 0x410000 (4100:00) //	Cut 2.0	__ADDR24__
+    196				     ; // Signature Block
+    197	0000  41 54 48 45		     signature	  db 'A','T','H','E'
+    198	0004  FF			     vertag	  db 0ffh
+    199	0005  06*(FF)			     not_used6	  db 6 dup(0ffh)
+    200	000B  00			     crcCheckFlag db 0
+    201	000C  00001021			     configCrc2	  dd 00001021h
+    202				     ; // Startup
+    203	0010  B8 0000			 mov	ax, 0h		    ; DS = 00000h
+    204	0013  8E D8			 mov	ds, ax
+    205					 assume	   ds:0h
+    206
+    207					 ;following code is very correlated with CODE_START_ADDRESS calculation
+    208					 ;There	is a difference	in 24bit address mode EXT_ROM_BASE_ADDR	is always configured for 4M +
+    209				     (even if code size	is 1M or 2M.
+    210					 IFDEF __ADDR24__
+    211	0015  C7 06 C9C0 0400		     mov word ptr ds:[EXT_ROM_BASE_ADDR], 0400h	       ;XROM_START = 0x400000 (8M Bytes)
+    212					 ELSE
+    213					     mov word ptr ds:[EXT_ROM_BASE_ADDR], 0020h	       ;XROM_START = 0x20000 (832K Bytes)
+    214					 ENDIF
+    215
+    216	001B  90			 nop	;Time delay for	the system to setup the	XROM size
+    217	001C  90			 nop
+    218	001D  90			 nop
+    219	001E  90			 nop
+    220	001F  EB 1F			 jmp   _startup_XROM
+    221
+    222					 ;---Signature Block and xrom_config STRUC---
+    223					 IFDEF __ADDR24__
+    224					     org 032h	 ; // Cut 2.0
+    225					 ELSE
+    226					     org 022h
+    227					 ENDIF
+    228	0032  0000			     configCrc	  dw 0000h	  ; contrl block CRC, need post	process	by tool
+Paradigm C++ Assembler 5.0	  09/12/13 13:30:14	    Page 5
+main\C0STAR~1.ASM
+
+
+
+    229	0034  001E			     configLen	  dw 30		   ; length of the control block
+    230					 IFDEF __ADDR24__
+    231	0036  00200000			     flashSize	  dd FLASH_BANK_SIZE ; flash size
+    232					 ELSE
+    233					     flashSize	  dd 100000h	  ; max. flash size, 1M	bytes
+    234					 ENDIF
+    235	003A  0000			     codeCrc	  dw 0000h
+    236	003C  01			     fw_Major	  db FW_VER_MAJOR
+    237	003D  01			     fw_Minor	  db FW_VER_MINOR
+    238	003E  01			     fw_Build	  db FW_VER_BUILD
+    239	003F  ??			     not_used	  db ?
+    240					 ;---------------------------------------------------------------------------
+    241					 ; End of bootup block
+    242					 ;---------------------------------------------------------------------------
+    243				     ENDIF
+    244
+    245	0040			     _startup_XROM proc	far		       ; Startup code entry point
+    246				     public _startup_XROM
+    247					 ;---------------------------------------------------------------------------
+    248					 ;Check	flash image end	signature.
+    249	0040  B8 0000s			 mov	ax, seg	end_signature
+    250	0043  8E C0			 mov	es, ax
+    251	0045  26: 81 3E	00F0r 5441	 cmp	word ptr es:[offset end_signature], 5441h ; END_SIGNATURE_LO
+    252	004C  75 5B			 jne	__EnterIrom
+    253	004E  26: 81 3E	00F2r 414E	 cmp	word ptr es:[offset end_signature + 2],	414Eh ;	END_SIGNATURE_HI
+    254	0055  75 52			 jne	__EnterIrom
+    255
+    256	0057  B8 0000			 mov	ax, 0
+    257	005A  8E D0			 mov	ss, ax				  ;Stack setup SS = DGROUP = CLASS DATA	= 0x0000    +
+    258				     (ax=0)
+    259	005C  8E D8			 mov	ds, ax
+    260	005E  8E C0			 mov	es, ax
+    261					 assume	 ss:0h,	ds:0, es:0
+    262	0060  BC 8000			 mov	sp, IRAM_SIZE			 ;SP = top of RAM
+    263
+    264					 ;---------------------------------------------------------------------------
+    265					 ;Prepare the segment registers	for initialization.  The initialized
+    266					 ;data is assumed to have been located in the class ROMDATA which begins
+    267					 ;with the segment _RD.
+    268					 ;Copy DGROUP initialized data from its	position in ROM	to the target address
+    269					 ;in RAM.
+    270					 ;Because this is a group, there is never more than 64K	of data	to copy.
+    271	0063  B8 0000s			 mov	ax, _RD
+    272	0066  8E D8			 mov	ds, ax
+    273					 assume	ds:_RD
+    274	0068  BE 0000r			 mov	si, offset _romdata_start
+    275	006B  BF 0000r			 mov	di, offset DGROUP:_initialized_data_start
+    276	006E  B9 0000r			 mov	cx, offset DGROUP:_uninitialized_data_start
+    277	0071  2B CF			 sub	cx, di
+    278	0073  D1 E9			 shr	cx, 1
+    279	0075  F3> A5			 rep	movsw
+    280
+    281					 ;---------------------------------------------------------------------------
+    282					 ;Zero out the uninitialized data area (_uninitialized_data_start - _NVRAM_data_start)
+    283	0077  B8 0000			 mov	ax, 0
+    284	007A  8E D8			 mov	ds, ax		     ;DGROUP = 0x0000 (ax=0)
+    285					 assume	ds:0
+Paradigm C++ Assembler 5.0	  09/12/13 13:30:14	    Page 6
+main\C0STAR~1.ASM
+
+
+
+    286	007C  BF 0000r			 mov	di, offset DGROUP:_uninitialized_data_start
+    287	007F  B9 0000r			 mov	cx, offset DGROUP:_NVRAM_data_start
+    288	0082  2B CF			 sub	cx, di
+    289	0084  D1 E9			 shr	cx, 1
+    290	0086  F3> AB			 rep	stosw
+    291
+    292					 ;---------------------------------------------------------------------------
+    293					 ;fill stack with a constant pattern to	be able	to monitor a stack watermark
+    294	0088  B8 0000r			 mov	ax, offset _stack_end
+    295	008B  B9 7FFE			 mov	cx, (IRAM_SIZE - 2)
+    296	008E  2B C8			 sub	cx, ax
+    297	0090  D1 E9			 shr	cx, 1		     ; div by 2	for WORD size
+    298
+    299	0092  B8 0000			 mov	ax, 0
+    300	0095  8E D8			 mov	ds, ax		     ;DGROUP = 0x0000 (ax=0)
+    301					 assume	ds:0
+    302	0097  FD			 std			     ;set direction flag to have decrement addr
+    303	0098  B8 5555			 mov	ax, 5555h	     ;ax = fill	data (0x5555)
+    304	009B  BF 7FFE			 mov	di, (IRAM_SIZE - 2)  ;di = data	start (0x8000 -	one word = 0x7FFE)
+    305	009E  F3> AB			 rep	stosw		     ;rep store	pattern
+    306	00A0  FC			 cld
+    307
+    308					 ;Memory is now	initialized.  We need to initialize the	exception handling
+    309					 ;logic	and call any linked in initializers before handling control over
+    310					 ;to the user code.
+    311	00A1  BD 0000			 mov	bp, 0h
+    312					 IFDEF __ENABLE_EXCEPTIONS
+    313					     push    bp
+    314					     call    __ExceptInit
+    315					     pop    ax
+    316					 ENDIF
+    317
+    318					 ;---------------------------------------------------------------------------
+    319					 ;Call the C entry point main()	- initialization is complete
+    320	00A4  EA 00000000se		 jmp	    _main
+    321
+    322	00A9			     _startup_XROM endp
+    323
+    324				     ;******************************************************************************
+    325				     ;Call for switch to IROM
+    326	00A9			     __EnterIrom proc dist
+    327					 public	 __EnterIrom
+    328	      =CA6A			 OCM_NR_SCRATCHPAD   EQU 0CA6Ah
+    329	      =8100			 CLOCK_CONFIG1	     EQU  8100h
+    330	      =C80E			 HARD_RESETS_2	     EQU 0C80Eh
+    331	      =C810			 AUDIO_HARD_RESETS   EQU 0C810h
+    332	      =9C58			 LVDS_RESET_CTRL     EQU  9C58h
+    333	      =C80C			 HARD_RESETS	     EQU 0C80Ch
+    334	00A9  C7 06 CA6A 1234		 mov	word ptr ds:[OCM_NR_SCRATCHPAD], 01234h
+    335	00AF  C7 06 8100 0000		 mov	word ptr ds:[CLOCK_CONFIG1], 0h	; OCM_CLK_SEL =	0
+    336	00B5  C7 06 C80E FFFF		 mov	word ptr ds:[HARD_RESETS_2], 0FFFFh
+    337	00BB  C7 06 C810 FFFF		 mov	word ptr ds:[AUDIO_HARD_RESETS], 0FFFFh
+    338	00C1  C7 06 9C58 0002		 mov	word ptr ds:[LVDS_RESET_CTRL], 2h ; LVDSTX_HARD_RESET
+    339	00C7  C7 06 C80C FFFF		 mov	word ptr ds:[HARD_RESETS], 0FFFFh
+    340	00CD			     __EnterIrom endp
+    341
+    342				     ;******************************************************************************
+Paradigm C++ Assembler 5.0	  09/12/13 13:30:14	    Page 7
+main\C0STAR~1.ASM
+
+
+
+    343				     ;Called by	the exit handling code to execute C++ static destructors and #pragma exit routines.
+    344	00CD			     __cleanup proc dist
+    345					 public	 __cleanup
+    346	00CD  C3			 ret
+    347	00CE			     __cleanup endp
+    348
+    349	00CE			     _TEXT    ends
+    350
+    351
+    352				     ;******************************************************************************
+    353				     ; This segment contains bootup code for XROM.
+    354				     ; The Boot	code address is	0xEFFC0	(20bit)	and 0xBFFFC0 (24bit) is	defined
+    355				     ; in ExtRom.cfg
+    356				     ; The __ADDR24__ is automatically defined for the project when the	Extended
+    357				     ; Address Mode option is choosen in the IDE file
+    358				     ;
+    359				     ; should be defined at 0xEFFC0  in	20-bit mode
+    360				     ; should be defined at 0x7FFF00 in	24-bit mode
+    361				     ;******************************************************************************
+    362				     IF	CUT_2_0
+    363				      %	_END_SEGMENT segment _ALIGN_ public  'END_SEG'
+1   364	0000			      _END_SEGMENT segment page	public	'END_SEG'
+    365					 org 0F0h
+    366	00F0  41 54 4E 41		 end_signature	   db 'A','T','N','A'
+    367	00F4			     _END_SEGMENT  ends
+    368				     ELSE
+    369				     % _START_SEGMENT segment _ALIGN_ public  'START'
+1   370				      _START_SEGMENT segment page public  'START'
+    371					 assume	cs:nothing	   ;to avoid near jmp
+    372
+    373					 IFDEF __ADDR24__
+    374					     org 0C0h		 ;Bootup Address = 0xBFFFC0 (BFFF:C0)
+    375					 ELSE
+    376					     org 00h		    ;Bootup Address = 0x0EFFC0 (EFFC:00)
+    377					 ENDIF
+    378
+    379					 mov	ax, 0h		    ; DS = 00000h
+    380					 mov	ds, ax
+    381					 assume	   ds:0h
+    382
+    383					 ;following code is very correlated with CODE_START_ADDRESS calculation
+    384					 ;There	is a difference	in 24bit address mode EXT_ROM_BASE_ADDR	is always configured for 4M +
+    385				     (even if code size	is 1M or 2M.
+    386					 IFDEF __ADDR24__
+    387					     mov word ptr ds:[EXT_ROM_BASE_ADDR], 0400h	       ;XROM_START = 0x400000 (8M Bytes)
+    388					 ELSE
+    389					     mov word ptr ds:[EXT_ROM_BASE_ADDR], 0020h	       ;XROM_START = 0x20000 (832K Bytes)
+    390					 ENDIF
+    391
+    392					 nop	;Time delay for	the system to setup the	XROM size
+    393					 nop
+    394					 nop
+    395					 nop
+    396					 jmp   _startup_XROM
+    397
+    398					 ;---Signature Block and xrom_config STRUC---
+    399					 IFDEF __ADDR24__
+Paradigm C++ Assembler 5.0	  09/12/13 13:30:14	    Page 8
+main\C0STAR~1.ASM
+
+
+
+    400					     org 0E2h
+    401					 ELSE
+    402					     org 022h
+    403					 ENDIF
+    404					     configCrc	  dw 0000h	  ; contrl block CRC, need post	process	by tool
+    405					     configLen	  dw 30		   ; length of the control block
+    406					 IFDEF __ADDR24__
+    407					     flashSize	  dd 400000h	    ; max. flash size, 4M bytes
+    408					 ELSE
+    409					     flashSize	  dd 100000h	  ; max. flash size, 1M	bytes
+    410					 ENDIF
+    411					     codeCrc	  dw 0000h	   ; VER_LEN=8 if version string starts	here
+    412					     fw_Minor	  db 0h		   ; VER_LEN=4 if version string starts	here
+    413					     fw_Major	  db 0h		   ; VER_LEN=3 if version string starts	here
+    414					     fw_Build	  db 0		   ; VER_LEN=2 if version string starts	here
+    415					     not_used	  db ?		   ; VER_LEN=1 if version string starts	here
+    416					     signature	  db 'A','T','H','E'
+    417					     vertag	  db 0ffh
+    418					     not_used6	  db 6 dup(0ffh)
+    419					     crcCheckFlag db 0
+    420					     configCrc2	  dd 00001021h
+    421
+    422				     _START_SEGMENT  ends
+    423				     ENDIF
+    424
+    425				     end    _startup_XROM
+Paradigm C++ Assembler 5.0	  09/12/13 13:30:14	    Page 9
+Symbol Table
+
+
+
+
+Symbol Name		Type   Value			   Cref	(defined at #)
+
+??DATE			Text   "09/12/13"
+??FILENAME		Text   "C0STAR~1"
+??TIME			Text   "13:30:14"
+??VERSION		Number 0540
+@CPU			Text   0103H			   #32
+@CURSEG			Text   _END_SEGMENT		   #85	#97  #103  #113	 #121  #127  #134  #142	 #151  #159  #166  #188	  +
+							   #364
+@FILENAME		Text   C0STAR~1
+@WORDSIZE		Text   2			   #32	#85  #97  #103	#113  #121  #127  #134	#142  #151  #159  #166	  +
+							   #188	 #364
+AUDIO_HARD_RESETS	Number C810			   #331	 337
+CHIP_ID			Text   STDP93xx
+CLOCK_CONFIG1		Number 8100			   #329	 335
+CODECRC			Word   _TEXT:003A		   #235
+CONFIGCRC		Word   _TEXT:0032		   #228
+CONFIGCRC2		Dword  _TEXT:000C		   #201
+CONFIGLEN		Word   _TEXT:0034		   #229
+CRCCHECKFLAG		Byte   _TEXT:000B		   #200
+CUT_2_0			Number 0001			   #190	 191  362
+DIST			Number [BP+0004]		   #326	 #344
+END_SIGNATURE		Byte   _END_SEGMENT:00F0	   249	251  253  #366
+EXT_CS2_BASE_ADDR	Number C9CC			   #65
+EXT_ROM_BASE_ADDR	Number C9C0			   #64	211
+FLASHSIZE		Dword  _TEXT:0036		   #231
+FLASH_BANK_SIZE		Text   200000h			   #43	231
+FLI326XXBX		Text   32601
+FW_BUILD		Byte   _TEXT:003E		   #238
+FW_MAJOR		Byte   _TEXT:003C		   #236
+FW_MINOR		Byte   _TEXT:003D		   #237
+FW_VER_BUILD		Number 0001			   #48	238
+FW_VER_MAJOR		Number 0001			   #46	236
+FW_VER_MINOR		Number 0001			   #47	237
+HARD_RESETS		Number C80C			   #333	 339
+HARD_RESETS_2		Number C80E			   #330	 336
+IRAM_SIZE		Number 8000			   #63	168  262  295  304
+LVDS_RESET_CTRL		Number 9C58			   #332	 338
+NOT_USED		Byte   _TEXT:003F		   #239
+NOT_USED6		Byte   _TEXT:0005		   #199
+OCM_NR_SCRATCHPAD	Number CA6A			   #328	 334
+SIGNATURE		Byte   _TEXT:0000		   #197
+STACK_SIZE_WORD		Number 0400			   #61	153
+VERTAG			Byte   _TEXT:0004		   #198
+_ALIGN_			Text   page			   #75
+_INITIALIZED_DATA_STAR	Byte   _DATA:0000		   128	#129  275
+T		     +
+(_initialized_data_sta
+rt)
+_MAIN (_main)		Far    ----:---- Extern		   #183	 320
+_NVRAM_DATA_START    +	Byte   _NVRAM:0000		   143	#144  287
+(_NVRAM_data_start)
+_PAD_			Number 0100			   #74	106
+_ROMDATA_END	     +	Byte   _ERD:0000		   104	#105
+(_romdata_end)
+_ROMDATA_START	     +	Byte   _RD:0000			   98  #99  274
+Paradigm C++ Assembler 5.0	  09/12/13 13:30:14	    Page 10
+Symbol Table
+
+
+
+(_romdata_start)
+_STACK_END		Byte   _STACK:0000		   #152	 170  294
+_STARTUP_XROM	     +	Far    _TEXT:0040		   220	#245  246  425
+(_startup_XROM)
+_UNINITIALIZED_DATA_ST	Byte   _BSS:0000		   135	#136  276  286
+ART		     +
+(_uninitialized_data_s
+tart)
+_UNINITIALIZED_FAR_DAT	Byte   _FARBSS:0000		   #160
+A_START
+_W_STACKEND	     +	Word   _FAR_CONST:0002		   #169	 174
+(_W_StackEnd)
+_W_STACKSTART	     +	Word   _FAR_CONST:0000		   #167	 173
+(_W_StackStart)
+__ADDR24__		Text
+__CLEANUP (__cleanup)	Near   _TEXT:00CD		   #344	 345
+__ENTERIROM	     +	Near   _TEXT:00A9		   252	254  #326  327
+(__EnterIrom)
+__EXTADDR__		Text
+__JTAG__		Text
+__MEDIUM__		Text
+__M__			Text
+__PARADIGM__		Text   700h
+
+Groups & Segments	Bit Size Align	Combine	Class	   Cref	(defined at #)
+
+DGROUP			Group				   #116	 #123  #131  #138  #147	 #155  275  276	 286  287
+  _BSS			16  0000 Word	Public	BSS	   #134	 138
+  _DATA			16  0000 Page	Public	DATA	   #127	 131
+  _IROM_DATA		16  0000 Page	Public	IROM_DATA  #113	 116
+  _NVRAM		16  0002 Word	Public	NVRAM	   #142	 147
+  _OSD_CMDBUF		16  0000 Page	Public		+  #121	 123
+			OSD_CMDBUF
+  _STACK		16  0800 Para	Stack	STACK	   #151	 155
+_END_SEGMENT		16  00F4 Page	Public	END_SEG	   #364
+_ERD			16  0100 Page	Public		+  #103
+			ENDROMDATA
+_FARBSS			16  0002 Page	Public	FAR_BSS	   #159
+_FAR_CONST		16  0004 Page	Public	FAR_CONST  #166
+_RD			16  0000 Page	Public	ROMDATA	   #97	271  273
+_TEXT			16  00CE Page	Public	CODE	   #85	#188  189
+

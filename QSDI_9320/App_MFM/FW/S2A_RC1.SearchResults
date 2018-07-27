@@ -1,0 +1,17 @@
+---- ENABLE_HPD_OVERRIDED Matches (16 in 4 files) ----
+AppsTest.c (testharness): #if ENABLE_HPD_OVERRIDED
+DPApp.h (dp):#define ENABLE_HPD_OVERRIDED                 1     // If 1, DP_HPD will force to low 
+DPBrApp.c (dp):#if ENABLE_HPD_OVERRIDED
+DPBrApp.c (dp):      #if (ENABLE_HPD_OVERRIDED!=0) && (DP_NUM_SST_ONLY_RX != 0)
+DPBrApp.c (dp):      #if (ENABLE_HPD_OVERRIDED!=0) && (DP_RL_NUM_UPSTRM_PORTS != 0)
+DPBrApp.c (dp):   #if (ENABLE_HPD_OVERRIDED!=0) && (DP_NUM_SST_ONLY_RX != 0)
+DPBrApp.c (dp):   #if (ENABLE_HPD_OVERRIDED!=0) && (DP_RL_NUM_UPSTRM_PORTS != 0)
+DPBrApp.c (dp):   #if ENABLE_HPD_OVERRIDED
+DPBrApp.c (dp):#if ENABLE_HPD_OVERRIDED
+DPBrApp.c (dp):            #if (ENABLE_HPD_OVERRIDED!=0) && (DP_RL_NUM_UPSTRM_PORTS != 0)
+DPBrApp.c (dp):            #if (ENABLE_HPD_OVERRIDED!=0) && (DP_NUM_SST_ONLY_RX != 0)
+DPBrApp.c (dp):         #if (ENABLE_HPD_OVERRIDED!=0) && (DP_RL_NUM_UPSTRM_PORTS != 0)
+DPBrApp.c (dp):   #if (ENABLE_HPD_OVERRIDED!=0) && (DP_NUM_SST_ONLY_RX != 0)
+DPBrApp.c (dp):   #if ENABLE_HPD_OVERRIDED
+GpioControl.c (board\rd1-93xx):#if (FEATURE_DISPLAY_PORT == ENABLE) && ENABLE_HPD_OVERRIDED
+GpioControl.c (board\rd1-93xx):#if (FEATURE_DISPLAY_PORT == ENABLE) && ENABLE_HPD_OVERRIDED
