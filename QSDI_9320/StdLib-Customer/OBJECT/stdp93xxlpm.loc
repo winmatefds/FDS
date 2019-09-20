@@ -1,0 +1,3062 @@
+Input file: .\object\stdp93xxlpm.rom
+Configuration file: D:\genesis\G2A130A_170\StdLib-Customer\lowpowermonitor\lowpowermonitor.cfg
+Created by Paradigm C++ Locate 7.00.006 on Thu Sep 12 08:58:32 2019
+Command line options: c:\PROGRA~1\paradigm\bin\locate.exe .\object\stdp93xxlpm.rom 
+
+Memory Address Map for Program STDP93xxLpm
+
+ Start     Stop      Length   Segment                Class               
+ 000000H   00005FH   00060H   _INTERRUPT_VECTOR      INT_TABLE       
+ 000060H   0004B9H   0045AH   _DATA                  DATA            
+ 0004BAH   000793H   002DAH   _BSS                   BSS             
+ 000794H   000794H   00000H   _NVRAM                 NVRAM           
+ 000794H   000795H   00002H   _STACK                 STACK           
+ 0F6000H   0FDE42H   07E43H   _TEXT                  CODE            
+ 0FDE50H   0FDE50H   00000H   _RD                    ROMDATA         
+ 0FDE50H   0FE2A9H   0045AH   _DATA                  ROMDATA         
+ 0FE2B0H   0FE2BFH   00010H   _ERD                   ENDROMDATA      
+ 0FFFF0H   0FFFF9H   0000AH   _START                 START           
+
+Entry point:   FFFF:0005
+Initial stack: 0000:0796
+
+
+Memory Address Space Usage
+
+  Start     Stop     Size     Left   Used   Type      Name
+ 00000H   01FFFH   00796H   0186AH    23%   IRAM      
+ F6000H   FFFEFH   082ADH   01D43H    81%   Rdonly    
+ FFFF0H   FFFFFH   0000AH   00006H    62%   Rdonly    
+
+
+  Address         Publics by Address
+
+ 0000:0000  Abs  __PCMODE
+ 0000:0004  Abs  __PCSHIFT
+ 0000:000C  Abs  __AHSHIFT
+ 0000:000C  Abs  __PCFAST
+ 0000:000F  Abs  __PCMASK
+ 0000:0060       _Configuration
+ 0000:0060       _initialized_data_start
+ 0000:0062       _powerUpRequest
+ 0000:0064       _RcOscTrim
+ 0000:0066       _MeasRcOscVal
+ 0000:0068       _LpmRcOscClk
+ 0000:006C       _LpmOcmClk
+ 0000:0070       _PBusReqLock
+ 0000:0072       _aPf_HandlersRoutines
+ 0000:0080       _aB_HandlersFlags
+ 0000:0092       _B_ModeStatus
+ 0000:0094       _Sp_I2CSlavePtrGlobal
+ 0000:00A4       _I2CSlaveExtHandlerFuncPtr
+ 0000:00A8       _Fp_CorrespondingFuncPtr
+ 0000:00AC       _B_DDCToAuxStatus
+ 0000:00AD       _B_SlvStatus
+ 0000:00B1       _B_SlvStatus2
+ 0000:00B6       _I2CSlaveTable
+ 0000:03F6       _gB_I2cSlaveSel
+ 0000:03F7       _B_DevIdReady
+ 0000:03F8       _I2cBufOverflow
+ 0000:03FA       _I2CSlaveHLModuleData
+ 0000:0442       _gB_AuxTransactionSize
+ 0000:0443       _gB_AuxRx_EdidWrOffsetSize
+ 0000:0444       _gB_AuxTransactionSize2
+ 0000:0445       _gB_AuxRx_EdidWrOffsetSize2
+ 0000:0446       _P_AuxRxI2CInternalData
+ 0000:0448       _pSW_Transaction_ModuleData
+ 0000:044A       _P_AuxRxI2CModuleData
+ 0000:044C       _P_AuxRxI2CInternalData2
+ 0000:044E       _pSW_Transaction_ModuleData2
+ 0000:0450       _P_AuxRxI2CModuleData2
+ 0000:0452       _ASDECT_State
+ 0000:0456       _ExecuteMemTest
+ 0000:0457       _ExecuteMemTest2
+ 0000:0458       _gB_DDC2BiDevId
+ 0000:045A       _gB_DdcciWaitForParsing
+ 0000:0462       _Event2PwrHdr
+ 0000:0464       _LastLpmPwrStatus
+ 0000:0465       _LpmPwrState
+ 0000:046A       _DebugParam
+ 0000:047A       _AckPkt
+ 0000:047C       _NakPkt
+ 0000:047E       _gDebugCmdPtr
+ 0000:0480       _gB_GprobeCmdSet
+ 0000:0482       _gW_ManufacturerID
+ 0000:0484       _gB_CheckSRAMLast16KB
+ 0000:0485       _DebugOnly
+ 0000:0486       _CableUpdateRequest
+ 0000:0488       _BoardType
+ 0000:048A       _ChipID4k2K
+ 0000:048C       _HdmiDviHpdPin
+ 0000:0492       _HdmiDviCblDetPin
+ 0000:0498       _DpRxSrcPwrPin
+ 0000:049C       _DpRxCblDetPin
+ 0000:04A0       _DpRxHpdPin
+ 0000:04A4       _SigDetPortNum
+ 0000:04A5       _CurInputPort
+ 0000:04AD       _IsSyncDetected
+ 0000:04AE       _WakeupFrom
+ 0000:04AF       _ExternalSwitch
+ 0000:04B0       _ProductId
+ 0000:04B2       _ProductRev
+ 0000:04B4       _IsDpSrcPwrWakeup
+ 0000:04B6       _IsHdmiDviSrcPwrWakeup
+ 0000:04B9       _IsVgaSrcPwrWakeup
+ 0000:04BA       _uninitialized_data_start
+ 0000:0540       _IrPowerKey
+ 0000:0542       _gB_NVRamError
+ 0000:0544       _gB_Ddc2Bi_I2C_Status
+ 0000:0548       _SW_Transaction_ModuleData
+ 0000:05E6       _AuxRxI2CModuleData
+ 0000:05EE       _AuxRxI2CInternalData
+ 0000:060A       _SW_Transaction_ModuleData2
+ 0000:06A8       _AuxRxI2CModuleData2
+ 0000:06B0       _AuxRxI2CInternalData2
+ 0000:06CC       _DprxVirtualEdid
+ 0000:06D6       _DprxVirtualEdid2
+ 0000:072C       _LbadcCableNowState
+ 0000:0730       _CPhyType
+ 0000:0736       _CsmI2cMuxCtrlBackup
+ 0000:0738       _CsmHpdOutCtrlBackup
+ 0000:073A       _CsmHpdPdInCtrlBackup
+ 0000:073C       _REG_MSG_CONTENT
+ 0000:077C       _REG_MSG_PTR
+ 0000:077D       _REG_MSG_TOP
+ 0000:077E       _RX_MONITOR
+ 0000:0780       _BACK_TX
+ 0000:0782       _BACK_RX
+ 0000:0792       _dateCounter
+ 0000:0794       _lpm_used_sdram_end
+ 0000:1000  Abs  __PCINCR
+ F600:0000       _main
+ F600:0062       _Lpm_MainHandlersTurn
+ F600:0073       _Lpm_InterruptEnable
+ F600:0173       _Lpm_InterruptDisable
+ F600:0260       _Lpm_IrqZeroManager
+ F600:0294       _Lpm_IrqOneManager
+ F600:02B6       _Lpm_IrqTwoManager
+ F600:033B       _Lpm_IrqThreeManager
+ F600:0475       _Lpm_IrqFourManager
+ F600:0498       _Lpm_IrqFiveManager
+ F600:04C9       _Lpm_isrDivideErrorException
+ F600:04DC       _Lpm_isrNonMaskableInterrupt
+ F600:04FB       _Lpm_isrInt0Overflow
+ F600:050E       _Lpm_isrArrayBoundsException
+ F600:0521       _Lpm_isrUnusedOpcodeException
+ F600:0534       _Lpm_isrEscOpcodeException
+ F600:0547       _IsMissionPoweredUp
+ F600:0557       _MissionPowerUp
+ F600:057E       _Lpm_ClearMailbox
+ F600:0590       _Lpm_RedLedCtrl
+ F600:0658       _Lpm_MfpInit
+ F600:0CC0       _Lpm_SystemInit
+ F600:0D2C       _Lpm_ResetLpmDevices
+ F600:0DA4       _Lpm_SharedPBusSwitch
+ F600:0DC2       _Lpm_SharedPBusHandler
+ F600:0DDB       _Lpm_SharedHostBusHandler
+ F600:0E63       _Lpm_CalibrationHandler
+ F600:0EE0       _Lpm_GpioControlHandler
+ F600:0F4C       _Lpm_DebugCmdHandler
+ F600:0F98       _Lpm_CheckStatusCmdHandler
+ F600:1021       _Lpm_MissionTaskHandler
+ F600:1039       _Lpm_StackMonitorInit
+ F600:106D       _Lpm_Main
+ F600:10E4       _Lpm_TestHandler
+ F600:10E5       _Lpm_CsmI2CMuxSelect
+ F600:1250       _Lpm_ClockSwitch2RCOSC
+ F600:137F       _Lpm_NvramCheckDevice
+ F600:13AC       _Lpm_NvramReadByte
+ F600:140B       _Lpm_NvramWriteByte
+ F600:1470       _Lpm_NvramReadBuffer
+ F600:14CE       _Lpm_NvramWriteBuffer
+ F600:1598       _Lpm_I2CMasterSetTimeout
+ F600:15A3       _Lpm_I2CMasterIsCmdStatusZero
+ F600:15CE       _Lpm_I2CMasterAckReceived
+ F600:15EC       _Lpm_I2CMasterStart
+ F600:160D       _Lpm_I2CMasterCheck
+ F600:1628       _Lpm_I2CMasterStop
+ F600:163C       _Lpm_I2CMasterGetByte
+ F600:1674       _Lpm_I2CMasterPutByte
+ F600:169B       _Lpm_I2CMasterWriteAddrBuffer
+ F600:1718       _Lpm_I2CMasterReadAddrBuffer
+ F600:17B4       _Lpm_I2CMasterWriteBlock
+ F600:1804       _Lpm_I2CMasterReadBlock
+ F600:1866       _Lpm_I2CMasterConfig
+ F600:18E2       _Lpm_I2CMasterSelectIdx
+ F600:18E3       _Lpm_I2CMasterInit
+ F600:18FC       _Lpm_I2CMasterCsmSel
+ F600:1927       _Lpm_I2CMasterSetClock
+ F600:1972       _Lpm_I2CSlaveInitAll
+ F600:1A15       _Lpm_I2CSlaveInit
+ F600:1AC0       _Lpm_I2CSlaveGetAddrBuffer
+ F600:1AD3       _Lpm_I2CSlaveSetChannel
+ F600:1ADE       _Lpm_I2CSlaveGetChannel
+ F600:1AE4       _Lpm_I2CSlaveAddI2CAddress
+ F600:1B78       _Lpm_I2CSlaveRemoveI2CAddress
+ F600:1C0E       _Lpm_I2CSlaveWriteToFifo
+ F600:1CC5       _Lpm_I2CSlaveSetReply
+ F600:1D28       _Lpm_I2CSlaveReadFromFifo_new
+ F600:1EC9       _Lpm_I2CSlaveReadFromFifo
+ F600:208F       _Lpm_I2CSlaveExecCommHandler
+ F600:212D       _Lpm_I2CSlaveCreateNullMsg
+ F600:219F       _Lpm_I2CSlaveDefaultHandler
+ F600:2246       _Lpm_I2CSlaveHandler
+ F600:2267       _Lpm_I2CSlaveChannelHandler
+ F600:22E6       _Lpm_I2CSlaveSetExtHandler
+ F600:22F8       _Lpm_I2CSlaveIsrNew
+ F600:2672       _Lpm_I2CSlaveIsrOld
+ F600:2A7F       _Lpm_I2CSlaveIsr
+ F600:2ABD       _Lpm_I2CSlaveGetAddrMsgBuffer
+ F600:2AD3       _Lpm_I2CSlaveAddCommHandler
+ F600:2B59       _Lpm_I2CSlaveGProbeHandler
+ F600:2C1F       _Lpm_I2CSlaveCheckCS
+ F600:2C6E       _Lpm_I2CSlaveHLInit
+ F600:2C89       _Lpm_I2CSlaveHLAddCommHandler
+ F600:2CF3       _Lpm_I2CSlaveHLFindCommHandler
+ F600:2D54       _Lpm_I2CSlaveHLGetAddrModuleData
+ F600:2D62       _Lpm_AuxRxRequestISR
+ F600:2DB9       _Lpm_AuxRxGetChunkData
+ F600:2DFD       _Lpm_AuxRxSetReplyData
+ F600:2E3A       _Lpm_AuxRxSetReplyCmd
+ F600:2E4D       _Lpm_AuxRxBusReadByte
+ F600:2E7C       _Lpm_AuxRxBusWriteByte
+ F600:2EAE       _Lpm_AuxRxPhyInit
+ F600:2EAF       _Lpm_AuxRxInit
+ F600:309E       _Lpm_AuxRxEdidHandlerInit
+ F600:30D1       _Lpm_AuxRxEdidHandler
+ F600:3136       _Lpm_AuxRxEdidReadHandler
+ F600:320D       _Lpm_AuxRxEdidRead
+ F600:3267       _Lpm_AuxRxEdidWriteHandler
+ F600:333B       _Lpm_AuxRxEdidWrite
+ F600:34F6       _Lpm_DprxVirtualEdidInit
+ F600:352C       _Lpm_AuxRxI2CSwTransInit
+ F600:356D       _Lpm_AuxRxI2CIsSwTransaction
+ F600:35FB       _Lpm_AuxRxI2CAddSwDevId
+ F600:3663       _Lpm_AuxRxI2CClearSwDevIdTable
+ F600:3688       _Lpm_AuxRxI2CSwHandler
+ F600:39EA       _Lpm_AuxRxI2CSwGetBuff
+ F600:39FD       _Lpm_AuxRxI2CSwGetAddrModuleData
+ F600:3A10       _Lpm_AuxRxI2CSwCallback
+ F600:3AAB       _Lpm_AuxRxI2CInit
+ F600:3B18       _Lpm_AuxRxI2CGetModuleData
+ F600:3B2B       _Lpm_AuxRxLLI2CInit
+ F600:3B86       _Lpm_AuxRxLLI2CRequest
+ F600:3BE3       _Lpm_SignalDetectInit
+ F600:3CDE       _Lpm_SignalDetectStop
+ F600:3D40       _Lpm_SignalDetectHandler
+ F600:3F30       _Lpm_TmdsClkDetectInit
+ F600:3FC3       _Lpm_DigitalTmdsClkDetect
+ F600:410B       _Lpm_AnalogSyncDetect
+ F600:4370       _Lpm_AutoWakePortSetup
+ F600:43C6       _Lpm_AutoWakeISR
+ F600:4415       _Lpm_IsWakeupPort
+ F600:4664       _Lpm_IsAllPortWakeup
+ F600:4671       _Lpm_IsWakeupTmdsCPhy
+ F600:46A3       _Lpm_ExternalSwitchCheck
+ F600:46E7       _Lpm_GetWakeupExtraInfo
+ F600:473F       _Lpm_CableDetectHandlerInit
+ F600:4771       _Lpm_CableDetectHandler
+ F600:47D3       _Lpm_IsDPRxSrcPwrValid
+ F600:482D       _Lpm_IsDPRxCablePlugged
+ F600:4887       _Lpm_IsCPhySrcPwrValid
+ F600:4908       _Lpm_IsCPhyCablePlugged
+ F600:4A84       _Lpm_IsVGASrcPwrValid
+ F600:4ABB       _Lpm_IsVGACablePlugged
+ F600:4ABE       _Lpm_DdcciCmdHandler
+ F600:4DD2       _Lpm_IsDdcciTransaction
+ F600:4E92       _Lpm_PowerModeInit
+ F600:4EA3       _Lpm_SetPowerKeyEvent
+ F600:4ECC       _Lpm_SetAnyKeyWakeEvent
+ F600:4EE3       _Lpm_PowerModeStateChange
+ F600:4FF0       _Lpm_PowerModeHandler
+ F600:526F       _Lpm_PowerModeSetEvent2PwrHdr
+ F600:527B       _Lpm_PowerModeGetState
+ F600:527F       _Lpm_PowerModeCsmMuxSel
+ F600:52E8       _Lpm_PowerDownLpmDevices
+ F600:539D       _Lpm_PowerUpLpmDevices
+ F600:53E6       _Lpm_WarmReset
+ F600:5403       _Lpm_HpdControl
+ F600:54DB       _Lpm_ForceDpHpdLow
+ F600:5530       _Lpm_PowerDownMission
+ F600:553B       _Lpm_TmdsSwitcherControl
+ F600:557C       _IsMissionPowerON
+ F600:5583       _IsDCOffMode
+ F600:558A       _Lpm_SystemDebug
+ F600:558B       _Lpm_GprobeCmdParser
+ F600:5C4A       _Lpm_AppstestCmdParser
+ F600:6814       _Lpm_SendAckOrNack
+ F600:6868       _Lpm_WriteCmdPkt
+ F600:6998       _gm_Print
+ F600:6999       _gm_GetSystemTime
+ F600:69BE       _gm_W_GetSystemTime
+ F600:69C2       _gm_Delay1ms
+ F600:69DB       _isrSystemTimer
+ F600:6A15       _Lpm_TimerInit
+ F600:6A72       _Lpm_TimerStart
+ F600:6A91       _Lpm_TimerTimeOut
+ F600:6AB7       _Lpm_Delay1ms
+ F600:6AD1       _Lpm_McuInit
+ F600:6C45       _Lpm_KeypadHandler
+ F600:6EB4       _Lpm_KeypadInit
+ F600:6EC0       _Lpm_KeypadLbwAdcInit
+ F600:6EF6       _Lpm_KeypadGetKey
+ F600:711C       _Lpm_IrHandler
+ F600:7189       _Lpm_IrIsr
+ F600:75D4       _Lpm_IrInit
+ F600:7637       _gm_MessageInIsr
+ F600:7833       _gm_MessageInit
+ F600:78BB       _gm_MessageSend
+ F600:79D8       _gm_MessageReceived
+ F600:7AD7       _gm_RegMsgInit
+ F600:7B25       _gm_RegMsgSd
+ F600:7B8D       _gm_RegMsgRv
+ F600:7C37       _RegMsgUpdate
+ F600:7CAF       _RegMsgHandler
+ F600:7D11       N_LXMUL@
+ F600:7D28       N_LUDIV@
+ F600:7D2B       F_LUDIV@
+ F600:7D2B       LUDIV@
+ F600:7D8A       N_LXURSH@
+ F600:7D8D       LXURSH@
+ F600:7D8D       F_LXURSH@
+ F600:7DAC       __fmemcpy
+ F600:7DDA       N_SCOPY@
+ F600:7DF6       __fmemset
+ F600:7E22       N_LXLSH@
+ F600:7E25       LXLSH@
+ F600:7E25       F_LXLSH@
+ FDE5:0000       _romdata_end
+ FDE5:0000       _romdata_start
+
+Module: LPM_C0STARTUP
+   Language: Assembly language  Memory Model: Unknown
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_C0STARTUP.ASM
+      LOWPOWERMONITOR\LPM_C0STARTUP.ASM
+
+   Module scope declarations:
+      Static   FDE5:0000     _ROMDATA_START
+      Static   FDE5:0000     _ROMDATA_END
+      Static   0000:0060     _INTERRUPT_VECTOR_END
+      Static   0000:0060     _INITIALIZED_DATA_START
+      Static   0000:04BA     _UNINITIALIZED_DATA_START
+      Static   0000:0794     _LPM_USED_SDRAM_END
+      Static   F600:005D     ::
+      Static   F600:0000     _MAIN
+      Static   FFFF:0005     _INIT
+
+   Filename:   LOWPOWERMONITOR\LPM_C0STARTUP.ASM
+   Code Base:  F600:0000     Length: 0062 bytes
+
+   Line numbers from LOWPOWERMONITOR\LPM_C0STARTUP.ASM (segment F600)
+      130:0000h    131:0003h    132:0005h    133:0008h    134:000Bh
+      135:000Dh    140:000Fh    141:0010h    145:0011h    146:0014h
+      147:0017h    151:0018h    152:001Bh    153:001Eh    157:001Fh
+      158:0022h    159:0025h    160:0028h    161:002Ah    162:002Ch
+      164:002Eh    165:0031h    166:0034h    167:0037h    168:0039h
+      169:003Ch    172:003Eh    173:0041h    174:0044h    175:0046h
+      176:0048h    180:004Ah    181:004Dh    183:004Fh    184:0051h
+      185:0054h    186:0057h    187:0059h    188:005Bh    191:005Dh
+   
+   Filename:   LOWPOWERMONITOR\LPM_C0STARTUP.ASM
+   Code Base:  FFFF:0000     Length: 000A bytes
+
+   Line numbers from LOWPOWERMONITOR\LPM_C0STARTUP.ASM (segment FFFF)
+      198:0000h    201:0005h 
+
+Module: LPM_MAIN
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_MAIN.C
+
+   Module scope declarations:
+      Static   0000:04BA     Queue
+      Static   0000:04DA     B_Buffer
+      Static   0000:050E     IrBuffer
+
+   Filename:   LOWPOWERMONITOR\LPM_MAIN.C
+   Code Base:  F600:0062     Length: 1083 bytes
+
+      Func     F600:0062     _Lpm_MainHandlersTurn
+      Scope    Start: 0062   Length: 0011 bytes
+      Parm     [BP+6]        B_OnOff
+      Parm     [BP+4]        B_HdrId
+
+      Scope    Start: 0065   Length: 000E bytes
+      Parm     [BP+4]        B_HdrId
+      Parm     [BP+6]        B_OnOff
+
+      Func     F600:0073     _Lpm_InterruptEnable
+      Scope    Start: 0073   Length: 00E1 bytes
+      Parm     [BP+4]        W_IsrSource
+
+      Scope    Start: 0076   Length: 00DE bytes
+      RegVar   AX            status
+      Parm     [BP+4]        W_IsrSource
+
+      Func     F600:0173     _Lpm_InterruptDisable
+      Scope    Start: 0173   Length: 00CF bytes
+      Parm     [BP+4]        W_IsrSource
+
+      Scope    Start: 0176   Length: 00CC bytes
+      RegVar   AX            status
+      Parm     [BP+4]        W_IsrSource
+
+      Func     F600:0260     _Lpm_IrqZeroManager
+
+      Func     F600:0294     _Lpm_IrqOneManager
+
+      Func     F600:02B6     _Lpm_IrqTwoManager
+
+      Func     F600:033B     _Lpm_IrqThreeManager
+
+      Scope    Start: 0369   Length: 008B bytes
+      Auto     [BP-12]       DW_AuxC2Status
+      Auto     [BP-8]        DW_AuxC0Status
+
+      Func     F600:0475     _Lpm_IrqFourManager
+
+      Func     F600:0498     _Lpm_IrqFiveManager
+
+      Func     F600:04C9     _Lpm_isrDivideErrorException
+
+      Func     F600:04DC     _Lpm_isrNonMaskableInterrupt
+
+      Func     F600:04FB     _Lpm_isrInt0Overflow
+
+      Func     F600:050E     _Lpm_isrArrayBoundsException
+
+      Func     F600:0521     _Lpm_isrUnusedOpcodeException
+
+      Func     F600:0534     _Lpm_isrEscOpcodeException
+
+      Func     F600:0547     _IsMissionPoweredUp
+
+      Func     F600:0557     _MissionPowerUp
+
+      Scope    Start: 055B   Length: 001E bytes
+      Auto     [BP-2]        w
+
+      Func     F600:057E     _Lpm_ClearMailbox
+
+      Scope    Start: 0588   Length: 0006 bytes
+      Auto     [BP-2]        W_Temp
+
+      Func     F600:0590     _Lpm_RedLedCtrl
+      Scope    Start: 0590   Length: 0021 bytes
+      Parm     [BP+4]        Switch
+
+      Scope    Start: 0593   Length: 001E bytes
+      Parm     [BP+4]        Switch
+
+      Func     F600:0658     _Lpm_MfpInit
+
+      Scope    Start: 0AD3   Length: 003E bytes
+      Auto     [BP-3]        offValue
+      Auto     [BP-2]        offChannel
+      Auto     [BP-1]        numChannels
+
+      Func     F600:0CC0     _Lpm_SystemInit
+
+      Func     F600:0D2C     _Lpm_ResetLpmDevices
+      Scope    Start: 0D2C   Length: 0078 bytes
+      Parm     [BP+4]        PBusOwner
+
+      Scope    Start: 0D33   Length: 0071 bytes
+      RegVar   SI            PBusOwner
+
+      Func     F600:0DA4     _Lpm_SharedPBusSwitch
+      Scope    Start: 0DA4   Length: 001E bytes
+      Parm     [BP+4]        PBusOwner
+
+      Scope    Start: 0DAA   Length: 0018 bytes
+      RegVar   AX            PBusOwner
+
+      Func     F600:0DC2     _Lpm_SharedPBusHandler
+
+      Func     F600:0DDB     _Lpm_SharedHostBusHandler
+
+      Scope    Start: 0DDF   Length: 0029 bytes
+      Auto     [BP-2]        HostBusOwner
+
+      Func     F600:0E63     _Lpm_CalibrationHandler
+
+      Scope    Start: 0E67   Length: 0079 bytes
+      Auto     [BP-4]        CalibratedData
+
+      Func     F600:0EE0     _Lpm_GpioControlHandler
+
+      Scope    Start: 0EE4   Length: 0068 bytes
+      Auto     [BP-6]        msg
+
+      Scope    Start: 0F31   Length: 0019 bytes
+      Auto     [BP-8]        value
+
+      Func     F600:0F4C     _Lpm_DebugCmdHandler
+
+      Scope    Start: 0F50   Length: 0048 bytes
+      Auto     [BP-6]        command
+
+      Scope    Start: 0F7B   Length: 001B bytes
+      Auto     [BP-8]        value
+
+      Func     F600:0F98     _Lpm_CheckStatusCmdHandler
+
+      Scope    Start: 0F9C   Length: 0085 bytes
+      Auto     [BP-2]        command
+
+      Scope    Start: 0FB7   Length: 005C bytes
+      Auto     [BP-6]        value
+
+      Func     F600:1021     _Lpm_MissionTaskHandler
+
+      Func     F600:1039     _Lpm_StackMonitorInit
+
+      Scope    Start: 103D   Length: 0030 bytes
+      RegVar   AX            W_Cnt
+      Auto     [BP-4]        DW_Addr
+
+      Func     F600:106D     _Lpm_Main
+
+      Scope    Start: 109D   Length: 003C bytes
+      RegVar   AX            HdrProcessed
+      Static   0000:008E     HdrCount
+
+      Func     F600:10E4     _Lpm_TestHandler
+
+   Line numbers from LOWPOWERMONITOR\LPM_MAIN.C (segment F600)
+      161:0062h    163:0065h    164:0071h    189:0073h    194:0076h
+      196:0078h    197:0079h    201:008Bh    202:0090h    203:0095h
+      204:009Bh    207:009Dh    208:00A2h    209:00A7h    210:00ADh
+      213:00AFh    214:00B4h    215:00B9h    216:00BFh    219:00C1h
+      220:00C6h    221:00CBh    222:00D1h    223:00D7h    226:00D9h
+      227:00DEh    228:00E4h    231:00E6h    232:00EBh    233:00F1h
+      235:00F3h    236:00F8h    237:00FEh    241:0100h    242:0105h
+      243:010Bh    253:010Dh    254:0112h    255:0118h    264:011Ah
+      265:011Fh    266:0125h    268:0127h    269:012Ch    270:0132h
+      272:0134h    273:0139h    274:013Fh    276:0141h    277:0146h
+      278:014Ch    287:014Eh    290:0151h    292:0152h    316:0173h
+      320:0176h    322:0178h    323:0179h    327:018Bh    328:0190h
+      329:0196h    331:0199h    332:019Eh    333:01A4h    335:01A7h
+      336:01ACh    337:01B2h    339:01B5h    340:01BAh    341:01C0h
+      344:01C2h    345:01C7h    346:01CDh    349:01CFh    350:01D4h
+      351:01DAh    353:01DCh    354:01E1h    355:01E7h    359:01E9h
+      360:01EEh    361:01F4h    371:01F6h    372:01FCh    373:0202h
+      382:0204h    383:020Ah    384:0210h    386:0212h    387:0218h
+      388:021Eh    390:0220h    391:0226h    392:022Ch    394:022Eh
+      395:0234h    396:023Ah    404:023Ch    407:023Fh    409:0240h
+      422:0260h    424:0269h    426:026Ah    429:0272h    432:0275h
+      435:027Bh    440:0283h    443:0289h    444:028Ah    445:0290h
+      458:0294h    460:029Dh    462:029Eh    464:02A6h    477:02ABh
+      478:02ACh    479:02B2h    492:02B6h    494:02BFh    497:02C0h
+      499:02C8h    500:02D0h    501:02D6h    504:02DCh    508:02E4h
+      509:02ECh    510:02F2h    513:02F8h    515:0300h    516:0308h
+      517:030Eh    520:0314h    522:031Ch    523:0324h    524:032Ah
+      527:0330h    528:0331h    529:0337h    541:033Bh    543:0349h
+      545:034Ah    547:0359h    548:035Fh    556:0369h    557:0378h
+      559:037Fh    561:0385h    569:039Bh    570:03A1h    571:03A6h
+      575:03ACh    576:03BBh    578:03C5h    580:03CBh    588:03E1h
+      589:03E7h    590:03ECh    608:03F4h    614:0406h    616:0410h
+      617:0413h    620:041Bh    623:041Dh    625:0422h    629:042Eh
+      635:0440h    637:044Ah    638:044Dh    641:0455h    644:0457h
+      646:045Ch    665:0468h    666:0469h    667:046Fh    679:0475h
+      681:047Eh    683:047Fh    685:0487h    695:048Dh    696:048Eh
+      697:0494h    709:0498h    711:04A1h    712:04A2h    714:04AAh
+      717:04B0h    719:04B8h    730:04BEh    731:04BFh    732:04C5h
+      744:04C9h    747:04D2h    748:04D8h    750:04DCh    755:04E5h
+      756:04EBh    757:04F1h    758:04F7h    760:04FBh    763:0504h
+      764:050Ah    766:050Eh    769:0517h    770:051Dh    772:0521h
+      775:052Ah    776:0530h    778:0534h    781:053Dh    782:0543h
+      794:0547h    795:0556h    804:0557h    819:055Bh    820:0572h
+      822:0565h    843:0579h    845:057Ch    847:057Eh    849:0582h
+      851:0588h    853:058Eh    855:0590h    857:0593h    860:0599h
+      861:059Eh    864:05A0h    868:05A5h    869:05AAh    870:05AFh
+      872:0658h    875:065Ch    906:0663h    907:066Eh    909:0675h
+      911:067Dh    913:0688h    914:068Dh    915:0692h    916:0694h
+      918:069Fh    919:06A4h    929:06A9h    931:06B1h    933:06BCh
+      934:06C1h    935:06C6h    936:06C8h    938:06D3h    939:06D8h
+      948:06DDh    950:06E5h    952:06F0h    953:06F5h    954:06FAh
+      955:06FCh    957:0707h    958:070Ch    967:0711h    969:0719h
+      971:0724h    972:0729h    973:072Eh    974:0730h    976:073Bh
+      977:0740h    986:0745h    988:074Dh    990:0758h    991:075Dh
+      992:0762h    993:0764h    995:076Fh    996:0774h   1001:077Bh
+     1005:0780h   1007:0788h   1009:0793h   1010:0798h   1011:079Dh
+     1012:079Fh   1014:07AAh   1015:07AFh   1024:07B4h   1026:07BCh
+     1028:07C7h   1029:07CCh   1030:07D1h   1031:07D3h   1033:07DEh
+     1034:07E3h   1043:07E8h   1045:07F0h   1047:07FBh   1048:0800h
+     1049:0805h   1050:0807h   1052:0812h   1053:0817h   1062:081Ch
+     1064:0824h   1066:082Fh   1067:0834h   1068:083Ah   1069:083Ch
+     1071:0847h   1072:084Ch   1081:0851h   1083:0859h   1085:0864h
+     1086:0869h   1087:086Fh   1088:0871h   1090:087Ch   1091:0881h
+     1100:0886h   1102:088Eh   1104:0899h   1105:089Eh   1106:08A4h
+     1107:08A6h   1109:08B1h   1110:08B6h   1119:08BBh   1121:08C3h
+     1123:08CEh   1124:08D3h   1125:08D9h   1126:08DBh   1128:08E6h
+     1129:08EBh   1138:08F0h   1140:08F8h   1142:0903h   1143:0908h
+     1144:090Eh   1145:0910h   1147:091Bh   1148:0920h   1157:0925h
+     1159:092Dh   1161:0938h   1162:093Dh   1163:0943h   1164:0945h
+     1166:0950h   1167:0955h   1176:095Ah   1178:0962h   1180:096Dh
+     1181:0972h   1182:0978h   1183:097Ah   1185:0985h   1186:098Ah
+     1195:098Fh   1197:0997h   1199:09A2h   1200:09A7h   1201:09ACh
+     1202:09AEh   1204:09B9h   1205:09BEh   1214:09C3h   1216:09CBh
+     1218:09D6h   1219:09DBh   1220:09E0h   1221:09E2h   1223:09EDh
+     1224:09F2h   1233:09F7h   1235:09FFh   1237:0A0Ah   1238:0A0Fh
+     1239:0A14h   1240:0A16h   1242:0A21h   1243:0A26h   1252:0A2Bh
+     1254:0A33h   1256:0A3Eh   1257:0A43h   1258:0A48h   1259:0A4Ah
+     1261:0A55h   1262:0A5Ah   1266:0A5Fh   1269:0A66h   1271:0A6Eh
+     1273:0A79h   1274:0A7Eh   1275:0A83h   1276:0A85h   1278:0A90h
+     1279:0A95h   1284:0A9Ah   1286:0AA2h   1288:0AADh   1289:0AB2h
+     1290:0AB7h   1292:0AB9h   1294:0AC4h   1295:0AC9h   1296:0ACEh
+     1303:0AD3h   1304:0AD9h   1305:0ADFh   1310:0AE5h   1312:0AF8h
+     1314:0AFEh   1315:0B04h   1319:0B06h   1320:0B0Ch   1330:0B11h
+     1332:0B1Ch   1336:0B2Fh   1337:0B35h   1338:0B3Bh   1340:0B41h
+     1341:0B47h   1342:0B4Dh   1344:0B53h   1345:0B59h   1346:0B5Fh
+     1348:0B65h   1350:0B6Bh   1355:0B74h   1356:0B7Ah   1357:0B80h
+     1359:0B86h   1360:0B8Ch   1361:0B92h   1363:0B98h   1368:0BA1h
+     1369:0BA7h   1370:0BADh   1372:0BB3h   1373:0BB9h   1374:0BBFh
+     1376:0BC5h   1378:0BCBh   1382:0BD4h   1384:0BDFh   1386:0BE6h
+     1387:0BECh   1388:0BF2h   1389:0BF8h   1392:0BFAh   1393:0C00h
+     1394:0C06h   1397:0C0Ch   1398:0C12h   1399:0C18h   1401:0C1Eh
+     1402:0C24h   1403:0C2Ah   1408:0C30h   1417:0C3Ah   1418:0C40h
+     1419:0C46h   1421:0C4Ch   1422:0C52h   1423:0C58h   1425:0C5Eh
+     1426:0C64h   1428:0C6Ah   1429:0C71h   1430:0C79h   1431:0C80h
+     1432:0C88h   1433:0C8Fh   1437:0C9Bh   1440:0CA1h   1441:0CA7h
+     1973:0CADh   1986:0CC0h   1988:0CC3h   1991:0CC6h   1992:0CD2h
+     2000:0CD8h   2001:0CDEh   2003:0CE4h   2009:0CF0h   2010:0D0Dh
+     2014:0D13h   2034:0D1Ah   2038:0D1Dh   2056:0D20h   2064:0D23h
+     2067:0D26h   2068:0D2Bh   2078:0D2Ch   2082:0D33h   2084:0D38h
+     2085:0D3Dh   2086:0D42h   2087:0D47h   2088:0D4Ch   2091:0D51h
+     2092:0D56h   2095:0D5Bh   2097:0D61h   2099:0D66h   2100:0D6Bh
+     2101:0D70h   2102:0D75h   2103:0D7Ah   2105:0D7Fh   2106:0D84h
+     2109:0D89h   2115:0D8Eh   2119:0D95h   2121:0D9Bh   2124:0DA1h
+     2134:0DA4h   2136:0DAAh   2138:0DAEh   2139:0DB4h   2140:0DB6h
+     2142:0DBBh   2144:0DC0h   2157:0DC2h   2159:0DC9h   2162:0DD0h
+     2170:0DD4h   2176:0DDAh   2186:0DDBh   2191:0DDFh   2193:0DF4h
+     2195:0DFAh   2197:0DFFh   2200:0E01h   2204:0E06h   2214:0E63h
+     2219:0E67h   2221:0E7Ch   2222:0E84h   2223:0E8Ah   2225:0E9Fh
+     2229:0EA5h   2230:0EB5h   2231:0EC3h   2234:0EDEh   2244:0EE0h
+     2248:0EE4h   2251:0EF9h   2253:0EFFh   2254:0F09h   2255:0F0Bh
+     2257:0F11h   2258:0F19h   2259:0F1Bh   2261:0F21h   2262:0F29h
+     2263:0F2Bh   2265:0F31h   2266:0F39h   2269:0F4Ah   2279:0F4Ch
+     2283:0F50h   2285:0F65h   2287:0F6Bh   2288:0F73h   2289:0F75h
+     2291:0F7Bh   2292:0F83h   2306:0F96h   2316:0F98h   2320:0F9Ch
+     2322:0FB1h   2326:0FB7h   2328:0FBEh   2329:0FC3h   2330:0FC7h
+     2333:0FC9h   2334:0FD7h   2336:0FDDh   2339:0FE8h   2340:0FEEh
+     2342:0FF8h   2348:100Bh   2350:1013h   2352:1019h   2355:101Fh
+     2367:1021h   2368:1024h   2369:1027h   2370:102Ah   2371:102Dh
+     2372:1030h   2373:1033h   2374:1038h   2384:1039h   2388:103Dh
+     2389:1047h   2391:1067h   2393:104Ch   2394:105Ch   2395:1064h
+     2397:106Bh   2422:106Dh   2424:106Eh   2429:1071h   2430:1076h
+     2431:107Bh   2433:1080h   2438:1083h   2440:1089h   2442:108Eh
+     2444:1091h   2452:1096h   2457:109Dh   2459:10A0h   2462:10A3h
+     2463:10D5h   2465:10A7h   2467:10B4h   2468:10BEh   2470:10C1h
+     2471:10C5h   2473:10CCh   2474:10D2h   2478:10D9h   2481:10DBh
+     2483:10DEh   2491:10E3h   2619:10E4h 
+
+Module: LPM_CSM
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_CSM.C
+
+   Module scope declarations:
+
+   Filename:   LOWPOWERMONITOR\LPM_CSM.C
+   Code Base:  F600:10E5     Length: 016B bytes
+
+      Func     F600:10E5     _Lpm_CsmI2CMuxSelect
+      Scope    Start: 10E5   Length: 0147 bytes
+      Parm     [BP+4]        MuxSel
+
+      Scope    Start: 10E8   Length: 0144 bytes
+      Parm     [BP+4]        MuxSel
+
+   Line numbers from LOWPOWERMONITOR\LPM_CSM.C (segment F600)
+       55:10E5h     58:10E8h     62:10FAh     63:10FFh     66:1101h
+       67:1107h     68:110Ch     71:110Eh     72:1118h     74:111Ah
+       75:1124h     78:1126h     79:112Ch     80:1131h     81:1136h
+       84:1140h     85:1146h     86:114Bh     87:1150h     90:1152h
+       91:1158h     92:115Dh     93:1162h     96:116Bh     97:1171h
+       98:1176h     99:117Bh    100:1180h    103:1182h    104:1187h
+      105:118Ch    108:1195h    109:119Ah    110:119Fh    111:11A4h
+      113:11A6h    114:11ABh    115:11B0h    118:11B9h    119:11BEh
+      120:11C3h    121:11C8h    124:11CAh    125:11D0h    126:11D5h
+      127:11DAh    128:11DFh    129:11E9h    131:11EBh    132:11F0h
+      135:11F9h    136:11FEh    137:1203h    138:1208h    139:120Dh
+      142:120Fh    143:1214h    144:121Eh    145:1223h    148:1225h
+      153:122Ah 
+
+Module: LPM_CLOCK
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_CLOCK.C
+
+   Module scope declarations:
+
+   Filename:   LOWPOWERMONITOR\LPM_CLOCK.C
+   Code Base:  F600:1250     Length: 012F bytes
+
+      Func     F600:1250     _Lpm_ClockSwitch2RCOSC
+      Scope    Start: 1250   Length: 0120 bytes
+      Parm     [BP+4]        Lpm_OcmClkSel
+
+      Scope    Start: 1258   Length: 0118 bytes
+      Auto     [BP-4]        UartBaudRate
+      RegVar   SI            Lpm_OcmClkSel
+
+   Line numbers from LOWPOWERMONITOR\LPM_CLOCK.C (segment F600)
+       61:1250h     65:1258h     67:1264h     72:1273h     73:1281h
+       75:128Bh     79:128Eh     80:12A0h     82:12AAh     86:12ADh
+       87:12C0h     89:12CAh     93:12CDh     94:12E0h     96:12EAh
+      100:12ECh    101:12FFh    103:1309h    107:130Bh    108:131Eh
+      110:1328h    114:132Ah    121:1335h    122:1348h    128:1352h
+      134:135Ch    135:136Ah    136:136Dh 
+
+Module: LPM_NVRAM
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_NVRAM.C
+
+   Module scope declarations:
+
+   Filename:   LOWPOWERMONITOR\LPM_NVRAM.C
+   Code Base:  F600:137F     Length: 0219 bytes
+
+      Func     F600:137F     _Lpm_NvramCheckDevice
+      Scope    Start: 137F   Length: 002D bytes
+      Parm     [BP+6]        W_RegAddr
+
+      Scope    Start: 1383   Length: 0029 bytes
+      Auto     [BP-1]        B_StartLimit
+      Parm     [BP+6]        W_RegAddr
+
+      Func     F600:13AC     _Lpm_NvramReadByte
+      Scope    Start: 13AC   Length: 005F bytes
+      Parm     [BP+6]        W_RegAddr
+
+      Scope    Start: 13B0   Length: 005B bytes
+      Auto     [BP-6]        W_Result
+      Auto     [BP-4]        Ba_RegAddr
+      Auto     [BP-1]        B_Data
+      Parm     [BP+6]        W_RegAddr
+
+      Func     F600:140B     _Lpm_NvramWriteByte
+      Scope    Start: 140B   Length: 0065 bytes
+      Parm     [BP+8]        B_Data
+      Parm     [BP+6]        W_RegAddr
+
+      Scope    Start: 1410   Length: 0060 bytes
+      RegVar   SI            W_Result
+      Auto     [BP-2]        Ba_RegAddr
+      Parm     [BP+6]        W_RegAddr
+      Parm     [BP+8]        B_Data
+
+      Func     F600:1470     _Lpm_NvramReadBuffer
+      Scope    Start: 1470   Length: 005E bytes
+      Parm     [BP+12]       W_Length
+      Parm     [BP+8]        Bp_Buf
+      Parm     [BP+6]        W_RegAddr
+
+      Scope    Start: 1475   Length: 0059 bytes
+      Auto     [BP-2]        Ba_RegAddr
+      RegVar   SI            W_Result
+      Parm     [BP+6]        W_RegAddr
+      Parm     [BP+8]        Bp_Buf
+      Parm     [BP+12]       W_Length
+
+      Func     F600:14CE     _Lpm_NvramWriteBuffer
+      Scope    Start: 14CE   Length: 00CA bytes
+      Parm     [BP+12]       W_Length
+      Parm     [BP+8]        Bp_Buf
+      Parm     [BP+6]        W_RegAddr
+
+      Scope    Start: 14D3   Length: 00C5 bytes
+      RegVar   SI            W_Result
+      RegVar   BL            B_PageSize
+      Auto     [BP-4]        Ba_RegAddr
+      Auto     [BP-1]        B_Count
+      Parm     [BP+6]        W_RegAddr
+      Parm     [BP+8]        Bp_Buf
+      Parm     [BP+12]       W_Length
+
+   Line numbers from LOWPOWERMONITOR\LPM_NVRAM.C (segment F600)
+       76:137Fh     78:1383h     80:1387h     82:139Dh     84:1389h
+       85:1399h     88:13A7h     89:13AAh    114:13ACh    120:13B0h
+      126:13B6h    128:13BCh    130:13C8h    131:13CEh    134:13D2h
+      136:13ECh    138:13F2h    140:13F8h    141:13FDh    145:1402h
+      146:1407h    148:1409h    175:140Bh    181:1410h    187:1416h
+      189:141Ch    191:1428h    192:142Eh    196:1433h    202:143Eh
+      204:1457h    210:1461h    212:1465h    214:146Bh    215:146Dh
+      243:1470h    249:1475h    255:147Bh    257:1481h    259:148Dh
+      260:1493h    263:1498h    265:14B3h    267:14B9h    268:14BDh
+      270:14C4h    272:14C9h    273:14CBh    301:14CEh    306:14D3h
+      307:14E1h    309:14E7h    310:14ECh    313:14EFh    317:1584h
+      322:14F8h    326:1501h    331:150Ah    336:150Fh    337:1513h
+      345:1515h    354:151Ah    358:1520h    367:1526h    369:1532h
+      370:1538h    374:153Dh    378:1548h    380:1566h    386:1570h
+      388:1574h    389:157Eh    390:1581h    393:158Dh    395:1593h
+      396:1595h 
+
+Module: LPM_I2CMASTER
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_I2CMASTER.C
+
+   Module scope declarations:
+      Static   0000:0090     W_TimeoutCount
+
+   Filename:   LOWPOWERMONITOR\LPM_I2CMASTER.C
+   Code Base:  F600:1598     Length: 03DA bytes
+
+      Func     F600:1598     _Lpm_I2CMasterSetTimeout
+      Scope    Start: 1598   Length: 000B bytes
+      Parm     [BP+4]        W_Timeout
+
+      Scope    Start: 159B   Length: 0008 bytes
+      Parm     [BP+4]        W_Timeout
+
+      Func     F600:15A3     _Lpm_I2CMasterIsCmdStatusZero
+      Scope    Start: 15A3   Length: 002B bytes
+      Parm     [BP+4]        W_Status
+
+      Scope    Start: 15A7   Length: 0027 bytes
+      RegVar   SI            W_Count
+      Parm     [BP+4]        W_Status
+
+      Func     F600:15CE     _Lpm_I2CMasterAckReceived
+
+      Func     F600:15EC     _Lpm_I2CMasterStart
+      Scope    Start: 15EC   Length: 0021 bytes
+      Parm     [BP+6]        Ctrl
+      Parm     [BP+4]        B_DevAddr
+
+      Scope    Start: 15EF   Length: 001E bytes
+      Parm     [BP+4]        B_DevAddr
+      Parm     [BP+6]        Ctrl
+
+      Func     F600:160D     _Lpm_I2CMasterCheck
+      Scope    Start: 160D   Length: 001B bytes
+      Parm     [BP+6]        B_DevAddr
+      Parm     [BP+4]        B_Port
+
+      Scope    Start: 1611   Length: 0017 bytes
+      Auto     [BP-2]        result
+      Parm     [BP+4]        B_Port
+      Parm     [BP+6]        B_DevAddr
+
+      Func     F600:1628     _Lpm_I2CMasterStop
+
+      Func     F600:163C     _Lpm_I2CMasterGetByte
+      Scope    Start: 163C   Length: 0038 bytes
+      Parm     [BP+6]        Bp_Data
+      Parm     [BP+4]        W_Cmd
+
+      Scope    Start: 163F   Length: 0035 bytes
+      Parm     [BP+4]        W_Cmd
+      Parm     [BP+6]        Bp_Data
+
+      Func     F600:1674     _Lpm_I2CMasterPutByte
+      Scope    Start: 1674   Length: 0027 bytes
+      Parm     [BP+4]        Bp_Data
+
+      Scope    Start: 1678   Length: 0023 bytes
+      RegVar   SI            W_I2cCmd
+      Parm     [BP+4]        Bp_Data
+
+      Func     F600:169B     _Lpm_I2CMasterWriteAddrBuffer
+      Scope    Start: 169B   Length: 007D bytes
+      Parm     [BP+16]       W_Len
+      Parm     [BP+12]       Bp_Data
+      Parm     [BP+10]       B_AddrLen
+      Parm     [BP+6]        Bp_RegAddr
+      Parm     [BP+4]        B_DevAddr
+
+      Scope    Start: 16A3   Length: 0075 bytes
+      RegVar   SI            result
+      Parm     [BP+4]        B_DevAddr
+      Parm     [BP+6]        Bp_RegAddr
+      Parm     [BP+10]       B_AddrLen
+      Parm     [BP+12]       Bp_Data
+      RegVar   DI            W_Len
+
+      Func     F600:1718     _Lpm_I2CMasterReadAddrBuffer
+      Scope    Start: 1718   Length: 009C bytes
+      Parm     [BP+16]       W_Len
+      Parm     [BP+12]       Bp_Data
+      Parm     [BP+10]       B_AddrLen
+      Parm     [BP+6]        Bp_RegAddr
+      Parm     [BP+4]        B_DevAddr
+
+      Scope    Start: 1720   Length: 0094 bytes
+      RegVar   SI            result
+      Parm     [BP+4]        B_DevAddr
+      Parm     [BP+6]        Bp_RegAddr
+      Parm     [BP+10]       B_AddrLen
+      Parm     [BP+12]       Bp_Data
+      RegVar   DI            W_Len
+
+      Func     F600:17B4     _Lpm_I2CMasterWriteBlock
+      Scope    Start: 17B4   Length: 0050 bytes
+      Parm     [BP+14]       B_Stop
+      Parm     [BP+12]       B_Length
+      Parm     [BP+8]        Bp_Buffer
+      Parm     [BP+6]        B_DevAddr
+      Parm     [BP+4]        B_Port
+
+      Scope    Start: 17B8   Length: 004C bytes
+      Parm     [BP+4]        B_Port
+      Parm     [BP+6]        B_DevAddr
+      Parm     [BP+8]        Bp_Buffer
+      Parm     [BP+12]       B_Length
+      Parm     [BP+14]       B_Stop
+
+      Scope    Start: 17CA   Length: 0037 bytes
+      RegVar   SI            result
+
+      Func     F600:1804     _Lpm_I2CMasterReadBlock
+      Scope    Start: 1804   Length: 0062 bytes
+      Parm     [BP+14]       B_Stop
+      Parm     [BP+12]       B_Length
+      Parm     [BP+8]        Bp_Buffer
+      Parm     [BP+6]        B_DevAddr
+      Parm     [BP+4]        B_Port
+
+      Scope    Start: 1808   Length: 005E bytes
+      RegVar   SI            result
+      Parm     [BP+4]        B_Port
+      Parm     [BP+6]        B_DevAddr
+      Parm     [BP+8]        Bp_Buffer
+      Parm     [BP+12]       B_Length
+      Parm     [BP+14]       B_Stop
+
+      Func     F600:1866     _Lpm_I2CMasterConfig
+      Scope    Start: 1866   Length: 0069 bytes
+      Parm     [BP+8]        B_Port
+      Parm     [BP+6]        W_2WireFreq
+      Parm     [BP+4]        B_2WireMaster
+
+      Scope    Start: 186D   Length: 0062 bytes
+      Parm     [BP+4]        B_2WireMaster
+      RegVar   SI            W_2WireFreq
+      Parm     [BP+8]        B_Port
+
+      Func     F600:18DA     I2CMasterReg
+      Scope    Start: 18DA   Length: 0008 bytes
+      Parm     [BP+4]        W_RegAddr
+
+      Scope    Start: 18DD   Length: 0005 bytes
+      Parm     [BP+4]        W_RegAddr
+
+      Func     F600:18E2     _Lpm_I2CMasterSelectIdx
+      Scope    Start: 18E2   Length: 0001 bytes
+      Parm     [BP+2]        B_Idx
+
+      Scope    Start: 18E2   Length: 0001 bytes
+      Parm     [BP+2]        B_Idx
+
+      Func     F600:18E3     _Lpm_I2CMasterInit
+
+      Func     F600:18FC     _Lpm_I2CMasterCsmSel
+      Scope    Start: 18FC   Length: 002B bytes
+      Parm     [BP+4]        I2cMstSel
+
+      Scope    Start: 18FF   Length: 0028 bytes
+      Parm     [BP+4]        I2cMstSel
+
+      Func     F600:1927     _Lpm_I2CMasterSetClock
+
+      Scope    Start: 1928   Length: 004A bytes
+      RegVar   SI            I2cPreScale
+
+   Line numbers from LOWPOWERMONITOR\LPM_I2CMASTER.C (segment F600)
+      108:1598h    110:159Bh    111:15A1h    133:15A3h    135:15A7h
+      137:15C2h    142:15ADh    143:15BDh    145:15C9h    146:15CBh
+      171:15CEh    172:15D9h    173:15E5h    174:15E9h    175:15EBh
+      198:15ECh    203:15EFh    205:1608h    206:160Bh    232:160Dh
+      237:1611h    238:1620h    239:1623h    240:1626h    264:1628h
+      265:1635h    266:163Bh    288:163Ch    290:163Fh    291:164Dh
+      292:1657h    295:165Bh    296:166Fh    297:1672h    319:1674h
+      321:1678h    322:1682h    324:1685h    326:1695h    327:1698h
+      357:169Bh    364:16A3h    365:16ABh    366:16B0h    367:16B4h
+      369:16B9h    372:16D6h    373:16C4h    376:16F9h    377:16E7h
+      379:1705h    380:1708h    381:170Dh    382:1712h    383:1714h
+      412:1718h    418:1720h    419:1728h    420:172Eh    421:1732h
+      423:1737h    426:1754h    427:1742h    430:1763h    431:1768h
+      434:1795h    435:1776h    437:17A1h    438:17A4h    439:17A9h
+      440:17AEh    441:17B0h    470:17B4h    478:17B8h    550:17CAh
+      553:17E7h    554:17D5h    556:17F6h    558:17FFh    560:1801h
+      594:1804h    602:1808h    667:181Ah    670:1849h    672:1828h
+      674:1858h    675:185Eh    679:1861h    680:1863h    725:1866h
+      728:186Dh    734:1875h    739:1880h    743:188Fh    744:189Ch
+      746:189Eh    747:18ABh    749:18ADh    750:18BAh    752:18BCh
+      760:18C9h    762:18CCh    786:18DAh    789:18DDh    790:18E0h
+      810:18E2h    824:18E3h    825:18E9h    826:18EEh    827:18F3h
+      828:18F6h    836:18FBh    848:18FCh    855:18FFh    857:1905h
+      858:190Bh    860:1912h    862:1918h    863:191Fh    865:1925h
+      877:1927h    879:1928h    880:1946h    881:196Ah    882:196Ch
+      883:1970h 
+
+Module: LPM_I2CSLAVE
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_I2CSLAVE.C
+
+   Module scope declarations:
+
+   Filename:   LOWPOWERMONITOR\LPM_I2CSLAVE.C
+   Code Base:  F600:1972     Length: 12FC bytes
+
+      Func     F600:1972     _Lpm_I2CSlaveInitAll
+
+      Scope    Start: 1973   Length: 00A2 bytes
+      RegVar   DX            W_I2cResetDelay
+      RegVar   SI            B_SlaveCh
+
+      Func     F600:1A15     _Lpm_I2CSlaveInit
+      Scope    Start: 1A15   Length: 00AB bytes
+      Parm     [BP+10]       B_SlaveCh
+      Parm     [BP+8]        B_AuxRdLen
+      Parm     [BP+6]        Bp_StartAddr
+
+      Scope    Start: 1A21   Length: 009F bytes
+      RegVar   DI            Bp_StartAddr
+      Parm     [BP+8]        B_AuxRdLen
+      RegVar   SI            B_SlaveCh
+
+      Scope    Start: 1A28   Length: 0094 bytes
+      Auto     [BP-4]        Sp_I2CSlavePtr
+
+      Func     F600:1AC0     _Lpm_I2CSlaveGetAddrBuffer
+      Scope    Start: 1AC0   Length: 0013 bytes
+      Parm     [BP+4]        B_SlaveCh
+
+      Scope    Start: 1AC3   Length: 0010 bytes
+      Parm     [BP+4]        B_SlaveCh
+
+      Func     F600:1AD3     _Lpm_I2CSlaveSetChannel
+      Scope    Start: 1AD3   Length: 000B bytes
+      Parm     [BP+6]        B_SlaveCh
+
+      Scope    Start: 1AD6   Length: 0008 bytes
+      Parm     [BP+6]        B_SlaveCh
+
+      Func     F600:1ADE     _Lpm_I2CSlaveGetChannel
+
+      Func     F600:1AE4     _Lpm_I2CSlaveAddI2CAddress
+      Scope    Start: 1AE4   Length: 0094 bytes
+      Parm     [BP+8]        B_SlaveCh
+      Parm     [BP+6]        B_I2CAddr
+
+      Scope    Start: 1AE9   Length: 008F bytes
+      RegVar   SI            W_TBLNumAddr
+      Auto     [BP-5]        B_TBLBit8
+      Auto     [BP-4]        B_TBLNum
+      Auto     [BP-3]        B_TBLBit32
+      Auto     [BP-2]        B_TBLSel
+      Auto     [BP-1]        B_Addr2
+      Parm     [BP+6]        B_I2CAddr
+      Parm     [BP+8]        B_SlaveCh
+
+      Func     F600:1B78     _Lpm_I2CSlaveRemoveI2CAddress
+      Scope    Start: 1B78   Length: 0096 bytes
+      Parm     [BP+8]        B_SlaveCh
+      Parm     [BP+6]        B_I2CAddr
+
+      Scope    Start: 1B7D   Length: 0091 bytes
+      RegVar   SI            W_TBLNumAddr
+      Auto     [BP-5]        B_TBLBit8
+      Auto     [BP-4]        B_TBLNum
+      Auto     [BP-3]        B_TBLBit32
+      Auto     [BP-2]        B_TBLSel
+      Auto     [BP-1]        B_Addr2
+      Parm     [BP+6]        B_I2CAddr
+      Parm     [BP+8]        B_SlaveCh
+
+      Func     F600:1C0E     _Lpm_I2CSlaveWriteToFifo
+      Scope    Start: 1C0E   Length: 00B7 bytes
+      Parm     [BP+6]        B_SlaveCh
+
+      Scope    Start: 1C15   Length: 00B0 bytes
+      Auto     [BP-4]        Sp_I2CSlavePtr
+      RegVar   CX            B_SlaveCh
+
+      Func     F600:1CC5     _Lpm_I2CSlaveSetReply
+      Scope    Start: 1CC5   Length: 0063 bytes
+      Parm     [BP+8]        B_SlaveCh
+      Parm     [BP+6]        B_Count
+
+      Scope    Start: 1CCD   Length: 005B bytes
+      Auto     [BP-4]        Sp_I2CSlavePtr
+      Parm     [BP+6]        B_Count
+      RegVar   SI            B_SlaveCh
+
+      Func     F600:1D28     _Lpm_I2CSlaveReadFromFifo_new
+      Scope    Start: 1D28   Length: 01A1 bytes
+      Parm     [BP+6]        B_SlaveCh
+
+      Scope    Start: 1D2C   Length: 019D bytes
+      Auto     [BP-6]        Sp_I2CSlavePtr
+      Auto     [BP-1]        B_Buff
+      Parm     [BP+6]        B_SlaveCh
+
+      Func     F600:1EC9     _Lpm_I2CSlaveReadFromFifo
+      Scope    Start: 1EC9   Length: 0100 bytes
+      Parm     [BP+6]        B_SlaveCh
+
+      Scope    Start: 1ECD   Length: 00FC bytes
+      Auto     [BP-6]        Sp_I2CSlavePtr
+      Auto     [BP-1]        B_Buff
+      Parm     [BP+6]        B_SlaveCh
+
+      Func     F600:1FC9     IsCompleted_I2C_Msg
+      Scope    Start: 1FC9   Length: 00C6 bytes
+      Parm     [BP+4]        B_SlaveCh
+
+      Scope    Start: 1FCD   Length: 00C2 bytes
+      Auto     [BP-4]        Sp_I2CSlavePtr
+      RegVar   CX            W_Isr_RcvI2CCount
+      RegVar   DL            B_Length
+      Parm     [BP+4]        B_SlaveCh
+
+      Scope    Start: 2047   Length: 0044 bytes
+      Auto     [BP-5]        B_whichHandler
+
+      Func     F600:208F     _Lpm_I2CSlaveExecCommHandler
+      Scope    Start: 208F   Length: 009E bytes
+      Parm     [BP+6]        B_SlaveCh
+
+      Scope    Start: 2097   Length: 0096 bytes
+      Auto     [BP-10]       Sp_I2CSlavePtr
+      Auto     [BP-6]        CorrespondingFuncPtr
+      Auto     [BP-1]        B_DevID
+      RegVar   DL            B_Count
+      RegVar   SI            B_SlaveCh
+
+      Func     F600:212D     _Lpm_I2CSlaveCreateNullMsg
+      Scope    Start: 212D   Length: 0072 bytes
+      Parm     [BP+10]       B_SlaveCh
+      Parm     [BP+8]        B_DevID
+      Parm     [BP+6]        B_Stop
+
+      Scope    Start: 2134   Length: 006B bytes
+      Auto     [BP-6]        Sp_I2CSlavePtr
+      Auto     [BP-1]        B_Data
+      Parm     [BP+6]        B_Stop
+      Parm     [BP+8]        B_DevID
+      RegVar   CX            B_SlaveCh
+
+      Func     F600:219F     _Lpm_I2CSlaveDefaultHandler
+      Scope    Start: 219F   Length: 00A7 bytes
+      Parm     [BP+6]        B_SlaveCh
+
+      Scope    Start: 21A7   Length: 009F bytes
+      Auto     [BP-4]        Sp_I2CSlavePtr
+      RegVar   SI            B_SlaveCh
+
+      Scope    Start: 21DC   Length: 0033 bytes
+      Auto     [BP-5]        B_Data
+
+      Func     F600:2246     _Lpm_I2CSlaveHandler
+
+      Func     F600:2267     _Lpm_I2CSlaveChannelHandler
+      Scope    Start: 2267   Length: 007F bytes
+      Parm     [BP+6]        B_SlaveCh
+
+      Scope    Start: 226F   Length: 0077 bytes
+      Auto     [BP-6]        Sp_I2CSlavePtr
+      Auto     [BP-2]        B_Status
+      RegVar   SI            B_SlaveCh
+
+      Func     F600:22E6     _Lpm_I2CSlaveSetExtHandler
+      Scope    Start: 22E6   Length: 0012 bytes
+      Parm     [BP+6]        FuncPtr
+
+      Scope    Start: 22E9   Length: 000F bytes
+      Parm     [BP+6]        FuncPtr
+
+      Func     F600:22F8     _Lpm_I2CSlaveIsrNew
+      Scope    Start: 22F8   Length: 037A bytes
+      Parm     [BP+6]        B_SlaveCh
+
+      Scope    Start: 22FC   Length: 0376 bytes
+      Auto     [BP-6]        Sp_I2CSlavePtr
+      Auto     [BP-1]        B_Buff
+      Parm     [BP+6]        B_SlaveCh
+
+      Func     F600:2672     _Lpm_I2CSlaveIsrOld
+      Scope    Start: 2672   Length: 040D bytes
+      Parm     [BP+6]        B_SlaveCh
+
+      Scope    Start: 2676   Length: 0409 bytes
+      Auto     [BP-6]        Sp_I2CSlavePtr
+      Auto     [BP-1]        B_Buff
+      Parm     [BP+6]        B_SlaveCh
+
+      Func     F600:2A7F     _Lpm_I2CSlaveIsr
+      Scope    Start: 2A7F   Length: 003E bytes
+      Parm     [BP+6]        B_SlaveCh
+
+      Scope    Start: 2A87   Length: 0036 bytes
+      Auto     [BP-2]        B_SlaveChTemp
+      RegVar   SI            B_SlaveCh
+
+      Func     F600:2ABD     _Lpm_I2CSlaveGetAddrMsgBuffer
+      Scope    Start: 2ABD   Length: 0016 bytes
+      Parm     [BP+4]        B_SlaveCh
+
+      Scope    Start: 2AC0   Length: 0013 bytes
+      Parm     [BP+4]        B_SlaveCh
+
+      Func     F600:2AD3     _Lpm_I2CSlaveAddCommHandler
+      Scope    Start: 2AD3   Length: 0086 bytes
+      Parm     [BP+12]       B_SlaveCh
+      Parm     [BP+10]       B_CorrDevID
+      Parm     [BP+6]        Fp_NewCommHandler
+
+      Scope    Start: 2ADA   Length: 007F bytes
+      Auto     [BP-4]        Sp_I2CSlavePtr
+      RegVar   CL            B_FuncNum
+      Parm     [BP+6]        Fp_NewCommHandler
+      Parm     [BP+10]       B_CorrDevID
+      RegVar   CX            B_SlaveCh
+
+      Func     F600:2B59     _Lpm_I2CSlaveGProbeHandler
+      Scope    Start: 2B59   Length: 00C6 bytes
+      Parm     [BP+6]        B_SlaveCh
+
+      Scope    Start: 2B5D   Length: 00C2 bytes
+      Auto     [BP-6]        Sp_I2CSlavePtr
+      Auto     [BP-2]        B_Status
+      Parm     [BP+6]        B_SlaveCh
+
+      Scope    Start: 2BB3   Length: 0041 bytes
+      Auto     [BP-7]        B_whichHandler
+
+      Func     F600:2C1F     _Lpm_I2CSlaveCheckCS
+      Scope    Start: 2C1F   Length: 004F bytes
+      Parm     [BP+10]       Bp_Buff
+      Parm     [BP+8]        B_Len
+      Parm     [BP+6]        B_DevID
+
+      Scope    Start: 2C23   Length: 004B bytes
+      Auto     [BP-1]        B_Checksum
+      RegVar   CL            B_Count
+      Parm     [BP+6]        B_DevID
+      Parm     [BP+8]        B_Len
+      Parm     [BP+10]       Bp_Buff
+
+   Line numbers from LOWPOWERMONITOR\LPM_I2CSLAVE.C (segment F600)
+       98:1972h    101:1973h    104:1976h    105:197Bh    106:1980h
+      107:1987h    110:19CAh    110:198Ch    115:198Eh    116:1995h
+      117:19AAh    119:19BDh    132:19D0h    134:19DEh    135:19E4h
+      138:19E6h    140:19ECh    144:19F1h    145:19F6h    149:19FBh
+      150:1A01h    151:1A07h    153:1A0Dh    155:1A13h    165:1A15h
+      168:1A21h    172:1A28h    173:1A2Fh    174:1A3Ch    176:1A4Fh
+      178:1A5Ch    179:1A64h    180:1A69h    182:1A71h    183:1A80h
+      184:1A8Fh    186:1A9Eh    187:1AADh    190:1ABCh    200:1AC0h
+      202:1AC3h    203:1AD1h    213:1AD3h    215:1AD6h    216:1ADCh
+      228:1ADEh    229:1AE3h    239:1AE4h    241:1AE9h    245:1AF3h
+      246:1AFBh    247:1B0Ch    248:1B15h    249:1B26h    250:1B2Fh
+      252:1B45h    253:1B6Ch    254:1B75h    264:1B78h    266:1B7Dh
+      270:1B87h    271:1B8Fh    272:1BA0h    273:1BA9h    274:1BBAh
+      275:1BC3h    277:1BD9h    278:1C00h    279:1C0Bh    289:1C0Eh
+      291:1C15h    293:1C28h    297:1CA0h    299:1C30h    301:1C3Dh
+      302:1C42h    309:1C44h    312:1C4Eh    316:1C63h    317:1C88h
+      319:1C8Fh    321:1C9Ah    324:1CB4h    325:1CC3h    335:1CC5h
+      340:1CCDh    342:1CE0h    343:1CE1h    347:1CE7h    348:1CF4h
+      358:1CFAh    365:1CFFh    367:1D06h    368:1D15h    370:1D24h
+      371:1D25h    381:1D28h    383:1D2Ch    384:1D30h    386:1D44h
+      388:1EA4h    390:1D4Fh    392:1D63h    393:1D78h    394:1D8Dh
+      397:1D93h    399:1DB8h    400:1DBDh    401:1DC1h    406:1DCDh
+      408:1DE2h    409:1DF1h    414:1E00h    416:1E05h    418:1E08h
+      420:1E11h    422:1E25h    426:1E27h    428:1E4Dh    429:1E54h
+      430:1E5Bh    432:1E66h    438:1E6Eh    439:1E7Fh    441:1E9Ah
+      442:1EA2h    446:1EB8h    447:1EC7h    458:1EC9h    461:1ECDh
+      463:1EE1h    465:1FA4h    467:1EECh    469:1EF5h    471:1F09h
+      474:1F0Ch    475:1F32h    476:1F39h    478:1F40h    480:1F4Bh
+      481:1F50h    483:1F56h    485:1F61h    486:1F66h    491:1F6Eh
+      492:1F7Fh    494:1F9Ah    495:1FA2h    499:1FB8h    500:1FC7h
+      521:1FC9h    525:1FCDh    527:1FE1h    529:1FE9h    531:1FF4h
+      537:2001h    540:2008h    542:200Fh    546:201Eh    549:203Ah
+      550:2042h    554:2047h    556:204Fh    559:2065h    560:2074h
+      562:2083h    576:208Dh    585:208Fh    589:2097h    590:20A1h
+      592:20B4h    594:20BAh    597:20C2h    601:20CEh    601:211Ch
+      604:20D2h    607:20F9h    608:2115h    611:2128h    612:212Ah
+      621:212Dh    623:2134h    624:213Ch    626:214Fh    628:2155h
+      630:215Bh    634:2160h    636:217Fh    637:2183h    638:2185h
+      645:2189h    646:2194h    648:219Ah    649:219Dh    658:219Fh
+      660:21A7h    662:21BAh    664:21C0h    666:21D1h    670:21DCh
+      671:21EEh    672:21FFh    673:2207h    677:220Fh    682:2219h
+      684:222Bh    685:222Fh    686:2235h    690:2241h    691:2243h
+      703:2246h    704:224Eh    705:2256h    706:225Eh    707:2266h
+      717:2267h    720:226Fh    721:2274h    723:2287h    725:228Dh
+      727:2295h    731:2297h    733:22A0h    736:22ABh    738:22C9h
+      742:22D1h    744:22DCh    746:22E3h    757:22E6h    759:22E9h
+      760:22F6h    769:22F8h    772:22FCh    774:2310h    780:2318h
+      781:232Dh    786:2342h    788:2354h    789:2363h    790:2372h
+      791:2387h    792:239Ch    793:23ABh    795:23BAh    797:23C6h
+      819:23DDh    822:23E7h    842:240Ch    845:2414h    847:241Dh
+      848:2425h    849:2429h    856:2433h    858:2442h    859:2451h
+      861:2453h    864:2460h    866:246Fh    885:247Eh    887:2495h
+      893:24A6h    895:24AEh    897:24B7h    898:24BFh    899:24C3h
+      900:24CDh    903:24CFh    906:24E4h    907:24F3h    910:24F5h
+      911:2502h    912:250Ch    921:2512h    928:2521h    929:2529h
+      930:252Eh    932:2537h    935:2549h    941:2560h    943:256Ah
+      944:2572h    945:257Ah    948:257Ch    950:2590h    953:2599h
+      955:25B4h    956:25BCh    958:25CBh    960:25DAh    971:25EBh
+      972:25FAh    974:2602h    977:2604h    991:260Eh    992:2613h
+      993:2618h    994:261Dh   1001:2629h   1005:2630h   1006:2638h
+     1010:2640h   1016:264Dh   1019:2652h   1020:2661h   1024:2670h
+     1033:2672h   1036:2676h   1038:268Ah   1044:2692h   1045:26A7h
+     1048:26BCh   1050:26CBh   1051:26DAh   1052:26E9h   1053:26FEh
+     1054:2713h   1056:271Fh   1061:2736h   1064:2743h   1084:2768h
+     1087:2770h   1089:2779h   1090:2781h   1091:2785h   1092:278Fh
+     1095:2791h   1097:27A6h   1100:27B5h   1102:27CAh   1104:27DEh
+     1106:27F3h   1107:2802h   1110:2804h   1112:2811h   1113:2823h
+     1114:2838h   1134:2847h   1136:285Eh   1142:2872h   1144:287Ah
+     1146:2883h   1147:288Bh   1148:288Fh   1149:2899h   1152:289Bh
+     1156:28B0h   1158:28B7h   1159:28BCh   1160:28C9h   1161:28D3h
+     1164:28D9h   1165:28EEh   1168:28F0h   1169:28FDh   1170:2907h
+     1173:290Dh   1174:291Ch   1175:292Bh   1177:293Ah   1178:2942h
+     1179:2947h   1181:2950h   1185:2962h   1191:2974h   1193:297Eh
+     1194:2986h   1195:298Eh   1198:2990h   1200:29A4h   1202:29ADh
+     1204:29C8h   1205:29D0h   1207:29DFh   1208:29EEh   1209:29FFh
+     1211:2A0Eh   1212:2A16h   1215:2A18h   1229:2A22h   1230:2A27h
+     1231:2A2Ch   1232:2A31h   1235:2A3Dh   1236:2A45h   1240:2A4Dh
+     1242:2A5Ah   1243:2A5Fh   1244:2A6Eh   1248:2A7Dh   1258:2A7Fh
+     1261:2A87h   1263:2A8Eh   1270:2A94h   1272:2AA5h   1276:2AACh
+     1279:2AB2h   1281:2ABAh   1291:2ABDh   1293:2AC0h   1294:2AD1h
+     1305:2AD3h   1308:2ADAh   1310:2AEDh   1312:2AF3h   1315:2B06h
+     1317:2B0Eh   1320:2B19h   1323:2B1Dh   1324:2B3Bh   1325:2B4Ch
+     1328:2B54h   1329:2B57h   1339:2B59h   1341:2B5Dh   1342:2B62h
+     1344:2B76h   1346:2B7Eh   1365:2B8Ch   1367:2BB3h   1369:2BBBh
+     1373:2BD4h   1374:2BE3h   1377:2BF4h   1379:2C08h   1380:2C13h
+     1384:2C15h   1431:2C1Ah   1432:2C1Dh   1496:2C1Fh   1499:2C23h
+     1501:2C2Bh   1501:2C3Bh   1503:2C2Fh   1507:2C53h   1509:2C65h
+     1511:2C6Ah   1512:2C6Ch 
+
+Module: LPM_I2CSLAVEHL
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_I2CSLAVEHL.C
+
+   Module scope declarations:
+
+   Filename:   LOWPOWERMONITOR\LPM_I2CSLAVEHL.C
+   Code Base:  F600:2C6E     Length: 00F4 bytes
+
+      Func     F600:2C6E     _Lpm_I2CSlaveHLInit
+      Scope    Start: 2C6E   Length: 001B bytes
+      Parm     [BP+6]        B_SlaveCh
+      Parm     [BP+4]        B_MaxFunc
+
+      Scope    Start: 2C72   Length: 0017 bytes
+      Parm     [BP+4]        B_MaxFunc
+      Parm     [BP+6]        B_SlaveCh
+
+      Func     F600:2C89     _Lpm_I2CSlaveHLAddCommHandler
+      Scope    Start: 2C89   Length: 006A bytes
+      Parm     [BP+10]       B_SlaveCh
+      Parm     [BP+8]        B_CorrDevID
+      Parm     [BP+4]        Fp_NewCommHandler
+
+      Scope    Start: 2C94   Length: 005F bytes
+      Parm     [BP+4]        Fp_NewCommHandler
+      RegVar   CL            B_CorrDevID
+      RegVar   DX            B_SlaveCh
+
+      Func     F600:2CF3     _Lpm_I2CSlaveHLFindCommHandler
+      Scope    Start: 2CF3   Length: 0061 bytes
+      Parm     [BP+6]        B_SlaveCh
+      Parm     [BP+4]        B_DevID
+
+      Scope    Start: 2CF8   Length: 005C bytes
+      Auto     [BP-4]        Fp_CorrespondingFuncPtr
+      RegVar   CL            B_Count
+      Parm     [BP+4]        B_DevID
+      Parm     [BP+6]        B_SlaveCh
+
+      Func     F600:2D54     _Lpm_I2CSlaveHLGetAddrModuleData
+      Scope    Start: 2D54   Length: 000E bytes
+      Parm     [BP+4]        B_SlaveCh
+
+      Scope    Start: 2D57   Length: 000B bytes
+      Parm     [BP+4]        B_SlaveCh
+
+   Line numbers from LOWPOWERMONITOR\LPM_I2CSLAVEHL.C (segment F600)
+       57:2C6Eh     59:2C72h     60:2C81h     61:2C86h     70:2C89h
+       75:2C94h     78:2CB8h     81:2CBCh     82:2CDCh     86:2CECh
+       87:2CEFh     96:2CF3h     99:2CF8h    101:2D02h    104:2D11h
+      107:2D19h    107:2D43h    109:2D1Dh    112:2D2Fh    115:2D4Bh
+      116:2D51h    127:2D54h    129:2D57h    130:2D60h 
+
+Module: LPM_AUXRX
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_AUXRX.C
+
+   Module scope declarations:
+
+   Filename:   LOWPOWERMONITOR\LPM_AUXRX.C
+   Code Base:  F600:2D62     Length: 033C bytes
+
+      Func     F600:2D62     _Lpm_AuxRxRequestISR
+      Scope    Start: 2D62   Length: 0057 bytes
+      Parm     [BP+4]        B_AuxCh
+
+      Scope    Start: 2D6B   Length: 004E bytes
+      Auto     [BP-5]        B_Len
+      Auto     [BP-4]        DW_Addr
+      RegVar   CL            B_Request
+      RegVar   DI            B_AuxCh
+
+      Func     F600:2DB9     _Lpm_AuxRxGetChunkData
+      Scope    Start: 2DB9   Length: 0044 bytes
+      Parm     [BP+8]        B_AuxCh
+      Parm     [BP+6]        B_Len
+      Parm     [BP+4]        PB_Dest
+
+      Scope    Start: 2DC1   Length: 003C bytes
+      RegVar   DI            W_CurReg
+      RegVar   SI            PB_Dest
+      Parm     [BP+6]        B_Len
+      Parm     [BP+8]        B_AuxCh
+
+      Func     F600:2DFD     _Lpm_AuxRxSetReplyData
+      Scope    Start: 2DFD   Length: 003D bytes
+      Parm     [BP+8]        B_AuxCh
+      Parm     [BP+6]        B_Len
+      Parm     [BP+4]        PB_Mem
+
+      Scope    Start: 2E05   Length: 0035 bytes
+      RegVar   DI            W_CurReg
+      RegVar   SI            PB_Mem
+      Parm     [BP+6]        B_Len
+      Parm     [BP+8]        B_AuxCh
+
+      Func     F600:2E3A     _Lpm_AuxRxSetReplyCmd
+      Scope    Start: 2E3A   Length: 0013 bytes
+      Parm     [BP+6]        B_AuxCh
+      Parm     [BP+4]        B_RepCmd
+
+      Scope    Start: 2E3D   Length: 0010 bytes
+      Parm     [BP+4]        B_RepCmd
+      Parm     [BP+6]        B_AuxCh
+
+      Func     F600:2E4D     _Lpm_AuxRxBusReadByte
+      Scope    Start: 2E4D   Length: 002F bytes
+      Parm     [BP+8]        B_AuxCh
+      Parm     [BP+4]        DW_Addr
+
+      Scope    Start: 2E51   Length: 002B bytes
+      Parm     [BP+4]        DW_Addr
+      Parm     [BP+8]        B_AuxCh
+
+      Func     F600:2E7C     _Lpm_AuxRxBusWriteByte
+      Scope    Start: 2E7C   Length: 0032 bytes
+      Parm     [BP+10]       B_AuxCh
+      Parm     [BP+8]        B_Data
+      Parm     [BP+4]        DW_Addr
+
+      Scope    Start: 2E80   Length: 002E bytes
+      Parm     [BP+4]        DW_Addr
+      Parm     [BP+8]        B_Data
+      Parm     [BP+10]       B_AuxCh
+
+      Func     F600:2EAE     _Lpm_AuxRxPhyInit
+
+      Func     F600:2EAF     _Lpm_AuxRxInit
+      Scope    Start: 2EAF   Length: 01EF bytes
+      Parm     [BP+4]        B_AuxCh
+
+      Scope    Start: 2EB6   Length: 01E8 bytes
+      RegVar   SI            B_AuxCh
+
+   Line numbers from LOWPOWERMONITOR\LPM_AUXRX.C (segment F600)
+       61:2D62h     67:2D6Bh     68:2D77h     69:2D8Ah     71:2D93h
+       81:2D98h     84:2DAAh     85:2DB5h     97:2DB9h    101:2DC1h
+      102:2DCDh    104:2DD1h    107:2DD4h    109:2DECh    112:2DDCh
+      113:2DEAh    114:2DEBh    136:2DF6h    137:2DF9h    149:2DFDh
+      152:2E05h    154:2E08h    157:2E16h    159:2E2Ch    161:2E1Bh
+      162:2E2Ah    163:2E2Bh    183:2E36h    194:2E3Ah    196:2E3Dh
+      197:2E4Bh    207:2E4Dh    210:2E51h    211:2E68h    213:2E6Dh
+      215:2E75h    216:2E79h    227:2E7Ch    229:2E80h    232:2E91h
+      233:2E9Fh    234:2EA6h    235:2EABh    255:2EAEh    265:2EAFh
+      268:2EB6h    271:2EBDh    272:2EC8h    274:2ED2h    275:2EE5h
+      277:2EFCh    279:2F02h    280:2F0Eh    284:2F14h    285:2F19h
+      286:2F1Fh    287:2F43h    288:2F4Ah    289:2F6Eh    290:2F75h
+      291:2F87h    293:2F8Eh    295:2F93h    297:2F96h    298:2F9Bh
+      310:2FA1h    314:2FA7h    316:2FAFh    317:2FBAh    319:2FC4h
+      320:2FD7h    322:2FEEh    324:2FF4h    325:3000h    329:3006h
+      330:300Bh    331:3011h    332:3035h    333:303Ch    334:3060h
+      335:3067h    336:3079h    338:3080h    340:3085h    342:3088h
+      343:308Dh    356:3093h    360:3099h    361:309Bh 
+
+Module: LPM_AUXRXEDID
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_AUXRXEDID.C
+
+   Module scope declarations:
+
+   Filename:   LOWPOWERMONITOR\LPM_AUXRXEDID.C
+   Code Base:  F600:309E     Length: 048E bytes
+
+      Func     F600:309E     _Lpm_AuxRxEdidHandlerInit
+      Scope    Start: 309E   Length: 0033 bytes
+      Parm     [BP+4]        B_AuxCh
+
+      Scope    Start: 30A4   Length: 002D bytes
+      RegVar   AX            B_AuxCh
+
+      Func     F600:30D1     _Lpm_AuxRxEdidHandler
+      Scope    Start: 30D1   Length: 0065 bytes
+      Parm     [BP+12]       B_AuxCh
+      Parm     [BP+10]       B_Len
+      Parm     [BP+8]        B_Req
+      Parm     [BP+4]        DW_Addr
+
+      Scope    Start: 30DC   Length: 005A bytes
+      RegVar   BL            B_Addr
+      Auto     [BP-1]        B_IsStop
+      Parm     [BP+4]        DW_Addr
+      RegVar   DL            B_Req
+      Parm     [BP+10]       B_Len
+      RegVar   CX            B_AuxCh
+
+      Func     F600:3136     _Lpm_AuxRxEdidReadHandler
+      Scope    Start: 3136   Length: 00D7 bytes
+      Parm     [BP+10]       B_AuxCh
+      Parm     [BP+8]        B_IsStop
+      Parm     [BP+6]        B_Len
+      Parm     [BP+4]        B_Addr
+
+      Scope    Start: 3143   Length: 00CA bytes
+      RegVar   DL            B_Addr
+      Parm     [BP+6]        B_Len
+      RegVar   AL            B_IsStop
+      RegVar   SI            B_AuxCh
+
+      Func     F600:320D     _Lpm_AuxRxEdidRead
+      Scope    Start: 320D   Length: 005A bytes
+      Parm     [BP+10]       B_AuxCh
+      Parm     [BP+8]        W_Length
+      Parm     [BP+6]        Bp_Buffer
+      Parm     [BP+4]        B_DevAddress
+
+      Scope    Start: 3216   Length: 0051 bytes
+      Parm     [BP+4]        B_DevAddress
+      RegVar   DX            Bp_Buffer
+      Parm     [BP+8]        W_Length
+      RegVar   AX            B_AuxCh
+
+      Func     F600:3267     _Lpm_AuxRxEdidWriteHandler
+      Scope    Start: 3267   Length: 00D4 bytes
+      Parm     [BP+10]       B_AuxCh
+      Parm     [BP+8]        B_IsStop
+      Parm     [BP+6]        B_Len
+      Parm     [BP+4]        B_Addr
+
+      Scope    Start: 326E   Length: 00CD bytes
+      Parm     [BP+4]        B_Addr
+      Parm     [BP+6]        B_Len
+      Parm     [BP+8]        B_IsStop
+      RegVar   SI            B_AuxCh
+
+      Func     F600:333B     _Lpm_AuxRxEdidWrite
+      Scope    Start: 333B   Length: 01A7 bytes
+      Parm     [BP+10]       B_AuxCh
+      Parm     [BP+8]        W_Length
+      Parm     [BP+6]        Bp_Buffer
+      Parm     [BP+4]        B_DevAddress
+
+      Scope    Start: 3346   Length: 019C bytes
+      Parm     [BP+4]        B_DevAddress
+      RegVar   SI            Bp_Buffer
+      Parm     [BP+8]        W_Length
+      RegVar   DI            B_AuxCh
+
+      Func     F600:34F6     _Lpm_DprxVirtualEdidInit
+      Scope    Start: 34F6   Length: 0036 bytes
+      Parm     [BP+6]        B_AuxCh
+      Parm     [BP+4]        B_WrState
+
+      Scope    Start: 34FF   Length: 002D bytes
+      RegVar   DL            B_WrState
+      RegVar   AX            B_AuxCh
+
+   Line numbers from LOWPOWERMONITOR\LPM_AUXRXEDID.C (segment F600)
+       77:309Eh     79:30A4h     81:30A8h     82:30B2h     83:30B8h
+       85:30BAh     87:30BFh     88:30C9h     91:30CFh    104:30D1h
+      107:30DCh    109:30DFh    110:30E1h    114:30EFh    117:30FBh
+      119:310Ah    122:310Fh    123:311Fh    128:3121h    129:312Eh
+      133:3133h    146:3136h    149:3143h    151:3147h    153:314Ch
+      155:3152h    156:3157h    158:315Ch    160:3163h    165:316Ch
+      166:3175h    168:317Bh    169:3190h    170:31A2h    174:31A9h
+      176:31AEh    178:31B3h    180:31B9h    181:31BEh    183:31C3h
+      185:31C7h    190:31CFh    191:31D8h    193:31DEh    194:31F3h
+      195:3205h    199:320Ah    212:320Dh    214:3216h    216:321Ch
+      218:3220h    219:3236h    220:323Fh    222:3241h    224:3246h
+      225:325Ch    229:3265h    242:3267h    244:326Eh    246:3272h
+      252:3278h    258:328Ah    259:32A2h    260:32A7h    262:32ACh
+      265:32B5h    271:32BCh    273:32C2h    274:32C7h    277:32C9h
+      283:32D0h    285:32D5h    287:32DBh    289:32EDh    290:3305h
+      291:330Ah    293:330Fh    301:3317h    303:331Dh    304:3322h
+      307:3324h    309:3329h    313:3338h    326:333Bh    329:3346h
+      331:334Dh    333:335Ah    336:3363h    343:337Ah    345:3381h
+      347:3388h    352:338Eh    358:3395h    360:339Bh    364:33B6h
+      365:33C1h    366:33C6h    369:33C8h    370:33D2h    373:33D7h
+      374:33DEh    377:33E1h    381:33EAh    382:33F2h    383:33F7h
+      389:33FAh    390:3401h    401:340Dh    404:3410h    410:3418h
+      412:3420h    414:342Dh    417:3436h    424:3452h    426:3459h
+      428:3460h    433:3466h    439:346Dh    441:3473h    445:348Eh
+      446:3499h    447:349Eh    450:34A0h    451:34AAh    454:34AFh
+      455:34B6h    458:34B8h    462:34C1h    463:34C9h    464:34CEh
+      470:34D0h    471:34D7h    485:34D9h    491:34DEh    502:34F6h
+      504:34FFh    506:3503h    507:3509h    508:350Fh    509:3513h
+      511:3515h    513:351Ah    514:3520h    515:3526h    518:352Ah
+   
+Module: LPM_AUXRXI2C
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_AUXRXI2C.C
+
+   Module scope declarations:
+
+   Filename:   LOWPOWERMONITOR\LPM_AUXRXI2C.C
+   Code Base:  F600:352C     Length: 06B7 bytes
+
+      Func     F600:352C     _Lpm_AuxRxI2CSwTransInit
+      Scope    Start: 352C   Length: 0041 bytes
+      Parm     [BP+6]        B_AuxCh
+      Parm     [BP+4]        PB_StartRAM
+
+      Scope    Start: 3535   Length: 0038 bytes
+      RegVar   DX            PB_StartRAM
+      RegVar   AX            B_AuxCh
+
+      Func     F600:356D     _Lpm_AuxRxI2CIsSwTransaction
+      Scope    Start: 356D   Length: 008E bytes
+      Parm     [BP+8]        B_AuxCh
+      Parm     [BP+4]        DW_Addr
+
+      Scope    Start: 3574   Length: 0087 bytes
+      RegVar   CX            W_Count
+      RegVar   SI            Bl_Result
+      Parm     [BP+4]        DW_Addr
+      RegVar   AX            B_AuxCh
+
+      Func     F600:35FB     _Lpm_AuxRxI2CAddSwDevId
+      Scope    Start: 35FB   Length: 0068 bytes
+      Parm     [BP+6]        B_AuxCh
+      Parm     [BP+4]        B_I2CDevId
+
+      Scope    Start: 3604   Length: 005F bytes
+      RegVar   DL            B_I2CDevId
+      RegVar   AX            B_AuxCh
+
+      Func     F600:3663     _Lpm_AuxRxI2CClearSwDevIdTable
+      Scope    Start: 3663   Length: 0025 bytes
+      Parm     [BP+4]        B_AuxCh
+
+      Scope    Start: 3669   Length: 001F bytes
+      RegVar   AX            B_AuxCh
+
+      Func     F600:3688     _Lpm_AuxRxI2CSwHandler
+      Scope    Start: 3688   Length: 0362 bytes
+      Parm     [BP+14]       B_AuxCh
+      Parm     [BP+12]       B_Stop
+      Parm     [BP+10]       W_Length
+      Parm     [BP+8]        Bp_Buffer
+      Parm     [BP+6]        B_Dir
+      Parm     [BP+4]        W_Address
+
+      Scope    Start: 3697   Length: 0353 bytes
+      RegVar   CL            B_Low_Address
+      RegVar   CL            B_Count
+      Parm     [BP+4]        W_Address
+      RegVar   DX            B_Dir
+      RegVar   DI            Bp_Buffer
+      Parm     [BP+10]       W_Length
+      Parm     [BP+12]       B_Stop
+      RegVar   BX            B_AuxCh
+
+      Scope    Start: 3703   Length: 004D bytes
+      RegVar   DL            B_Len
+
+      Scope    Start: 38A8   Length: 0055 bytes
+      RegVar   DL            B_Len
+
+      Func     F600:39EA     _Lpm_AuxRxI2CSwGetBuff
+      Scope    Start: 39EA   Length: 0013 bytes
+      Parm     [BP+4]        B_AuxCh
+
+      Scope    Start: 39ED   Length: 0010 bytes
+      Parm     [BP+4]        B_AuxCh
+
+      Func     F600:39FD     _Lpm_AuxRxI2CSwGetAddrModuleData
+      Scope    Start: 39FD   Length: 0013 bytes
+      Parm     [BP+4]        B_AuxCh
+
+      Scope    Start: 3A00   Length: 0010 bytes
+      Parm     [BP+4]        B_AuxCh
+
+      Func     F600:3A10     _Lpm_AuxRxI2CSwCallback
+      Scope    Start: 3A10   Length: 009B bytes
+      Parm     [BP+12]       B_AuxCh
+      Parm     [BP+10]       B_Length
+      Parm     [BP+8]        B_Command
+      Parm     [BP+4]        W_Addr
+
+      Scope    Start: 3A19   Length: 0092 bytes
+      Auto     [BP-16]       B_Chunk
+      RegVar   DI            B_IsWrite
+      Parm     [BP+4]        W_Addr
+      Parm     [BP+8]        B_Command
+      Parm     [BP+10]       B_Length
+      RegVar   SI            B_AuxCh
+
+      Func     F600:3AAB     _Lpm_AuxRxI2CInit
+      Scope    Start: 3AAB   Length: 006D bytes
+      Parm     [BP+18]       B_AuxCh
+      Parm     [BP+14]       PCheckToPostpone
+      Parm     [BP+10]       PCheckTimer
+      Parm     [BP+6]        PStartTimer
+      Parm     [BP+4]        PB_StartRAM
+
+      Scope    Start: 3AB1   Length: 0067 bytes
+      RegVar   DX            PB_StartRAM
+      Parm     [BP+6]        PStartTimer
+      Parm     [BP+10]       PCheckTimer
+      Parm     [BP+14]       PCheckToPostpone
+      Parm     [BP+18]       B_AuxCh
+
+      Func     F600:3B18     _Lpm_AuxRxI2CGetModuleData
+      Scope    Start: 3B18   Length: 0013 bytes
+      Parm     [BP+4]        B_AuxCh
+
+      Scope    Start: 3B1B   Length: 0010 bytes
+      Parm     [BP+4]        B_AuxCh
+
+      Func     F600:3B2B     _Lpm_AuxRxLLI2CInit
+      Scope    Start: 3B2B   Length: 005B bytes
+      Parm     [BP+14]       B_AuxCh
+      Parm     [BP+10]       ExtI2CFunc
+      Parm     [BP+6]        ExtSWI2CFunc
+      Parm     [BP+4]        PB_StartRAM
+
+      Scope    Start: 3B34   Length: 0052 bytes
+      RegVar   DX            PB_StartRAM
+      Parm     [BP+6]        ExtSWI2CFunc
+      Parm     [BP+10]       ExtI2CFunc
+      RegVar   AX            B_AuxCh
+
+      Func     F600:3B86     _Lpm_AuxRxLLI2CRequest
+      Scope    Start: 3B86   Length: 005D bytes
+      Parm     [BP+12]       B_AuxCh
+      Parm     [BP+10]       B_Len
+      Parm     [BP+6]        DW_Addr
+      Parm     [BP+4]        B_Request
+
+      Scope    Start: 3B8E   Length: 0055 bytes
+      Auto     [BP-2]        B_IsSW
+      Parm     [BP+4]        B_Request
+      Parm     [BP+6]        DW_Addr
+      Parm     [BP+10]       B_Len
+      RegVar   SI            B_AuxCh
+
+   Line numbers from LOWPOWERMONITOR\LPM_AUXRXI2C.C (segment F600)
+       70:352Ch     72:3535h     74:3539h     76:353Dh     77:3541h
+       78:354Ah     79:354Fh     81:3551h     83:3556h     84:355Ah
+       85:3563h     90:3568h     91:356Bh    102:356Dh    104:3574h
+      106:3576h    109:3582h    111:3586h    113:35A7h    113:358Dh
+      115:3591h    121:35B6h    123:35B8h    125:35BDh    127:35E7h
+      127:35C8h    129:35CCh    131:35E2h    132:35E5h    138:35F6h
+      139:35F8h    150:35FBh    152:3604h    154:3608h    156:3613h
+      157:3629h    161:3633h    163:3638h    165:3643h    166:3659h
+      170:3661h    180:3663h    182:3669h    183:366Dh    185:3678h
+      186:367Dh    188:3686h    203:3688h    206:3697h    211:36A0h
+      213:36A7h    216:36B5h    217:36BBh    218:36BFh    219:36C5h
+      222:36CDh    225:36ECh    225:36D1h    226:36D5h    228:36FAh
+      232:3703h    233:370Ch    236:3711h    238:3717h    240:3727h
+      244:373Bh    245:3740h    248:3743h    256:3750h    259:3759h
+      261:376Bh    263:3779h    264:377Fh    265:3785h    266:3787h
+      269:3789h    272:37A7h    273:378Dh    275:37B2h    277:37BBh
+      282:37C7h    282:3821h    284:37CBh    286:37E5h    287:37EEh
+      288:37F0h    291:3801h    295:3811h    296:381Ch    299:382Ch
+      301:3835h    307:3841h    309:3849h    312:3857h    313:385Dh
+      314:3861h    315:3867h    318:386Fh    321:3894h    321:3876h
+      322:387Ah    324:389Fh    328:38A8h    329:38B1h    332:38B6h
+      334:38BCh    336:38CCh    340:38E0h    341:38E5h    344:38E8h
+      352:38FDh    355:3906h    357:3918h    359:3926h    360:392Ch
+      361:3932h    362:3934h    365:3936h    368:3954h    369:393Ah
+      371:395Fh    373:3965h    378:39CAh    378:3970h    380:3974h
+      382:398Eh    383:3997h    384:3999h    387:39AAh    391:39BAh
+      392:39C5h    395:39D5h    397:39DBh    403:39E4h    404:39E6h
+      414:39EAh    417:39EDh    418:39F3h    420:39F8h    425:39FBh
+      435:39FDh    438:3A00h    439:3A06h    441:3A0Bh    446:3A0Eh
+      457:3A10h    462:3A19h    464:3A2Fh    466:3A33h    473:3A42h
+      475:3A64h    484:3A6Bh    486:3A8Dh    490:3A9Ch    492:3AA5h
+      493:3AA7h    506:3AABh    512:3AB1h    515:3AB5h    517:3ABBh
+      518:3ABFh    519:3ACEh    520:3ADAh    521:3AE6h    525:3AE8h
+      526:3AECh    527:3AFBh    528:3B07h    532:3B13h    533:3B16h
+      543:3B18h    546:3B1Bh    547:3B21h    549:3B26h    556:3B29h
+      569:3B2Bh    575:3B34h    577:3B38h    579:3B3Ch    580:3B40h
+      581:3B4Fh    582:3B5Bh    584:3B5Dh    586:3B62h    587:3B66h
+      588:3B75h    593:3B81h    594:3B84h    607:3B86h    611:3B8Eh
+      612:3B9Eh    613:3BB0h    615:3BB4h    620:3BBAh    632:3BCBh
+      635:3BE0h 
+
+Module: LPM_SIGNALINGDETECT
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_SIGNALINGDETECT.C
+
+   Module scope declarations:
+
+   Filename:   LOWPOWERMONITOR\LPM_SIGNALINGDETECT.C
+   Code Base:  F600:3BE3     Length: 0B5C bytes
+
+      Func     F600:3BE3     _Lpm_SignalDetectInit
+
+      Func     F600:3CDE     _Lpm_SignalDetectStop
+
+      Func     F600:3D40     _Lpm_SignalDetectHandler
+
+      Func     F600:3F30     _Lpm_TmdsClkDetectInit
+      Scope    Start: 3F30   Length: 004B bytes
+      Parm     [BP+4]        CPhyNum
+
+      Scope    Start: 3F36   Length: 0045 bytes
+      RegVar   AX            CPhyNum
+
+      Func     F600:3FC3     _Lpm_DigitalTmdsClkDetect
+
+      Scope    Start: 3FC4   Length: 011B bytes
+      RegVar   SI            PortStatus
+
+      Func     F600:410B     _Lpm_AnalogSyncDetect
+
+      Scope    Start: 410C   Length: 0254 bytes
+      RegVar   DX            Status
+      RegVar   SI            PortStatus
+
+      Func     F600:4370     _Lpm_AutoWakePortSetup
+      Scope    Start: 4370   Length: 0056 bytes
+      Parm     [BP+4]        B_Port
+
+      Scope    Start: 4376   Length: 0050 bytes
+      RegVar   AX            B_Port
+
+      Func     F600:43C6     _Lpm_AutoWakeISR
+      Scope    Start: 43C6   Length: 004F bytes
+      Parm     [BP+6]        B_Port
+
+      Scope    Start: 43CD   Length: 0048 bytes
+      RegVar   SI            B_Port
+
+      Func     F600:4415     _Lpm_IsWakeupPort
+      Scope    Start: 4415   Length: 0244 bytes
+      Parm     [BP+4]        B_Port
+
+      Scope    Start: 4419   Length: 0240 bytes
+      Auto     [BP-1]        Status
+      Parm     [BP+4]        B_Port
+
+      Func     F600:4664     _Lpm_IsAllPortWakeup
+
+      Func     F600:4671     _Lpm_IsWakeupTmdsCPhy
+      Scope    Start: 4671   Length: 0032 bytes
+      Parm     [BP+4]        CPhyNum
+
+      Scope    Start: 4677   Length: 002C bytes
+      RegVar   DX            CPhyNum
+
+      Func     F600:46A3     _Lpm_ExternalSwitchCheck
+
+      Scope    Start: 46A7   Length: 0040 bytes
+      RegVar   DX            CPhyNum
+
+      Scope    Start: 46A9   Length: 0031 bytes
+      RegVar   CL            i
+      Auto     [BP-1]        count
+
+      Func     F600:46E7     _Lpm_GetWakeupExtraInfo
+      Scope    Start: 46E7   Length: 0058 bytes
+      Parm     [BP+4]        CPhyNum
+
+      Scope    Start: 46EE   Length: 0051 bytes
+      RegVar   CX            CPhyNum
+
+      Scope    Start: 46F7   Length: 0044 bytes
+      RegVar   DL            i
+
+      Scope    Start: 4714   Length: 0011 bytes
+      Auto     [BP-1]        WakeupExtraInfo
+
+   Line numbers from LOWPOWERMONITOR\LPM_SIGNALINGDETECT.C (segment F600)
+       59:3BE3h     61:3BEDh     63:3BF2h     65:3BF9h     72:3BFEh
+       75:3C04h     76:3C10h     78:3C16h     79:3C22h     83:3C28h
+       85:3C2Eh     87:3C42h     89:3C4Ch     91:3C52h     93:3C5Ch
+       97:3C61h     99:3C6Bh    101:3C71h    103:3C7Bh    107:3C80h
+      109:3C8Ah    110:3C90h    113:3C9Ah    129:3C9Fh    131:3CA9h
+      133:3CAFh    134:3CB9h    137:3CBEh    139:3CC8h    141:3CCEh
+      142:3CD8h    146:3CDDh    150:3CDEh    152:3CE3h    154:3CE9h
+      156:3CF0h    157:3CF6h    158:3CFCh    159:3D02h    160:3D08h
+      161:3D0Eh    162:3D14h    164:3D1Ah    173:3D21h    174:3D27h
+      179:3D2Dh    180:3D33h    186:3D39h    187:3D3Fh    192:3D40h
+      194:3D47h    196:3D55h    198:3D5Fh    199:3D65h    200:3D6Ah
+      201:3D6Fh    202:3D74h    210:3D79h    212:3D80h    214:3D88h
+      215:3D8Eh    216:3D93h    222:3D98h    224:3D9Fh    226:3DB6h
+      228:3DC3h    230:3DDDh    231:3DE3h    232:3DE8h    233:3DEDh
+      240:3DF5h    242:3DFCh    244:3E13h    246:3E1Dh    248:3E31h
+      249:3E37h    250:3E3Ch    251:3E41h    258:3E48h    260:3E4Fh
+      262:3E63h    264:3E6Dh    266:3E81h    267:3E87h    268:3E8Ch
+      269:3E91h    270:3E96h    279:3E9Bh    281:3EA3h    282:3EA9h
+      283:3EAFh    289:3EB4h    291:3EBBh    293:3ECFh    295:3ED9h
+      296:3EDFh    297:3EE4h    298:3EE9h    305:3EF0h    307:3EF7h
+      309:3F0Bh    311:3F15h    312:3F1Bh    313:3F20h    314:3F25h
+      315:3F2Ah    321:3F2Fh    323:3F30h    327:3F36h    329:3F3Ah
+      332:3F40h    333:3F45h    334:3F4Ah    335:3F4Ch    337:3F51h
+      340:3F57h    341:3F5Ch    342:3F61h    343:3F63h    345:3F68h
+      348:3F6Eh    349:3F74h    351:3F79h    353:3FC3h    355:3FC4h
+      357:3FC6h    360:3FDDh    362:3FE7h    364:3FF1h    365:3FF6h
+      368:3FFDh    369:4002h    370:4005h    371:400Ah    374:400Fh
+      376:401Dh    378:4022h    383:402Eh    385:4038h    387:4042h
+      388:404Ch    391:4053h    392:4058h    393:405Eh    394:4063h
+      395:4069h    397:407Ah    398:407Fh    399:4082h    400:4087h
+      401:408Ch    407:4098h    409:40A2h    411:40ACh    412:40B6h
+      415:40BDh    416:40C2h    417:40C5h    418:40CAh    419:40CFh
+      424:40DBh    425:40DDh    430:410Bh    432:410Ch    435:410Eh
+      436:4115h    438:4118h    442:4125h    445:413Ch    446:4142h
+      448:4148h    449:414Eh    450:4154h    452:415Ah    453:4160h
+      454:4166h    455:416Ch    456:4172h    459:4178h    460:417Dh
+      464:4182h    466:418Fh    467:4199h    469:41A1h    470:41ADh
+      471:41B0h    472:41B5h    473:41BAh    483:41C2h    484:41C8h
+      485:41CEh    487:41D4h    488:41DAh    489:41E0h    491:41E6h
+      492:41ECh    493:41F2h    494:41F8h    496:41FEh    497:4203h
+      501:4209h    503:4216h    504:4220h    506:4228h    507:4234h
+      508:4237h    509:423Ch    510:4241h    520:4249h    521:424Fh
+      523:4255h    524:425Bh    525:4261h    526:4267h    528:426Dh
+      529:4273h    530:4279h    531:427Fh    533:4285h    534:428Ah
+      538:4290h    540:429Dh    541:42A7h    543:42AFh    544:42BBh
+      545:42BEh    546:42C3h    547:42C8h    557:42D0h    558:42D6h
+      560:42DCh    561:42E2h    562:42E8h    564:42EEh    565:42F4h
+      566:42FAh    567:4300h    568:4306h    570:430Ch    571:4311h
+      572:431Ch    575:431Eh    577:432Bh    578:4335h    580:433Ah
+      581:4346h    582:4349h    583:434Eh    584:4353h    594:435Ah
+      598:435Ch    599:435Eh    601:4370h    603:4376h    605:437Bh
+      608:4382h    609:4387h    610:438Ch    612:4392h    619:4397h
+      620:439Ch    622:439Eh    624:43A3h    627:43AAh    628:43AFh
+      629:43B4h    631:43BAh    638:43BFh    659:43C4h    661:43C6h
+      663:43CDh    665:43DCh    666:43E2h    667:43E7h    670:43EEh
+      672:43FDh    673:4403h    674:4408h    675:440Dh    687:4412h
+      689:4415h    691:4419h    693:441Dh    694:4424h    696:4428h
+      702:443Bh    703:44A1h    709:44A4h    710:450Ah    715:450Dh
+      717:4521h    722:4529h    723:4570h    730:4573h    731:45BAh
+      739:45BDh    740:45F8h    747:45FAh    753:4634h    754:4650h
+      761:4654h    762:4657h    766:4664h    767:466Bh    769:466Eh
+      770:4670h    772:4671h    775:4677h    776:469Bh    778:469Fh
+      779:46A1h    781:46A3h    785:46A7h    785:46DAh    790:46A9h
+      791:46C6h    791:46ADh    793:46B1h    795:46C3h    799:46CEh
+      801:46D4h    802:46D8h    805:46E0h    807:46E5h    809:46E7h
+      811:46EEh    814:4733h    814:46F7h    816:46FBh    818:470Dh
+      822:4714h    823:4723h    827:4725h    832:473Bh    833:473Dh
+   
+Module: LPM_CABLEDETECT
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_CABLEDETECT.C
+
+   Module scope declarations:
+      Static   0000:0454     LastTime
+
+   Filename:   LOWPOWERMONITOR\LPM_CABLEDETECT.C
+   Code Base:  F600:473F     Length: 037F bytes
+
+      Func     F600:473F     _Lpm_CableDetectHandlerInit
+
+      Func     F600:4771     _Lpm_CableDetectHandler
+
+      Scope    Start: 4775   Length: 005E bytes
+      RegVar   CX            IsUpdate
+      RegVar   BX            NowTime
+
+      Scope    Start: 47A4   Length: 002D bytes
+      Auto     [BP-8]        msg
+
+      Func     F600:47D3     _Lpm_IsDPRxSrcPwrValid
+      Scope    Start: 47D3   Length: 005A bytes
+      Parm     [BP+4]        DPRxSel
+
+      Scope    Start: 47D9   Length: 0054 bytes
+      RegVar   DX            DPRxSel
+
+      Func     F600:482D     _Lpm_IsDPRxCablePlugged
+      Scope    Start: 482D   Length: 005A bytes
+      Parm     [BP+4]        DPRxSel
+
+      Scope    Start: 4833   Length: 0054 bytes
+      RegVar   DX            DPRxSel
+
+      Func     F600:4887     _Lpm_IsCPhySrcPwrValid
+      Scope    Start: 4887   Length: 0081 bytes
+      Parm     [BP+4]        CPhyNum
+
+      Scope    Start: 488D   Length: 007B bytes
+      RegVar   AL            SrcPwrDet
+      RegVar   DX            CPhyNum
+
+      Func     F600:4908     _Lpm_IsCPhyCablePlugged
+      Scope    Start: 4908   Length: 017C bytes
+      Parm     [BP+4]        CPhyNum
+
+      Scope    Start: 490E   Length: 0176 bytes
+      RegVar   AL            CblDet
+      RegVar   DX            CPhyNum
+
+      Func     F600:4A84     _Lpm_IsVGASrcPwrValid
+
+      Scope    Start: 4A84   Length: 0037 bytes
+      RegVar   AL            SrcPwrDet
+
+      Func     F600:4ABB     _Lpm_IsVGACablePlugged
+
+   Line numbers from LOWPOWERMONITOR\LPM_CABLEDETECT.C (segment F600)
+       41:473Fh     42:4745h     43:474Bh     51:4751h     53:4771h
+       55:4775h     56:477Ch     58:477Eh     60:478Ch     77:4790h
+       81:4797h     82:479Dh     85:47A0h     92:47A4h     93:47AAh
+       95:47B0h     97:47C5h    105:47D1h    107:47D3h    111:47D9h
+      113:47E7h    115:47EBh    117:47F3h    118:47FAh    124:47FCh
+      125:4803h    132:4805h    140:4816h    141:4825h    149:482Bh
+      151:482Dh    155:4833h    157:4841h    159:4845h    161:484Dh
+      162:4854h    168:4856h    169:485Dh    176:485Fh    184:4870h
+      185:487Fh    193:4885h    195:4887h    198:488Dh    200:488Fh
+      202:4893h    203:489Ah    205:489Ch    207:48A1h    211:48A8h
+      212:48D6h    217:48D8h    219:48DDh    221:48E4h    222:48F4h
+      224:48F6h    226:48FDh    238:4906h    240:4908h    243:490Eh
+      246:4910h    249:4914h    251:4922h    252:492Ch    256:492Fh
+      257:4939h    260:493Ch    265:4944h    267:494Bh    268:4973h
+      270:4976h    272:497Dh    273:49A5h    275:49A8h    277:49AFh
+      278:49B9h    280:49BCh    284:49C3h    285:4A28h    289:4A2Ah
+      290:4A49h    294:4A4Bh    296:4A50h    299:4A57h    304:4A79h
+      305:4A80h    314:4A82h    319:4A84h    321:4A86h    325:4A8Dh
+      336:4ABAh    373:4ABBh    375:4ABDh 
+
+Module: LPM_DDCCI
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_DDCCI.C
+
+   Module scope declarations:
+      Static   0000:06E0     VCPFeature
+
+   Filename:   LOWPOWERMONITOR\LPM_DDCCI.C
+   Code Base:  F600:4ABE     Length: 03D4 bytes
+
+      Func     F600:4ABE     _Lpm_DdcciCmdHandler
+
+      Scope    Start: 4AC4   Length: 009D bytes
+      RegVar   SI            SlaveCh
+      RegVar   DI            Handler
+
+      Scope    Start: 4B26   Length: 0018 bytes
+      Auto     [BP-2]        Bp_Buff
+
+      Scope    Start: 4B45   Length: 0018 bytes
+      Auto     [BP-2]        Bp_Buff
+
+      Func     F600:4B61     Lpm_DdcciParser
+      Scope    Start: 4B61   Length: 0196 bytes
+      Parm     [BP+8]        B_whichHandler
+      Parm     [BP+4]        B_BuffPtr
+
+      Scope    Start: 4B65   Length: 0192 bytes
+      Auto     [BP-6]        DdcciCmdPtr
+      Auto     [BP-1]        readExpected
+      Parm     [BP+4]        B_BuffPtr
+      Parm     [BP+8]        B_whichHandler
+
+      Scope    Start: 4C27   Length: 001A bytes
+      RegVar   AX            B_AuxCh
+
+      Scope    Start: 4C5C   Length: 0099 bytes
+      RegVar   DL            i
+      Auto     [BP-10]       B_Checksum
+      Auto     [BP-9]        B_Length
+      RegVar   CL            B_SlaveCh
+
+      Func     F600:4CF7     Lpm_DdcciVcpParseCommand
+      Scope    Start: 4CF7   Length: 00DB bytes
+      Parm     [BP+4]        SetVcp
+
+      Scope    Start: 4CFD   Length: 00D5 bytes
+      Auto     [BP-5]        B_VCPType
+      Auto     [BP-4]        W_VCPMax
+      RegVar   SI            W_VCPValue
+      Auto     [BP-2]        IsFeatureSupported
+      Parm     [BP+4]        SetVcp
+
+      Scope    Start: 4D31   Length: 003A bytes
+      RegVar   DI            PwrEvent
+
+      Scope    Start: 4D71   Length: 0021 bytes
+      RegVar   DL            PwrState
+
+      Func     F600:4DD2     _Lpm_IsDdcciTransaction
+      Scope    Start: 4DD2   Length: 0034 bytes
+      Parm     [BP+4]        B_BuffPtr
+
+      Scope    Start: 4DD6   Length: 0030 bytes
+      Auto     [BP-1]        I2C_as_Vcp_Opcode
+      Parm     [BP+4]        B_BuffPtr
+
+      Func     F600:4E22     Lpm_DdcciAuxrxSetReply
+      Scope    Start: 4E22   Length: 005C bytes
+      Parm     [BP+8]        B_AuxCh
+      Parm     [BP+4]        B_BuffPtr
+
+      Scope    Start: 4E28   Length: 0056 bytes
+      RegVar   SI            SW_TrnsData
+      Auto     [BP-2]        Index
+      Auto     [BP-1]        B_Length
+      RegVar   CL            B_Checksum
+      Parm     [BP+4]        B_BuffPtr
+      Parm     [BP+8]        B_AuxCh
+
+      Func     F600:4E7E     EndianConv
+      Scope    Start: 4E7E   Length: 0014 bytes
+      Parm     [BP+4]        W_Input
+
+      Scope    Start: 4E84   Length: 000E bytes
+      RegVar   BX            W_Input
+
+   Line numbers from LOWPOWERMONITOR\LPM_DDCCI.C (segment F600)
+       77:4ABEh     83:4AC4h     83:4B18h     88:4ACBh     90:4AD6h
+       92:4ADDh     93:4AEBh     94:4AF0h     96:4AFAh     97:4B09h
+      103:4B1Fh    105:4B26h    106:4B2Fh    107:4B34h    110:4B3Eh
+      112:4B45h    113:4B4Eh    114:4B53h    118:4B5Dh    130:4B61h
+      132:4B65h    133:4B69h    136:4B75h    138:4B8Dh    146:4B90h
+      151:4BA9h    152:4BAFh    153:4BB5h    154:4BBEh    155:4BC4h
+      156:4BC8h    157:4BD4h    160:4BE6h    165:4BE8h    166:4BF1h
+      167:4BF7h    168:4BFDh    176:4C02h    187:4C07h    188:4C0Eh
+      193:4C12h    196:4C1Bh    198:4C27h    199:4C29h    200:4C2Fh
+      202:4C32h    208:4C41h    210:4C5Ch    211:4C62h    214:4C6Dh
+      215:4C88h    215:4C9Bh    216:4C8Ch    218:4CA2h    220:4CB6h
+      222:4CBCh    223:4CCDh    227:4CCFh    228:4CE2h    232:4CF5h
+      242:4CF7h    244:4CFDh    246:4D02h    247:4D04h    248:4D09h
+      251:4D0Dh    252:4D13h    254:4D1Dh    258:4D27h    261:4D31h
+      265:4D33h    268:4D38h    269:4D3Fh    271:4D44h    274:4D49h
+      275:4D50h    277:4D55h    280:4D5Ah    281:4D61h    284:4D64h
+      287:4D6Bh    290:4D71h    294:4D76h    295:4D7Ah    296:4D7Fh
+      297:4D84h    299:4D89h    304:4D8Ch    312:4D92h    317:4D97h
+      319:4D9Dh    320:4DA7h    321:4DAFh    324:4DB5h    326:4DBBh
+      330:4DBFh    331:4DC5h    332:4DCBh    334:4DCEh    344:4DD2h
+      346:4DD6h    348:4DE0h    358:4DFEh    361:4E02h    362:4E04h
+      373:4E22h    376:4E28h    378:4E31h    379:4E38h    381:4E52h
+      381:4E43h    383:4E49h    387:4E69h    388:4E70h    390:4E75h
+      392:4E7Ah    401:4E7Eh    403:4E84h    404:4E90h 
+
+Module: LPM_POWERMODE
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_POWERMODE.C
+
+   Module scope declarations:
+
+   Filename:   LOWPOWERMONITOR\LPM_POWERMODE.C
+   Code Base:  F600:4E92     Length: 06F8 bytes
+
+      Func     F600:4E92     _Lpm_PowerModeInit
+
+      Func     F600:4EA3     _Lpm_SetPowerKeyEvent
+
+      Func     F600:4ECC     _Lpm_SetAnyKeyWakeEvent
+
+      Func     F600:4EE3     _Lpm_PowerModeStateChange
+
+      Scope    Start: 4EE3   Length: 006B bytes
+      RegVar   AX            IsPwrStateChange
+
+      Func     F600:4FF0     _Lpm_PowerModeHandler
+
+      Scope    Start: 4FF4   Length: 027B bytes
+      Auto     [BP-10]       Message
+
+      Func     F600:526F     _Lpm_PowerModeSetEvent2PwrHdr
+      Scope    Start: 526F   Length: 000C bytes
+      Parm     [BP+4]        SetEvent
+
+      Scope    Start: 5272   Length: 0009 bytes
+      Parm     [BP+4]        SetEvent
+
+      Func     F600:527B     _Lpm_PowerModeGetState
+
+      Func     F600:527F     _Lpm_PowerModeCsmMuxSel
+      Scope    Start: 527F   Length: 0069 bytes
+      Parm     [BP+4]        PwrMode
+
+      Scope    Start: 5285   Length: 0063 bytes
+      RegVar   AL            PwrMode
+
+      Func     F600:52E8     _Lpm_PowerDownLpmDevices
+      Scope    Start: 52E8   Length: 00B5 bytes
+      Parm     [BP+4]        PwrMode
+
+      Scope    Start: 52EF   Length: 00AE bytes
+      RegVar   AL            PwrMode
+
+      Scope    Start: 5340   Length: 005B bytes
+      Auto     [BP-4]        RxTerm
+
+      Func     F600:539D     _Lpm_PowerUpLpmDevices
+
+      Func     F600:53E6     _Lpm_WarmReset
+      Scope    Start: 53E6   Length: 001D bytes
+      Parm     [BP+4]        IsEnable
+
+      Scope    Start: 53E9   Length: 001A bytes
+      Parm     [BP+4]        IsEnable
+
+      Func     F600:5403     _Lpm_HpdControl
+      Scope    Start: 5403   Length: 00D8 bytes
+      Parm     [BP+4]        PwrMode
+
+      Scope    Start: 5409   Length: 00D2 bytes
+      RegVar   AL            PwrMode
+
+      Func     F600:54DB     _Lpm_ForceDpHpdLow
+
+      Func     F600:5530     _Lpm_PowerDownMission
+
+      Func     F600:553B     _Lpm_TmdsSwitcherControl
+      Scope    Start: 553B   Length: 0041 bytes
+      Parm     [BP+4]        PwrMode
+
+      Scope    Start: 553E   Length: 003E bytes
+      Parm     [BP+4]        PwrMode
+
+      Func     F600:557C     _IsMissionPowerON
+
+      Func     F600:5583     _IsDCOffMode
+
+   Line numbers from LOWPOWERMONITOR\LPM_POWERMODE.C (segment F600)
+       56:4E92h     57:4E97h     58:4E9Dh     59:4EA2h     63:4EA3h
+       64:4EA8h     65:4EADh     70:4ECCh     71:4ED8h     72:4EDDh
+       73:4EE2h     78:4EE3h     81:4EE5h     83:4EEDh     88:4EF4h
+       93:4EFBh     95:4F02h    101:4F09h    103:4F11h    105:4F18h
+      109:4F1Ah    111:4F22h    113:4F29h    117:4F30h    119:4F38h
+      121:4F3Fh    122:4F44h    126:4F47h    129:4F4Dh    131:4FF0h
+      135:4FF4h    137:500Ch    139:5015h    140:501Ch    141:5023h
+      142:502Ah    144:502Fh    145:5040h    146:5059h    149:505Ch
+      151:506Ah    152:506Fh    153:5074h    154:5080h    156:508Ch
+      158:5092h    159:5097h    163:509Ch    263:50A8h    267:50B2h
+      271:50BCh    275:50D7h    278:50DDh    279:50E2h    280:50E7h
+      283:50ECh    284:50F1h    285:50F7h    286:50FCh    288:5102h
+      289:5105h    290:510Bh    291:510Eh    292:5114h    294:5122h
+      298:512Eh    300:5134h    301:513Ah    302:513Fh    308:5145h
+      310:514Bh    311:5150h    315:5156h    318:5160h    324:516Ah
+      326:5174h    333:517Dh    334:5183h    336:5189h    337:518Fh
+      338:5194h    340:519Ah    341:51A0h    343:51A6h    344:51ACh
+      345:51B2h    346:51B5h    348:51BBh    352:51BEh    355:51C8h
+      361:51D2h    363:51DCh    369:51E5h    370:51EBh    371:51F1h
+      372:51F4h    374:5202h    376:520Eh    378:5214h    379:521Ah
+      380:521Fh    382:5225h    383:522Bh    384:5231h    385:5237h
+      386:523Dh    389:5240h    394:5243h    397:524Dh    403:5257h
+      405:5261h    409:526Dh    411:526Fh    413:5272h    414:5279h
+      418:527Bh    419:527Eh    429:527Fh    431:5285h    434:5289h
+      435:528Fh    436:5295h    437:529Bh    438:52A1h    439:52A3h
+      441:52ABh    442:52B1h    443:52B7h    446:52BDh    449:52C3h
+      451:52C8h    454:52D2h    461:52D7h    464:52E1h    472:52E6h
+      482:52E8h    484:52EFh    487:52F3h    488:52F9h    490:52FFh
+      493:530Ah    494:5314h    495:531Bh    496:5325h    498:532Dh
+      502:532Fh    507:5335h    508:533Ah    509:533Ch    511:5340h
+      512:534Fh    513:5356h    514:535Ah    515:5361h    517:5365h
+      518:536Bh    519:5379h    520:5387h    521:5395h    529:539Bh
+      551:539Dh    552:53A9h    553:53B5h    554:53BBh    555:53C1h
+      556:53C7h    557:53CDh    558:53D3h    559:53D9h    560:53DFh
+      562:53E5h    564:53E6h    566:53E9h    569:53EFh    570:53F4h
+      571:53F9h    575:53FBh    577:5401h    579:5403h    583:5409h
+      585:5414h    588:5422h    589:5427h    590:542Ch    593:5431h
+      594:5436h    595:543Bh    596:5440h    597:5442h    600:5449h
+      601:544Eh    602:5453h    605:5458h    606:545Dh    607:5463h
+      608:5468h    609:546Ah    612:5471h    613:5476h    614:547Bh
+      617:5480h    618:5485h    619:548Ah    623:548Fh    624:5494h
+      625:5499h    627:549Bh    630:54A2h    631:54A7h    632:54ACh
+      633:54B1h    634:54B3h    637:54BAh    638:54BFh    639:54C4h
+      642:54C9h    643:54CEh    644:54D4h    650:54D9h    656:54DBh
+      658:54F7h    659:54FCh    660:5502h    661:5507h    662:5508h
+      664:550Fh    665:5514h    666:551Ah    668:551Fh    669:5524h
+      670:552Ah    674:552Fh    687:5530h    688:5535h    689:553Ah
+      699:553Bh    702:553Eh    704:5544h    705:554Bh    706:5552h
+      707:5559h    711:5560h    712:5567h    713:556Eh    714:5575h
+      716:557Ah    721:557Ch    722:5582h    726:5583h    727:5589h
+   
+Module: LPM_DEBUG
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_DEBUG.C
+
+   Module scope declarations:
+      Static   0000:06E6     W_BurstAddr
+      Static   0000:06E8     gBurstPtr
+
+   Filename:   LOWPOWERMONITOR\LPM_DEBUG.C
+   Code Base:  F600:558A     Length: 140F bytes
+
+      Func     F600:558A     _Lpm_SystemDebug
+
+      Func     F600:558B     _Lpm_GprobeCmdParser
+      Scope    Start: 558B   Length: 0247 bytes
+      Parm     [BP+6]        Bp_MessageBuff
+      Parm     [BP+4]        B_whichHandler
+
+      Scope    Start: 5591   Length: 0241 bytes
+      Auto     [BP-3]        B_SendAckNackData
+      Auto     [BP-2]        PS_Status
+      Parm     [BP+4]        B_whichHandler
+      Parm     [BP+6]        Bp_MessageBuff
+
+      Scope    Start: 5648   Length: 0062 bytes
+      Auto     [BP-14]       W_SizeInBytes
+      Auto     [BP-12]       Bp_Data
+      Auto     [BP-8]        W_Address
+
+      Scope    Start: 56AA   Length: 0058 bytes
+      Auto     [BP-14]       W_SizeInBytes
+      Auto     [BP-12]       Bp_Data
+      Auto     [BP-8]        W_Address
+
+      Scope    Start: 572B   Length: 002C bytes
+      RegVar   DI            dNum
+      RegVar   SI            sNum
+
+      Func     F600:5C4A     _Lpm_AppstestCmdParser
+      Scope    Start: 5C4A   Length: 0616 bytes
+      Parm     [BP+6]        Bp_MessageBuff
+      Parm     [BP+4]        B_whichHandler
+
+      Scope    Start: 5C4F   Length: 0611 bytes
+      Auto     [BP-1]        B_SendAckNackData
+      Parm     [BP+4]        B_whichHandler
+      Parm     [BP+6]        Bp_MessageBuff
+
+      Scope    Start: 5CC2   Length: 002E bytes
+      Auto     [BP-14]       RcOscFreq
+
+      Scope    Start: 5D2E   Length: 000E bytes
+      Auto     [BP-12]       MuxSel
+
+      Scope    Start: 5DDB   Length: 0079 bytes
+      Auto     [BP-22]       DpcdBaseAddr
+      Auto     [BP-18]       W_Len
+      Auto     [BP-16]       W_DpcdAddr
+      Auto     [BP-14]       AuxCh
+      Auto     [BP-12]       i
+      Auto     [BP-11]       B_Data
+
+      Scope    Start: 5E0F   Length: 0032 bytes
+      Auto     [BP-26]       DW_Addr
+
+      Scope    Start: 5E54   Length: 0050 bytes
+      Auto     [BP-24]       DW_Addr
+      Auto     [BP-20]       DpcdBaseAddr
+      Auto     [BP-15]       B_Data
+      Auto     [BP-14]       W_DpcdAddr
+      Auto     [BP-12]       AuxCh
+
+      Scope    Start: 5EA4   Length: 004C bytes
+      Auto     [BP-16]       DpcdAddr
+      Auto     [BP-11]       IsWrite
+      RegVar   BX            AuxCh
+
+      Scope    Start: 5EC1   Length: 0015 bytes
+      Auto     [BP-17]       Data
+
+      Scope    Start: 5ED6   Length: 001A bytes
+      Auto     [BP-17]       Data
+
+      Scope    Start: 5F84   Length: 004A bytes
+      Auto     [BP-12]       Lpm_OcmClkSel
+
+      Scope    Start: 607C   Length: 0074 bytes
+      Auto     [BP-12]       Lpm_OcmClkSel
+
+      Scope    Start: 6156   Length: 0064 bytes
+      RegVar   SI            PwrEvent
+
+      Scope    Start: 61BA   Length: 007A bytes
+      Auto     [BP-14]       DW_Addr
+      RegVar   SI            W_Cnt
+
+      Scope    Start: 623C   Length: 0012 bytes
+      Auto     [BP-12]       BusOwn
+
+      Func     F600:62CE     ReadRamRegister
+      Scope    Start: 62CE   Length: 0056 bytes
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Scope    Start: 62D3   Length: 0051 bytes
+      RegVar   DX            W_Data
+      RegVar   SI            W_Addr
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Scope    Start: 62F0   Length: 001B bytes
+      Auto     [BP-4]        DW_Addr
+
+      Func     F600:6324     ReadRamRegisterEx
+      Scope    Start: 6324   Length: 0059 bytes
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Scope    Start: 6328   Length: 0055 bytes
+      Auto     [BP-4]        addr
+      RegVar   DX            data
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Func     F600:637D     ReadRamBurstEx
+      Scope    Start: 637D   Length: 00A9 bytes
+      Parm     [BP+6]        Bp_MessageBuff
+      Parm     [BP+4]        B_whichHandler
+
+      Scope    Start: 6381   Length: 00A5 bytes
+      RegVar   AL            B_SendAckNackData
+      Auto     [BP-8]        ptr
+      RegVar   CX            length
+      RegVar   DL            i
+      Auto     [BP-4]        addr
+      Parm     [BP+4]        B_whichHandler
+      Parm     [BP+6]        Bp_MessageBuff
+
+      Func     F600:6426     WriteRamRegister
+      Scope    Start: 6426   Length: 0056 bytes
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Scope    Start: 642B   Length: 0051 bytes
+      RegVar   CX            W_Data
+      RegVar   SI            W_Addr
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Scope    Start: 645A   Length: 001D bytes
+      Auto     [BP-4]        DW_Addr
+
+      Func     F600:647C     WriteRamRegisterEx
+      Scope    Start: 647C   Length: 004F bytes
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Scope    Start: 6480   Length: 004B bytes
+      Auto     [BP-6]        addr
+      Auto     [BP-2]        data
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Func     F600:64CB     WriteRamBurstEx
+      Scope    Start: 64CB   Length: 0073 bytes
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Scope    Start: 64CF   Length: 006F bytes
+      RegVar   DL            i
+      Auto     [BP-4]        addr
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Func     F600:653E     WriteRAMBurst
+      Scope    Start: 653E   Length: 0081 bytes
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Scope    Start: 6543   Length: 007C bytes
+      Auto     [BP-4]        DW_Addr
+      RegVar   CL            i
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Func     F600:65BF     WriteNextRAMBurst
+      Scope    Start: 65BF   Length: 006A bytes
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Scope    Start: 65C4   Length: 0065 bytes
+      Auto     [BP-4]        DW_Addr
+      RegVar   CL            i
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Func     F600:6629     ReadVarSizeRegisters
+      Scope    Start: 6629   Length: 0109 bytes
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Scope    Start: 662E   Length: 0104 bytes
+      RegVar   CL            B_CurRegSz
+      Auto     [BP-10]       PB_Dst
+      Auto     [BP-6]        PB_Src
+      Auto     [BP-2]        B_Len2Handle
+      Auto     [BP-1]        B_AddrSz
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Scope    Start: 6670   Length: 009E bytes
+      RegVar   DL            B_TmpCtr
+      Auto     [BP-18]       Bp_Addr
+      Auto     [BP-14]       DW_Addr
+
+      Func     F600:6732     WriteVarSizeRegisters
+      Scope    Start: 6732   Length: 00E2 bytes
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Scope    Start: 6737   Length: 00DD bytes
+      Auto     [BP-14]       Bp_Addr
+      Auto     [BP-10]       DW_Addr
+      RegVar   CL            B_CurRegSz
+      Auto     [BP-6]        PB_Src
+      Auto     [BP-2]        B_Len2Handle
+      Auto     [BP-1]        B_AddrSz
+      Parm     [BP+4]        Bp_MessageBuff
+
+      Scope    Start: 6756   Length: 00B0 bytes
+      RegVar   DL            B_TmpCtr
+
+      Func     F600:6814     _Lpm_SendAckOrNack
+      Scope    Start: 6814   Length: 0054 bytes
+      Parm     [BP+8]        Bp_MessageBuff
+      Parm     [BP+6]        B_whichHandler
+      Parm     [BP+4]        B_Ack
+
+      Scope    Start: 681A   Length: 004E bytes
+      RegVar   AL            B_Ack
+      Parm     [BP+6]        B_whichHandler
+      Parm     [BP+8]        Bp_MessageBuff
+
+      Func     F600:6868     _Lpm_WriteCmdPkt
+      Scope    Start: 6868   Length: 0117 bytes
+      Parm     [BP+8]        B_whichHandler
+      Parm     [BP+4]        Bp_Buf
+
+      Scope    Start: 686E   Length: 0111 bytes
+      RegVar   SI            SW_TrnsData
+      Auto     [BP-2]        B_Checksum
+      Auto     [BP-1]        B_Length
+      RegVar   CL            i
+      Parm     [BP+4]        Bp_Buf
+      Parm     [BP+8]        B_whichHandler
+
+      Scope    Start: 687E   Length: 0022 bytes
+      Auto     [BP-10]       Sp_I2CData
+      Auto     [BP-5]        B_whichSlaveCh
+
+      Scope    Start: 68A0   Length: 0018 bytes
+      RegVar   AX            B_AuxCh
+
+      Scope    Start: 695B   Length: 001B bytes
+      Auto     [BP-5]        B_whichSlaveCh
+
+      Func     F600:6998     _gm_Print
+      Scope    Start: 6998   Length: 0001 bytes
+      Parm     [BP+6]        W_Value
+      Parm     [BP+2]        Bp_Str
+
+      Scope    Start: 6998   Length: 0001 bytes
+      Parm     [BP+2]        Bp_Str
+      Parm     [BP+6]        W_Value
+
+   Line numbers from LOWPOWERMONITOR\LPM_DEBUG.C (segment F600)
+      130:558Ah    144:558Bh    146:5591h    147:5596h    150:559Ah
+      152:55A0h    155:55A4h    158:55CAh    162:55D5h    163:55E1h
+      164:55E5h    166:55E8h    167:55FAh    169:55FDh    173:5608h
+      177:5613h    181:561Eh    185:5629h    186:5635h    189:5638h
+      190:563Dh    192:5640h    193:5645h    197:5648h    198:565Fh
+      199:5677h    201:568Bh    209:56A3h    215:56AAh    216:56C1h
+      217:56D0h    220:56D9h    223:56EDh    224:56F1h    228:56F4h
+      235:5702h    238:570Dh    243:571Ch    246:572Bh    247:5739h
+      248:573Fh    249:5744h    250:574Ah    251:5750h    255:5757h
+      256:5769h    260:577Ah    264:577Fh    269:5787h    272:579Dh
+      275:57ABh    281:57B9h    285:57CBh    286:57CEh    298:5C4Ah
+      300:5C4Fh    303:5C53h    345:5C7Ch    347:5C85h    348:5C8Ah
+      349:5C96h    353:5C9Fh    354:5CA4h    355:5CB0h    360:5CB9h
+      362:5CC2h    364:5CCCh    367:5CD2h    368:5CDBh    372:5CE1h
+      378:5CF0h    380:5CFEh    384:5D04h    386:5D0Ch    388:5D20h
+      392:5D26h    398:5D2Eh    399:5D34h    400:5D39h    404:5D3Ch
+      405:5D45h    407:5D4Eh    414:5D56h    416:5D5Dh    417:5D69h
+      418:5D75h    419:5D88h    423:5D95h    424:5DA8h    425:5DBBh
+      426:5DCEh    434:5DDBh    435:5DE1h    436:5DE7h    439:5DEDh
+      440:5DF3h    442:5DFFh    447:5E09h    447:5E41h    450:5E0Fh
+      451:5E26h    455:5E34h    457:5E51h    462:5E54h    463:5E5Ah
+      464:5E60h    467:5E66h    468:5E6Ch    470:5E78h    472:5E82h
+      473:5E93h    474:5EA1h    480:5EA4h    481:5EA8h    482:5EAEh
+      484:5EBBh    486:5EC1h    487:5EC7h    492:5ED6h    493:5EE6h
+      501:5EF0h    504:5EF6h    505:5F03h    507:5F0Bh    509:5F17h
+      515:5F1Fh    516:5F25h    518:5F2Eh    520:5F33h    523:5F36h
+      525:5F3Ch    528:5F46h    530:5F50h    531:5F56h    532:5F5Bh
+      537:5F61h    540:5F67h    542:5F70h    544:5F84h    546:5F8Ah
+      547:5F8Fh    549:5F94h    550:5F9Ah    551:5F9Fh    553:5FA5h
+      555:5FABh    558:5FB5h    560:5FBFh    562:5FC5h    568:5FCEh
+      569:5FD4h    571:5FE0h    572:5FE5h    574:5FEBh    575:5FF0h
+      576:5FF6h    577:5FFBh    579:6001h    580:6007h    581:600Ah
+      582:600Dh    583:6013h    585:601Fh    587:6025h    588:602Bh
+      589:6030h    594:6036h    596:603Ch    600:6041h    603:604Bh
+      609:6055h    611:605Fh    613:6068h    615:607Ch    617:6082h
+      618:6087h    619:608Dh    621:6094h    622:609Ah    623:609Fh
+      625:60A5h    626:60ABh    628:60B1h    629:60B7h    630:60BDh
+      631:60C0h    633:60C6h    637:60C9h    640:60D3h    646:60DDh
+      648:60E7h    654:60F0h    656:60F9h    657:6105h    658:6111h
+      659:611Dh    660:6129h    661:6135h    662:6141h    663:614Dh
+      667:6156h    668:6158h    671:6187h    672:618Ah    674:618Ch
+      675:618Fh    677:6191h    678:6194h    680:6196h    681:6199h
+      683:619Bh    684:619Eh    686:61A0h    687:61A3h    689:61A5h
+      692:61A8h    693:61ADh    735:61BAh    738:61BCh    738:61DAh
+      740:61C8h    744:61F4h    746:61F9h    747:6205h    748:6211h
+      750:621Dh    751:6228h    756:6234h    757:623Ah    761:623Ch
+      762:6242h    763:6247h    764:624Ch    768:624Eh    772:625Ah
+      773:625Dh    851:62CEh    857:62D3h    859:62E9h    865:62F0h
+      866:62FEh    876:630Bh    880:630Dh    881:6314h    882:631Dh
+      883:6321h    885:6324h    891:6328h    893:633Fh    894:6353h
+      895:6357h    896:635Dh    897:6364h    898:636Eh    899:6377h
+      900:637Bh    902:637Dh    911:6381h    913:6398h    914:63ACh
+      916:63B0h    920:63BBh    922:63E8h    923:63EAh    926:63ECh
+      928:63F2h    929:641Ch    929:6401h    930:640Ah    932:6422h
+      936:6424h    948:6426h    954:642Bh    957:6440h    958:644Bh
+      960:6453h    966:645Ah    967:646Ah    975:6477h    977:6479h
+      979:647Ch    985:6480h    987:6497h    989:64ABh    991:64BFh
+      992:64C3h    993:64C9h    995:64CBh   1001:64CFh   1003:64E6h
+     1004:64FAh   1006:64FEh   1008:650Bh   1010:651Ah   1010:6536h
+     1011:6522h   1013:653Ch   1028:653Eh   1034:6543h   1039:655Ah
+     1039:65A4h   1041:655Eh   1043:6565h   1044:6576h   1049:658Dh
+     1052:65BCh   1066:65BFh   1074:65C4h   1074:660Eh   1076:65C8h
+     1078:65CFh   1079:65E0h   1084:65F7h   1087:6626h   1098:6629h
+     1104:662Eh   1106:6637h   1108:6643h   1111:6648h   1113:6652h
+     1114:665Eh   1116:666Ah   1118:670Eh   1124:6670h   1126:6676h
+     1127:6691h   1128:6693h   1130:6699h   1133:66C9h   1134:66D6h
+     1137:66D9h   1138:6702h   1138:66E8h   1140:66ECh   1141:66FFh
+     1145:6708h   1148:672Dh   1149:672Fh   1159:6732h   1167:6737h
+     1168:6740h   1169:6747h   1170:6806h   1173:6756h   1175:675Ch
+     1176:6777h   1178:6779h   1180:677Fh   1181:67AFh   1184:67B1h
+     1186:67B5h   1187:67BDh   1188:67C3h   1189:67D2h   1190:67F1h
+     1190:67D5h   1192:67D9h   1193:67EEh   1195:67F7h   1197:680Fh
+     1198:6811h   1210:6814h   1213:681Ah   1215:6820h   1217:6824h
+     1221:682Ch   1226:6834h   1227:6838h   1229:6840h   1231:6854h
+     1232:6866h   1245:6868h   1261:686Eh   1269:687Eh   1272:6886h
+     1273:6893h   1282:68A0h   1284:68A2h   1285:68A8h   1287:68ABh
+     1288:68B2h   1294:68B8h   1298:68C1h   1300:68CAh   1301:68CEh
+     1303:68D8h   1304:68DFh   1305:68E6h   1309:68F0h   1311:6913h
+     1311:6923h   1313:6917h   1319:693Ah   1320:6944h   1322:694Bh
+     1330:695Bh   1331:6963h   1340:6976h   1349:697Bh   1433:6998h
+   
+Module: LPM_IROM
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_IROM.C
+
+   Module scope declarations:
+      Static   0000:06EC     g_SystemTime
+      Static   0000:06F2     Lpm_timer
+
+   Filename:   LOWPOWERMONITOR\LPM_IROM.C
+   Code Base:  F600:6999     Length: 01F9 bytes
+
+      Func     F600:6999     _gm_GetSystemTime
+
+      Scope    Start: 699D   Length: 0021 bytes
+      Auto     [BP-4]        Dw_Temp
+
+      Func     F600:69BE     _gm_W_GetSystemTime
+
+      Func     F600:69C2     _gm_Delay1ms
+      Scope    Start: 69C2   Length: 0019 bytes
+      Parm     [BP+4]        ms
+
+      Scope    Start: 69C6   Length: 0015 bytes
+      Auto     [BP-2]        W_SavedTime
+      Parm     [BP+4]        ms
+
+      Func     F600:69DB     _isrSystemTimer
+
+      Func     F600:6A15     _Lpm_TimerInit
+      Scope    Start: 6A15   Length: 005D bytes
+      Parm     [BP+4]        D_CpuClock
+
+      Scope    Start: 6A18   Length: 005A bytes
+      Parm     [BP+4]        D_CpuClock
+
+      Func     F600:6A72     _Lpm_TimerStart
+      Scope    Start: 6A72   Length: 001F bytes
+      Parm     [BP+6]        W_TimeOutInMS
+      Parm     [BP+4]        B_Timer
+
+      Scope    Start: 6A75   Length: 001C bytes
+      Parm     [BP+4]        B_Timer
+      Parm     [BP+6]        W_TimeOutInMS
+
+      Func     F600:6A91     _Lpm_TimerTimeOut
+      Scope    Start: 6A91   Length: 0026 bytes
+      Parm     [BP+4]        B_Timer
+
+      Scope    Start: 6A94   Length: 0023 bytes
+      Parm     [BP+4]        B_Timer
+
+      Func     F600:6AB7     _Lpm_Delay1ms
+      Scope    Start: 6AB7   Length: 001A bytes
+      Parm     [BP+4]        W_TimeOutInMS
+
+      Scope    Start: 6ABA   Length: 0017 bytes
+      Parm     [BP+4]        W_TimeOutInMS
+
+      Func     F600:6AD1     _Lpm_McuInit
+
+   Line numbers from LOWPOWERMONITOR\LPM_IROM.C (segment F600)
+       74:6999h     76:699Dh     77:69AAh     78:69B0h     79:69B6h
+       80:69BCh     91:69BEh     92:69C1h    102:69C2h    104:69C6h
+      105:69CDh    106:69D9h    122:69DBh    124:69E4h    127:69E5h
+      128:69FAh    130:6A02h    132:6A0Ah    133:6A0Bh    134:6A11h
+      148:6A15h    150:6A18h    151:6A24h    153:6A29h    154:6A44h
+      155:6A4Ah    156:6A50h    157:6A5Ch    158:6A62h    160:6A68h
+      161:6A70h    179:6A72h    181:6A75h    182:6A8Fh    201:6A91h
+      203:6A94h    204:6AB5h    222:6AB7h    224:6ABAh    227:6AC5h
+      230:6ACFh    245:6AD1h    246:6ADDh    247:6AE9h    248:6AF5h
+      249:6B01h    250:6B0Dh    251:6B19h    252:6B25h    253:6B31h
+      254:6B3Dh    255:6B49h    256:6B55h    263:6B61h    264:6B67h
+      265:6B6Dh    267:6B73h    268:6B79h    269:6B7Fh    270:6B85h
+      272:6B8Bh    273:6B91h 
+
+Module: LPM_KEYPAD
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_KEYPAD.C
+
+   Module scope declarations:
+      Static   0000:071A     settings
+      Static   0000:071F     curChannel
+      Static   0000:0720     timeX
+      Static   0000:0722     valHistory
+
+   Filename:   LOWPOWERMONITOR\LPM_KEYPAD.C
+   Code Base:  F600:6B92     Length: 058A bytes
+
+      Func     F600:6C45     _Lpm_KeypadHandler
+
+      Scope    Start: 6C4A   Length: 026A bytes
+      RegVar   BX            w
+
+      Scope    Start: 6C6C   Length: 0234 bytes
+      Auto     [BP-4]        msg
+
+      Scope    Start: 6DB4   Length: 009F bytes
+      RegVar   SI            GetKey
+
+      Func     F600:6EB4     _Lpm_KeypadInit
+
+      Func     F600:6EC0     _Lpm_KeypadLbwAdcInit
+      Scope    Start: 6EC0   Length: 0036 bytes
+      Parm     [BP+12]       offValue
+      Parm     [BP+10]       offChannel
+      Parm     [BP+8]        numChannels
+      Parm     [BP+6]        treshold
+      Parm     [BP+4]        timeOut
+
+      Scope    Start: 6EC3   Length: 0033 bytes
+      Parm     [BP+4]        timeOut
+      Parm     [BP+6]        treshold
+      Parm     [BP+8]        numChannels
+      Parm     [BP+10]       offChannel
+      Parm     [BP+12]       offValue
+
+      Func     F600:6EF6     _Lpm_KeypadGetKey
+      Scope    Start: 6EF6   Length: 0226 bytes
+      Parm     [BP+6]        AdcVal
+      Parm     [BP+4]        AdcCh
+
+      Scope    Start: 6EFC   Length: 0220 bytes
+      RegVar   BX            GetKey
+      RegVar   CL            AdcCh
+      Parm     [BP+6]        AdcVal
+
+   Line numbers from LOWPOWERMONITOR\LPM_KEYPAD.C (segment F600)
+       77:6C45h     79:6C4Ah     81:6C51h     84:6C63h     85:6C67h
+       97:6C6Ch     98:6C78h    100:6C80h    102:6C8Ch    103:6CABh
+      104:6CC1h    109:6CC9h    111:6D1Ah    113:6D24h    115:6D2Ah
+      116:6D3Ah    119:6D44h    121:6D4Ah    122:6D5Ah    123:6D62h
+      124:6D68h    128:6D6Bh    129:6D71h    131:6D7Dh    133:6D8Dh
+      134:6DA5h    148:6DB4h    150:6DC4h    151:6DCAh    152:6DD6h
+      153:6DDCh    154:6DEEh    156:6DF4h    157:6E04h    158:6E0Ch
+      159:6E0Eh    161:6E14h    162:6E24h    167:6E2Ch    168:6E38h
+      170:6E3Dh    172:6E47h    173:6E4Eh    181:6E53h    190:6E59h
+      191:6E5Dh    192:6E5Fh    194:6E65h    197:6E69h    198:6E83h
+      201:6E93h    211:6EA0h    212:6EB1h    240:6EB4h    242:6EB9h
+      243:6EBFh    246:6EC0h    248:6EC3h    249:6EC9h    250:6ECFh
+      251:6ED5h    252:6EDBh    254:6EE1h    255:6EE6h    256:6EECh
+      257:6EF4h    259:6EF6h    261:6EFCh    268:6EFEh    269:6F21h
+      270:6F27h    271:6F43h    272:6F49h    273:6F65h    274:6F6Bh
+      275:6F86h    276:6F8Ch    277:6FA7h    278:6FADh    279:6FC8h
+      280:6FCEh    281:6FE9h    282:6FEFh    283:700Ah    284:7010h
+      285:702Ch    286:7032h    287:704Eh    288:7054h    289:7070h
+      290:7076h    291:7092h    292:7098h    293:70B3h    294:70B8h
+      295:70D4h    296:70D9h    297:70F4h    298:70F9h    299:7115h
+      301:7118h    302:711Ah 
+
+Module: LPM_IR
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LOWPOWERMONITOR\LPM_IR.C
+
+   Module scope declarations:
+      Static   0000:072A     gmp_Ir
+
+   Filename:   LOWPOWERMONITOR\LPM_IR.C
+   Code Base:  F600:711C     Length: 051B bytes
+
+      Func     F600:711C     _Lpm_IrHandler
+
+      Scope    Start: 712A   Length: 005D bytes
+      Auto     [BP-4]        buf
+
+      Func     F600:7189     _Lpm_IrIsr
+
+      Scope    Start: 718F   Length: 0445 bytes
+      Auto     [BP-2]        W_IsrData
+
+      Scope    Start: 71C0   Length: 006C bytes
+      Auto     [BP-10]       DW_Now
+
+      Scope    Start: 71FC   Length: 0020 bytes
+      RegVar   DL            j
+
+      Scope    Start: 722C   Length: 03A4 bytes
+      Auto     [BP-7]        j
+
+      Scope    Start: 7233   Length: 0383 bytes
+      RegVar   CX            isPolarityHigh
+      RegVar   DL            B_BitWidth
+      RegVar   SI            P_PacketState
+      Auto     [BP-12]       P_Packet
+
+      Scope    Start: 73E9   Length: 0117 bytes
+      Auto     [BP-13]       nbits
+
+      Func     F600:75D4     _Lpm_IrInit
+      Scope    Start: 75D4   Length: 0063 bytes
+      Parm     [BP+4]        p_Ir
+
+      Scope    Start: 75DD   Length: 005A bytes
+      Auto     [BP-4]        OCM_Assigned
+      RegVar   SI            p_Ir
+
+   Line numbers from LOWPOWERMONITOR\LPM_IR.C (segment F600)
+       58:711Ch     60:7120h     64:712Ah     65:7130h     66:7136h
+       67:713Ch     70:7141h     71:7148h     73:714Ch     75:7153h
+       76:7165h     79:716Ah     81:7171h     86:7176h     89:7187h
+      156:7189h    158:718Fh    159:7195h    161:719Ch    162:71A1h
+      164:71A4h    170:71AEh    172:71BAh    173:71BDh    177:71C0h
+      179:71CBh    181:71FCh    182:7218h    183:7205h    185:721Ch
+      190:722Ch    190:75B6h    192:7233h    193:724Eh    194:725Bh
+      195:7261h    197:7268h    204:7274h    206:728Ah    211:728Dh
+      213:72A3h    216:72A6h    220:72ABh    221:72C7h    223:72CDh
+      226:72D2h    227:72EDh    228:72F0h    230:72F5h    232:7308h
+      233:730Bh    234:730Fh    235:7319h    236:731Dh    237:7322h
+      239:7325h    241:7328h    245:7330h    247:7349h    248:7361h
+      250:7363h    253:7367h    255:7376h    256:7386h    259:738Dh
+      261:739Ch    262:73AEh    263:73B6h    267:73B8h    273:73BAh
+      274:73C9h    279:73CCh    280:73E3h    289:73E9h    292:73FDh
+      293:740Ch    296:7413h    297:7416h    300:74F3h    305:741Dh
+      307:7422h    308:7426h    309:7429h    310:742Dh    311:7430h
+      313:7435h    314:7441h    315:7444h    317:7449h    318:744Ch
+      319:7450h    321:7456h    323:745Bh    324:745Eh    325:7462h
+      326:746Ch    327:7471h    328:7473h    330:7478h    332:747Eh
+      334:7487h    335:7497h    336:749Bh    340:74A1h    341:74B1h
+      342:74B5h    347:74B9h    348:74CAh    351:74CDh    355:74D2h
+      358:74D8h    359:74F0h    368:7500h    371:7508h    372:750Eh
+      376:7529h    378:7543h    379:754Ch    381:7552h    382:7578h
+      383:757Eh    387:7588h    388:7597h    390:75B4h    394:75D0h
+      420:75D4h    424:75DDh    426:75E7h    428:75EDh    429:75F7h
+      430:75FEh    432:7604h    433:7610h    434:7614h    435:7623h
+      438:7628h    439:762Eh    440:7633h 
+
+Module: GM_LPM_IPC
+   Language: C             Memory Model: Small
+
+   Source file(s):
+      LPM_IPC\GM_LPM_IPC.C
+
+   Module scope declarations:
+      Static   0000:0784     Queue
+      Static   0000:0788     gFp_GetTime
+      Static   0000:078C     W_TimeoutStatic
+      Static   0000:078E     B_NumOfQueuesStatic
+      Static   0000:0790     W_QueueBufferSizeStatic
+      Static   0000:0793     B_QueueIdLock
+
+   Filename:   LPM_IPC\GM_LPM_IPC.C
+   Code Base:  F600:7637     Length: 06DA bytes
+
+      Func     F600:7637     _gm_MessageInIsr
+
+      Scope    Start: 763B   Length: 01F8 bytes
+      Auto     [BP-8]        queuePtr
+      RegVar   CL            B_EmptyIndex
+      Auto     [BP-4]        Message
+
+      Scope    Start: 7678   Length: 0076 bytes
+      RegVar   CL            queue
+
+      Scope    Start: 76EE   Length: 00CB bytes
+      Auto     [BP-10]       expiration
+      Auto     [BP-9]        queueOldest
+      RegVar   CL            queue
+
+      Scope    Start: 7702   Length: 0057 bytes
+      Auto     [BP-12]       QueueInfo
+
+      Scope    Start: 7739   Length: 0020 bytes
+      RegVar   BL            e
+
+      Scope    Start: 77B9   Length: 0078 bytes
+      Auto     [BP-9]        length
+
+      Func     F600:7833     _gm_MessageInit
+      Scope    Start: 7833   Length: 0088 bytes
+      Parm     [BP+20]       GetTimePtr
+      Parm     [BP+18]       W_Timeout
+      Parm     [BP+16]       W_TotalBufferSize
+      Parm     [BP+12]       Bp_Buffer
+      Parm     [BP+10]       B_NumOfQueues
+      Parm     [BP+6]        QueuePtr
+
+      Scope    Start: 7839   Length: 0082 bytes
+      RegVar   CL            B_Index
+      Parm     [BP+6]        QueuePtr
+      RegVar   CL            B_NumOfQueues
+      Parm     [BP+12]       Bp_Buffer
+      Parm     [BP+16]       W_TotalBufferSize
+      Parm     [BP+18]       W_Timeout
+      Parm     [BP+20]       GetTimePtr
+
+      Func     F600:78BB     _gm_MessageSend
+      Scope    Start: 78BB   Length: 011D bytes
+      Parm     [BP+12]       W_Length
+      Parm     [BP+8]        B_Buffer
+      Parm     [BP+6]        B_SourceId
+
+      Scope    Start: 78BF   Length: 0119 bytes
+      Auto     [BP-12]       MessageTemp
+      Auto     [BP-8]        B_BufferEnd
+      Auto     [BP-4]        B_BufferStart
+      Parm     [BP+6]        B_SourceId
+      Parm     [BP+8]        B_Buffer
+      Parm     [BP+12]       W_Length
+
+      Scope    Start: 78E4   Length: 0041 bytes
+      Auto     [BP-14]       W_SavedTime
+
+      Func     F600:79D8     _gm_MessageReceived
+      Scope    Start: 79D8   Length: 00FF bytes
+      Parm     [BP+12]       W_BufferSize
+      Parm     [BP+8]        Bp_Buffer
+      Parm     [BP+6]        B_SourceId
+
+      Scope    Start: 79E1   Length: 00F6 bytes
+      Parm     [BP+6]        B_SourceId
+      Parm     [BP+8]        Bp_Buffer
+      RegVar   DI            W_BufferSize
+
+      Scope    Start: 79E1   Length: 0076 bytes
+      Auto     [BP-3]        chkDateCounter
+      RegVar   CL            queue
+      Auto     [BP-2]        queueOldest
+      Auto     [BP-1]        expiration
+
+      Scope    Start: 79F5   Length: 004B bytes
+      Auto     [BP-6]        QueueInfo
+
+      Scope    Start: 7A21   Length: 001F bytes
+      RegVar   BL            e
+
+      Scope    Start: 7A5E   Length: 0073 bytes
+      RegVar   SI            length
+
+      Func     F600:7AD7     _gm_RegMsgInit
+
+      Scope    Start: 7ADA   Length: 004B bytes
+      RegVar   DL            buf_size
+      RegVar   DL            msg_size
+
+      Func     F600:7B25     _gm_RegMsgSd
+      Scope    Start: 7B25   Length: 0068 bytes
+      Parm     [BP+12]       W_Length
+      Parm     [BP+8]        B_Buffer
+      Parm     [BP+6]        B_SourceId
+
+      Scope    Start: 7B29   Length: 0064 bytes
+      Parm     [BP+6]        B_SourceId
+      Parm     [BP+8]        B_Buffer
+      Parm     [BP+12]       W_Length
+
+      Func     F600:7B8D     _gm_RegMsgRv
+      Scope    Start: 7B8D   Length: 00AA bytes
+      Parm     [BP+8]        Bp_Buffer
+      Parm     [BP+6]        B_SourceId
+
+      Scope    Start: 7B92   Length: 00A5 bytes
+      RegVar   DX            len
+      RegVar   SI            rx_len
+      Auto     [BP-2]        rx_cmd
+      RegVar   CX            rx_num
+      Parm     [BP+6]        B_SourceId
+      Parm     [BP+8]        Bp_Buffer
+
+      Func     F600:7C37     _RegMsgUpdate
+
+      Scope    Start: 7C3C   Length: 0073 bytes
+      Auto     [BP-4]        tx_num
+      RegVar   DX            len
+      Auto     [BP-2]        cmd_len
+
+      Func     F600:7CAF     _RegMsgHandler
+
+      Scope    Start: 7CB2   Length: 005F bytes
+      RegVar   DX            rx_num_remote
+      RegVar   BX            tx_num
+
+   Line numbers from LPM_IPC\GM_LPM_IPC.C (segment F600)
+      123:7637h    127:763Bh    129:7645h    130:7658h    132:766Bh
+      134:7678h    135:76D1h    138:767Eh    140:76B8h    141:76CFh
+      144:76D9h    146:76E4h    150:76EEh    151:76F2h    152:76F6h
+      153:7759h    154:76FCh    156:7702h    158:7715h    160:7720h
+      161:7737h    164:7739h    165:7748h    167:7753h    168:7756h
+      172:7761h    174:7769h    177:7772h    179:778Ah    180:779Dh
+      181:77B7h    185:77B9h    186:77C1h    187:77CFh    190:77DCh
+      192:77E8h    195:780Dh    196:7825h    198:7831h    230:7833h
+      234:7839h    235:783Eh    236:7843h    237:7853h    238:7857h
+      239:7864h    239:789Eh    241:7868h    242:7879h    243:7894h
+      246:78A6h    247:78ACh    248:78B9h    273:78BBh    275:78BFh
+      276:78CBh    278:78D4h    280:79C8h    284:78E4h    285:78EDh
+      287:7910h    288:78F6h    289:790Ch    291:7925h    292:7948h
+      293:7950h    295:795Bh    296:7970h    298:7988h    299:7994h
+      301:799Ch    302:79A8h    303:79B0h    304:79BCh    306:79C2h
+      308:79D3h    309:79D6h    333:79D8h    338:79E1h    339:79E5h
+      340:79E9h    341:79EDh    342:7A40h    344:79F5h    345:7A08h
+      347:7A21h    348:7A2Fh    350:7A3Ah    351:7A3Dh    357:7A48h
+      358:7A4Eh    362:7A57h    364:7A5Eh    365:7A60h    367:7A75h
+      368:7A8Bh    369:7A8Fh    370:7A91h    372:7AB6h    373:7AC8h
+      374:7ACDh    376:7AD1h    377:7AD3h    385:7AD7h    390:7ADAh
+      391:7ADFh    392:7AE4h    393:7AEAh    394:7AF0h    397:7B08h
+      397:7AF6h    399:7AFAh    401:7B0Fh    401:7B1Ch    402:7B11h
+      403:7B23h    405:7B25h    408:7B29h    410:7B2Dh    415:7B33h
+      418:7B42h    421:7B46h    422:7B4Dh    423:7B51h    424:7B5Fh
+      425:7B63h    426:7B7Eh    428:7B87h    429:7B8Ah    432:7B8Dh
+      434:7B92h    435:7BA4h    439:7BAAh    444:7BBFh    449:7BD3h
+      451:7BDAh    452:7BEFh    454:7BF3h    457:7BF7h    459:7C09h
+      459:7C27h    461:7C0Dh    464:7C2Ch    465:7C32h    467:7C34h
+      469:7C37h    473:7C3Ch    475:7C4Fh    476:7C5Fh    477:7C63h
+      478:7C75h    479:7C7Eh    480:7C9Fh    480:7C82h    482:7C86h
+      484:7C9Bh    486:7CA5h    487:7CACh    489:7CAFh    491:7CB2h
+      492:7CC4h    494:7CD6h    497:7CDCh    498:7CE2h    500:7CE8h
+      506:7CECh    509:7CF2h    510:7CF6h    515:7CFBh    517:7D01h
+      519:7D05h    520:7D0Ah    523:7D0Fh 
+

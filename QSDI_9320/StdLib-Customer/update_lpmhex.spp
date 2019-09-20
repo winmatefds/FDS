@@ -1,0 +1,45 @@
+//--------------------------------------------------------------------------
+// Object Scripting
+// Copyright (c) 1996, 1997 by Borland International, All Rights Reserved
+//
+// COPY_LIBRARY.SPP: copies library to application directory when build
+//                   completes.
+//--------------------------------------------------------------------------
+print typeid(module());
+
+import IDE;
+
+import "MISCSCR.DLL" {
+   char CreateDirectory(char *);
+   char RemoveDirectory(char *);
+   char SetCurrentDirectory(const char *);
+   const char *GetCurrentDirectory();
+   void Abort();
+   void IDEMessageBeep(int);
+   char * FindFirstFile(char *);
+   char * FindNextFile();
+   char * GetEnvironmentVariable(char *);
+   void AssociateButton(int, char *);
+   char PlaySound(char *, int);
+   char CopyFile(char *, char *, bool);
+   char DeleteFile(char *);
+   char MoveFile(char *, char *);
+   unsigned GetFileAttributes(char *);
+   char SetFileAttributes(char *, unsigned);
+   char FileExists(char *);
+   char IsLegalFileName(char *);
+   char Spawn(const char *);
+   char *GetValueData(int, const char *, const char *);
+   char SetValueData(int, const char *, const char *, const char *);
+   char *GetMainMenuHotKeys();
+}
+
+on IDE:>BuildComplete(status, inputPath, outputPath)
+{
+    Spawn("update_lpmhex.bat");
+    pass(status, inputPath, outputPath);
+}
+
+
+
+

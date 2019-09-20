@@ -1,0 +1,4 @@
+---- WAIT_MAIN_PWR_STABLE_DELAY Matches (3 in 3 files) ----
+Lpm_Debug.c:            Lpm_Delay1ms(WAIT_MAIN_PWR_STABLE_DELAY);   
+Lpm_PowerMode.c:         Lpm_Delay1ms(WAIT_MAIN_PWR_STABLE_DELAY);   
+Lpm_PowerMode.h:#define WAIT_MAIN_PWR_STABLE_DELAY     50 //ms, 64 TCLK min~50ms max. This can be measured on a per-design basis

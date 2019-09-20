@@ -1,0 +1,679 @@
+
+ Start  Stop   Length  Name               Class     
+
+ 00000H 07E42H 7E43H  _TEXT              CODE      
+ 07E50H 07E50H 0000H  _RD                ROMDATA   
+ 07E50H 07E5FH 0010H  _ERD               ENDROMDATA
+ 07E60H 07EBFH 0060H  _INTERRUPT_VECTOR  INT_TABLE 
+ 07EC0H 08319H 045AH  _DATA              DATA      
+ 0831AH 085F3H 02DAH  _BSS               BSS       
+ 085F4H 085F4H 0000H  _NVRAM             NVRAM     
+ 085F4H 085F5H 0002H  _STACK             STACK     
+ 08600H 08609H 000AH  _START             START     
+
+
+Detailed map of segments
+
+ 0000:0000 0062 C=CODE        S=_TEXT              G=(none)  M=Lpm_C0startup        ACBP=68
+ 0000:0062 1083 C=CODE        S=_TEXT              G=(none)  M=Lpm_main             ACBP=28
+ 0000:10E5 016B C=CODE        S=_TEXT              G=(none)  M=lpm_csm              ACBP=28
+ 0000:1250 012F C=CODE        S=_TEXT              G=(none)  M=lpm_clock            ACBP=28
+ 0000:137F 0219 C=CODE        S=_TEXT              G=(none)  M=lpm_nvram            ACBP=28
+ 0000:1598 03DA C=CODE        S=_TEXT              G=(none)  M=lpm_i2cmaster        ACBP=28
+ 0000:1972 12FC C=CODE        S=_TEXT              G=(none)  M=lpm_i2cslave         ACBP=28
+ 0000:2C6E 00F4 C=CODE        S=_TEXT              G=(none)  M=lpm_i2cslavehl       ACBP=28
+ 0000:2D62 033C C=CODE        S=_TEXT              G=(none)  M=lpm_auxrx            ACBP=28
+ 0000:309E 048E C=CODE        S=_TEXT              G=(none)  M=lpm_auxrxedid        ACBP=28
+ 0000:352C 06B7 C=CODE        S=_TEXT              G=(none)  M=lpm_auxrxi2c         ACBP=28
+ 0000:3BE3 0B5C C=CODE        S=_TEXT              G=(none)  M=lpm_signalingdetect  ACBP=28
+ 0000:473F 037F C=CODE        S=_TEXT              G=(none)  M=lpm_cabledetect      ACBP=28
+ 0000:4ABE 03D4 C=CODE        S=_TEXT              G=(none)  M=lpm_ddcci            ACBP=28
+ 0000:4E92 06F8 C=CODE        S=_TEXT              G=(none)  M=lpm_powermode        ACBP=28
+ 0000:558A 140F C=CODE        S=_TEXT              G=(none)  M=lpm_debug            ACBP=28
+ 0000:6999 01F9 C=CODE        S=_TEXT              G=(none)  M=Lpm_irom             ACBP=28
+ 0000:6B92 058A C=CODE        S=_TEXT              G=(none)  M=lpm_keypad           ACBP=28
+ 0000:711C 051B C=CODE        S=_TEXT              G=(none)  M=Lpm_ir               ACBP=28
+ 0000:7637 06DA C=CODE        S=_TEXT              G=(none)  M=gm_lpm_ipc           ACBP=28
+ 0000:7D11 0017 C=CODE        S=_TEXT              G=(none)  M=n_lxmul              ACBP=28
+ 0000:7D28 0062 C=CODE        S=_TEXT              G=(none)  M=h_ludiv              ACBP=28
+ 0000:7D8A 0021 C=CODE        S=_TEXT              G=(none)  M=h_lursh              ACBP=28
+ 0000:7DAC 002E C=CODE        S=_TEXT              G=(none)  M=fmemcpy              ACBP=48
+ 0000:7DDA 001C C=CODE        S=_TEXT              G=(none)  M=n_scopy              ACBP=28
+ 0000:7DF6 002C C=CODE        S=_TEXT              G=(none)  M=fmemset              ACBP=48
+ 0000:7E22 0021 C=CODE        S=_TEXT              G=(none)  M=h_llsh               ACBP=28
+ 07E5:0000 0000 C=ROMDATA     S=_RD                G=(none)  M=Lpm_C0startup        ACBP=68
+ 07E5:0000 0010 C=ENDROMDATA  S=_ERD               G=(none)  M=Lpm_C0startup        ACBP=68
+ 07E6:0000 0060 C=INT_TABLE   S=_INTERRUPT_VECTOR  G=DGROUP  M=Lpm_C0startup        ACBP=48
+ 07E6:0060 0000 C=DATA        S=_DATA              G=DGROUP  M=Lpm_C0startup        ACBP=48
+ 07E6:0060 0030 C=DATA        S=_DATA              G=DGROUP  M=Lpm_main             ACBP=48
+ 07E6:0090 0002 C=DATA        S=_DATA              G=DGROUP  M=lpm_i2cmaster        ACBP=48
+ 07E6:0092 0367 C=DATA        S=_DATA              G=DGROUP  M=lpm_i2cslave         ACBP=48
+ 07E6:03FA 0048 C=DATA        S=_DATA              G=DGROUP  M=lpm_i2cslavehl       ACBP=48
+ 07E6:0442 0004 C=DATA        S=_DATA              G=DGROUP  M=lpm_auxrxedid        ACBP=48
+ 07E6:0446 000C C=DATA        S=_DATA              G=DGROUP  M=lpm_auxrxi2c         ACBP=48
+ 07E6:0452 0001 C=DATA        S=_DATA              G=DGROUP  M=lpm_signalingdetect  ACBP=48
+ 07E6:0454 0002 C=DATA        S=_DATA              G=DGROUP  M=lpm_cabledetect      ACBP=48
+ 07E6:0456 000C C=DATA        S=_DATA              G=DGROUP  M=lpm_ddcci            ACBP=48
+ 07E6:0462 0007 C=DATA        S=_DATA              G=DGROUP  M=lpm_powermode        ACBP=48
+ 07E6:046A 001C C=DATA        S=_DATA              G=DGROUP  M=lpm_debug            ACBP=48
+ 07E6:0486 0034 C=DATA        S=_DATA              G=DGROUP  M=lpm_globalvariables  ACBP=48
+ 07E6:04BA 0000 C=BSS         S=_BSS               G=DGROUP  M=Lpm_C0startup        ACBP=48
+ 07E6:04BA 0087 C=BSS         S=_BSS               G=DGROUP  M=Lpm_main             ACBP=48
+ 07E6:0542 0001 C=BSS         S=_BSS               G=DGROUP  M=lpm_nvram            ACBP=48
+ 07E6:0544 0004 C=BSS         S=_BSS               G=DGROUP  M=lpm_i2cslave         ACBP=48
+ 07E6:0548 0184 C=BSS         S=_BSS               G=DGROUP  M=lpm_auxrx            ACBP=48
+ 07E6:06CC 0014 C=BSS         S=_BSS               G=DGROUP  M=lpm_auxrxedid        ACBP=48
+ 07E6:06E0 0006 C=BSS         S=_BSS               G=DGROUP  M=lpm_ddcci            ACBP=48
+ 07E6:06E6 0006 C=BSS         S=_BSS               G=DGROUP  M=lpm_debug            ACBP=48
+ 07E6:06EC 002E C=BSS         S=_BSS               G=DGROUP  M=Lpm_irom             ACBP=48
+ 07E6:071A 0010 C=BSS         S=_BSS               G=DGROUP  M=lpm_keypad           ACBP=48
+ 07E6:072A 0002 C=BSS         S=_BSS               G=DGROUP  M=Lpm_ir               ACBP=48
+ 07E6:072C 0010 C=BSS         S=_BSS               G=DGROUP  M=lpm_globalvariables  ACBP=48
+ 07E6:073C 0058 C=BSS         S=_BSS               G=DGROUP  M=gm_lpm_ipc           ACBP=48
+ 07E6:0794 0000 C=NVRAM       S=_NVRAM             G=DGROUP  M=Lpm_C0startup        ACBP=48
+ 07E6:0794 0002 C=STACK       S=_STACK             G=DGROUP  M=Lpm_C0startup        ACBP=54
+ 0860:0000 000A C=START       S=_START             G=(none)  M=Lpm_C0startup        ACBP=68
+
+
+  Address         Publics by Name
+
+ 0000:7D2B idle  F_LUDIV@
+ 0000:7E25 idle  F_LXLSH@
+ 0000:7D8D idle  F_LXURSH@
+ 0000:7D2B idle  LUDIV@
+ 0000:7E25 idle  LXLSH@
+ 0000:7D8D idle  LXURSH@
+ 0000:7D28       N_LUDIV@
+ 0000:7E22       N_LXLSH@
+ 0000:7D11       N_LXMUL@
+ 0000:7D8A       N_LXURSH@
+ 0000:7DDA       N_SCOPY@
+ 07E6:0080 idle  _aB_HandlersFlags
+ 07E6:047A idle  _AckPkt
+ 07E6:0072 idle  _aPf_HandlersRoutines
+ 07E6:0452 idle  _ASDECT_State
+ 07E6:05EE idle  _AuxRxI2CInternalData
+ 07E6:06B0 idle  _AuxRxI2CInternalData2
+ 07E6:05E6 idle  _AuxRxI2CModuleData
+ 07E6:06A8 idle  _AuxRxI2CModuleData2
+ 07E6:0782 idle  _BACK_RX
+ 07E6:0780 idle  _BACK_TX
+ 07E6:0488       _BoardType
+ 07E6:00AC idle  _B_DDCToAuxStatus
+ 07E6:03F7 idle  _B_DevIdReady
+ 07E6:0092 idle  _B_ModeStatus
+ 07E6:00AD idle  _B_SlvStatus
+ 07E6:00B1 idle  _B_SlvStatus2
+ 07E6:0486       _CableUpdateRequest
+ 07E6:048A       _ChipID4k2K
+ 07E6:0060 idle  _Configuration
+ 07E6:0730       _CPhyType
+ 07E6:0738       _CsmHpdOutCtrlBackup
+ 07E6:073A       _CsmHpdPdInCtrlBackup
+ 07E6:0736       _CsmI2cMuxCtrlBackup
+ 07E6:04A5       _CurInputPort
+ 07E6:0792 idle  _dateCounter
+ 07E6:0485       _DebugOnly
+ 07E6:046A idle  _DebugParam
+ 07E6:049C       _DpRxCblDetPin
+ 07E6:04A0       _DpRxHpdPin
+ 07E6:0498       _DpRxSrcPwrPin
+ 07E6:06CC idle  _DprxVirtualEdid
+ 07E6:06D6 idle  _DprxVirtualEdid2
+ 07E6:0462       _Event2PwrHdr
+ 07E6:0456       _ExecuteMemTest
+ 07E6:0457       _ExecuteMemTest2
+ 07E6:04AF       _ExternalSwitch
+ 07E6:00A8 idle  _Fp_CorrespondingFuncPtr
+ 07E6:0443 idle  _gB_AuxRx_EdidWrOffsetSize
+ 07E6:0445 idle  _gB_AuxRx_EdidWrOffsetSize2
+ 07E6:0442 idle  _gB_AuxTransactionSize
+ 07E6:0444 idle  _gB_AuxTransactionSize2
+ 07E6:0484 idle  _gB_CheckSRAMLast16KB
+ 07E6:0458       _gB_DDC2BiDevId
+ 07E6:0544       _gB_Ddc2Bi_I2C_Status
+ 07E6:045A       _gB_DdcciWaitForParsing
+ 07E6:0480       _gB_GprobeCmdSet
+ 07E6:03F6       _gB_I2cSlaveSel
+ 07E6:0542 idle  _gB_NVRamError
+ 07E6:047E idle  _gDebugCmdPtr
+ 0000:69C2 idle  _gm_Delay1ms
+ 0000:6999       _gm_GetSystemTime
+ 0000:7637       _gm_MessageInIsr
+ 0000:7833       _gm_MessageInit
+ 0000:79D8       _gm_MessageReceived
+ 0000:78BB       _gm_MessageSend
+ 0000:6998       _gm_Print
+ 0000:7AD7       _gm_RegMsgInit
+ 0000:7B8D idle  _gm_RegMsgRv
+ 0000:7B25 idle  _gm_RegMsgSd
+ 0000:69BE       _gm_W_GetSystemTime
+ 07E6:0482       _gW_ManufacturerID
+ 07E6:0492 idle  _HdmiDviCblDetPin
+ 07E6:048C       _HdmiDviHpdPin
+ 07E6:03F8 idle  _I2cBufOverflow
+ 07E6:00A4 idle  _I2CSlaveExtHandlerFuncPtr
+ 07E6:03FA idle  _I2CSlaveHLModuleData
+ 07E6:00B6 idle  _I2CSlaveTable
+ 07E6:0060 idle  _initialized_data_start
+ 07E6:0540 idle  _IrPowerKey
+ 0000:5583 idle  _IsDCOffMode
+ 07E6:04B4       _IsDpSrcPwrWakeup
+ 07E6:04B6       _IsHdmiDviSrcPwrWakeup
+ 0000:0547       _IsMissionPoweredUp
+ 0000:557C idle  _IsMissionPowerON
+ 0000:69DB idle  _isrSystemTimer
+ 07E6:04AD       _IsSyncDetected
+ 07E6:04B9       _IsVgaSrcPwrWakeup
+ 07E6:0464 idle  _LastLpmPwrStatus
+ 07E6:072C       _LbadcCableNowState
+ 07E6:006C       _LpmOcmClk
+ 07E6:0465       _LpmPwrState
+ 07E6:0068       _LpmRcOscClk
+ 0000:410B idle  _Lpm_AnalogSyncDetect
+ 0000:5C4A idle  _Lpm_AppstestCmdParser
+ 0000:43C6       _Lpm_AutoWakeISR
+ 0000:4370 idle  _Lpm_AutoWakePortSetup
+ 0000:2E4D       _Lpm_AuxRxBusReadByte
+ 0000:2E7C       _Lpm_AuxRxBusWriteByte
+ 0000:30D1       _Lpm_AuxRxEdidHandler
+ 0000:309E       _Lpm_AuxRxEdidHandlerInit
+ 0000:320D idle  _Lpm_AuxRxEdidRead
+ 0000:3136 idle  _Lpm_AuxRxEdidReadHandler
+ 0000:333B idle  _Lpm_AuxRxEdidWrite
+ 0000:3267 idle  _Lpm_AuxRxEdidWriteHandler
+ 0000:2DB9       _Lpm_AuxRxGetChunkData
+ 0000:35FB       _Lpm_AuxRxI2CAddSwDevId
+ 0000:3663 idle  _Lpm_AuxRxI2CClearSwDevIdTable
+ 0000:3B18 idle  _Lpm_AuxRxI2CGetModuleData
+ 0000:3AAB       _Lpm_AuxRxI2CInit
+ 0000:356D idle  _Lpm_AuxRxI2CIsSwTransaction
+ 0000:3A10 idle  _Lpm_AuxRxI2CSwCallback
+ 0000:39FD       _Lpm_AuxRxI2CSwGetAddrModuleData
+ 0000:39EA       _Lpm_AuxRxI2CSwGetBuff
+ 0000:3688 idle  _Lpm_AuxRxI2CSwHandler
+ 0000:352C       _Lpm_AuxRxI2CSwTransInit
+ 0000:2EAF       _Lpm_AuxRxInit
+ 0000:3B2B       _Lpm_AuxRxLLI2CInit
+ 0000:3B86       _Lpm_AuxRxLLI2CRequest
+ 0000:2EAE idle  _Lpm_AuxRxPhyInit
+ 0000:2D62       _Lpm_AuxRxRequestISR
+ 0000:2E3A       _Lpm_AuxRxSetReplyCmd
+ 0000:2DFD       _Lpm_AuxRxSetReplyData
+ 0000:4771       _Lpm_CableDetectHandler
+ 0000:473F       _Lpm_CableDetectHandlerInit
+ 0000:0E63 idle  _Lpm_CalibrationHandler
+ 0000:0F98 idle  _Lpm_CheckStatusCmdHandler
+ 0000:057E idle  _Lpm_ClearMailbox
+ 0000:1250       _Lpm_ClockSwitch2RCOSC
+ 0000:10E5       _Lpm_CsmI2CMuxSelect
+ 0000:4ABE       _Lpm_DdcciCmdHandler
+ 0000:0F4C idle  _Lpm_DebugCmdHandler
+ 0000:6AB7       _Lpm_Delay1ms
+ 0000:3FC3 idle  _Lpm_DigitalTmdsClkDetect
+ 0000:34F6 idle  _Lpm_DprxVirtualEdidInit
+ 0000:46A3       _Lpm_ExternalSwitchCheck
+ 0000:54DB       _Lpm_ForceDpHpdLow
+ 0000:46E7       _Lpm_GetWakeupExtraInfo
+ 0000:0EE0 idle  _Lpm_GpioControlHandler
+ 0000:558B       _Lpm_GprobeCmdParser
+ 0000:5403       _Lpm_HpdControl
+ 0000:15CE idle  _Lpm_I2CMasterAckReceived
+ 0000:160D       _Lpm_I2CMasterCheck
+ 0000:1866 idle  _Lpm_I2CMasterConfig
+ 0000:18FC       _Lpm_I2CMasterCsmSel
+ 0000:163C idle  _Lpm_I2CMasterGetByte
+ 0000:18E3       _Lpm_I2CMasterInit
+ 0000:15A3 idle  _Lpm_I2CMasterIsCmdStatusZero
+ 0000:1674 idle  _Lpm_I2CMasterPutByte
+ 0000:1718       _Lpm_I2CMasterReadAddrBuffer
+ 0000:1804 idle  _Lpm_I2CMasterReadBlock
+ 0000:18E2 idle  _Lpm_I2CMasterSelectIdx
+ 0000:1927       _Lpm_I2CMasterSetClock
+ 0000:1598 idle  _Lpm_I2CMasterSetTimeout
+ 0000:15EC idle  _Lpm_I2CMasterStart
+ 0000:1628 idle  _Lpm_I2CMasterStop
+ 0000:169B       _Lpm_I2CMasterWriteAddrBuffer
+ 0000:17B4 idle  _Lpm_I2CMasterWriteBlock
+ 0000:2AD3 idle  _Lpm_I2CSlaveAddCommHandler
+ 0000:1AE4 idle  _Lpm_I2CSlaveAddI2CAddress
+ 0000:2267 idle  _Lpm_I2CSlaveChannelHandler
+ 0000:2C1F       _Lpm_I2CSlaveCheckCS
+ 0000:212D idle  _Lpm_I2CSlaveCreateNullMsg
+ 0000:219F idle  _Lpm_I2CSlaveDefaultHandler
+ 0000:208F idle  _Lpm_I2CSlaveExecCommHandler
+ 0000:1AC0       _Lpm_I2CSlaveGetAddrBuffer
+ 0000:2ABD       _Lpm_I2CSlaveGetAddrMsgBuffer
+ 0000:1ADE idle  _Lpm_I2CSlaveGetChannel
+ 0000:2B59 idle  _Lpm_I2CSlaveGProbeHandler
+ 0000:2246       _Lpm_I2CSlaveHandler
+ 0000:2C89 idle  _Lpm_I2CSlaveHLAddCommHandler
+ 0000:2CF3       _Lpm_I2CSlaveHLFindCommHandler
+ 0000:2D54 idle  _Lpm_I2CSlaveHLGetAddrModuleData
+ 0000:2C6E idle  _Lpm_I2CSlaveHLInit
+ 0000:1A15 idle  _Lpm_I2CSlaveInit
+ 0000:1972       _Lpm_I2CSlaveInitAll
+ 0000:2A7F       _Lpm_I2CSlaveIsr
+ 0000:22F8 idle  _Lpm_I2CSlaveIsrNew
+ 0000:2672 idle  _Lpm_I2CSlaveIsrOld
+ 0000:1EC9 idle  _Lpm_I2CSlaveReadFromFifo
+ 0000:1D28 idle  _Lpm_I2CSlaveReadFromFifo_new
+ 0000:1B78 idle  _Lpm_I2CSlaveRemoveI2CAddress
+ 0000:1AD3       _Lpm_I2CSlaveSetChannel
+ 0000:22E6 idle  _Lpm_I2CSlaveSetExtHandler
+ 0000:1CC5       _Lpm_I2CSlaveSetReply
+ 0000:1C0E idle  _Lpm_I2CSlaveWriteToFifo
+ 0000:0173       _Lpm_InterruptDisable
+ 0000:0073       _Lpm_InterruptEnable
+ 0000:711C       _Lpm_IrHandler
+ 0000:75D4       _Lpm_IrInit
+ 0000:7189       _Lpm_IrIsr
+ 0000:0498       _Lpm_IrqFiveManager
+ 0000:0475       _Lpm_IrqFourManager
+ 0000:0294       _Lpm_IrqOneManager
+ 0000:033B       _Lpm_IrqThreeManager
+ 0000:02B6       _Lpm_IrqTwoManager
+ 0000:0260       _Lpm_IrqZeroManager
+ 0000:4664 idle  _Lpm_IsAllPortWakeup
+ 0000:4908       _Lpm_IsCPhyCablePlugged
+ 0000:4887       _Lpm_IsCPhySrcPwrValid
+ 0000:4DD2       _Lpm_IsDdcciTransaction
+ 0000:482D       _Lpm_IsDPRxCablePlugged
+ 0000:47D3       _Lpm_IsDPRxSrcPwrValid
+ 0000:050E       _Lpm_isrArrayBoundsException
+ 0000:04C9       _Lpm_isrDivideErrorException
+ 0000:0534       _Lpm_isrEscOpcodeException
+ 0000:04FB       _Lpm_isrInt0Overflow
+ 0000:04DC       _Lpm_isrNonMaskableInterrupt
+ 0000:0521       _Lpm_isrUnusedOpcodeException
+ 0000:4ABB       _Lpm_IsVGACablePlugged
+ 0000:4A84       _Lpm_IsVGASrcPwrValid
+ 0000:4415       _Lpm_IsWakeupPort
+ 0000:4671 idle  _Lpm_IsWakeupTmdsCPhy
+ 0000:6EF6 idle  _Lpm_KeypadGetKey
+ 0000:6C45       _Lpm_KeypadHandler
+ 0000:6EB4       _Lpm_KeypadInit
+ 0000:6EC0       _Lpm_KeypadLbwAdcInit
+ 0000:106D       _Lpm_Main
+ 0000:0062       _Lpm_MainHandlersTurn
+ 0000:6AD1       _Lpm_McuInit
+ 0000:0658 idle  _Lpm_MfpInit
+ 0000:1021 idle  _Lpm_MissionTaskHandler
+ 0000:137F       _Lpm_NvramCheckDevice
+ 0000:1470       _Lpm_NvramReadBuffer
+ 0000:13AC       _Lpm_NvramReadByte
+ 0000:14CE       _Lpm_NvramWriteBuffer
+ 0000:140B       _Lpm_NvramWriteByte
+ 0000:52E8       _Lpm_PowerDownLpmDevices
+ 0000:5530       _Lpm_PowerDownMission
+ 0000:527F       _Lpm_PowerModeCsmMuxSel
+ 0000:527B       _Lpm_PowerModeGetState
+ 0000:4FF0       _Lpm_PowerModeHandler
+ 0000:4E92       _Lpm_PowerModeInit
+ 0000:526F       _Lpm_PowerModeSetEvent2PwrHdr
+ 0000:4EE3 idle  _Lpm_PowerModeStateChange
+ 0000:539D       _Lpm_PowerUpLpmDevices
+ 0000:0590       _Lpm_RedLedCtrl
+ 0000:0D2C       _Lpm_ResetLpmDevices
+ 0000:6814       _Lpm_SendAckOrNack
+ 0000:4ECC       _Lpm_SetAnyKeyWakeEvent
+ 0000:4EA3       _Lpm_SetPowerKeyEvent
+ 0000:0DDB idle  _Lpm_SharedHostBusHandler
+ 0000:0DC2 idle  _Lpm_SharedPBusHandler
+ 0000:0DA4       _Lpm_SharedPBusSwitch
+ 0000:3D40       _Lpm_SignalDetectHandler
+ 0000:3BE3       _Lpm_SignalDetectInit
+ 0000:3CDE       _Lpm_SignalDetectStop
+ 0000:1039 idle  _Lpm_StackMonitorInit
+ 0000:558A       _Lpm_SystemDebug
+ 0000:0CC0 idle  _Lpm_SystemInit
+ 0000:10E4 idle  _Lpm_TestHandler
+ 0000:6A15       _Lpm_TimerInit
+ 0000:6A72       _Lpm_TimerStart
+ 0000:6A91       _Lpm_TimerTimeOut
+ 0000:3F30 idle  _Lpm_TmdsClkDetectInit
+ 0000:553B idle  _Lpm_TmdsSwitcherControl
+ 07E6:0794 idle  _lpm_used_sdram_end
+ 0000:53E6       _Lpm_WarmReset
+ 0000:6868 idle  _Lpm_WriteCmdPkt
+ 0000:0000 idle  _main
+ 07E6:0066 idle  _MeasRcOscVal
+ 0000:0557 idle  _MissionPowerUp
+ 07E6:047C idle  _NakPkt
+ 07E6:0070       _PBusReqLock
+ 07E6:0062 idle  _powerUpRequest
+ 07E6:04B0       _ProductId
+ 07E6:04B2       _ProductRev
+ 07E6:0448 idle  _pSW_Transaction_ModuleData
+ 07E6:044E idle  _pSW_Transaction_ModuleData2
+ 07E6:0446       _P_AuxRxI2CInternalData
+ 07E6:044C       _P_AuxRxI2CInternalData2
+ 07E6:044A idle  _P_AuxRxI2CModuleData
+ 07E6:0450 idle  _P_AuxRxI2CModuleData2
+ 07E6:0064       _RcOscTrim
+ 0000:7CAF       _RegMsgHandler
+ 0000:7C37 idle  _RegMsgUpdate
+ 07E6:073C idle  _REG_MSG_CONTENT
+ 07E6:077C idle  _REG_MSG_PTR
+ 07E6:077D idle  _REG_MSG_TOP
+ 07E5:0000 idle  _romdata_end
+ 07E5:0000 idle  _romdata_start
+ 07E6:077E idle  _RX_MONITOR
+ 07E6:04A4       _SigDetPortNum
+ 07E6:0094       _Sp_I2CSlavePtrGlobal
+ 07E6:0548 idle  _SW_Transaction_ModuleData
+ 07E6:060A idle  _SW_Transaction_ModuleData2
+ 07E6:04BA idle  _uninitialized_data_start
+ 07E6:04AE       _WakeupFrom
+ 0000:000C idle  __AHSHIFT
+ 0000:7DAC       __fmemcpy
+ 0000:7DF6       __fmemset
+ 0000:000C idle  __PCFAST
+ 0000:1000 idle  __PCINCR
+ 0000:000F idle  __PCMASK
+ 0000:0000 idle  __PCMODE
+ 0000:0004 idle  __PCSHIFT
+
+
+  Address         Publics by Value
+
+ 0000:0000 idle  _main
+ 0000:0000 idle  __PCMODE
+ 0000:0004 idle  __PCSHIFT
+ 0000:000C idle  __AHSHIFT
+ 0000:000C idle  __PCFAST
+ 0000:000F idle  __PCMASK
+ 0000:0062       _Lpm_MainHandlersTurn
+ 0000:0073       _Lpm_InterruptEnable
+ 0000:0173       _Lpm_InterruptDisable
+ 0000:0260       _Lpm_IrqZeroManager
+ 0000:0294       _Lpm_IrqOneManager
+ 0000:02B6       _Lpm_IrqTwoManager
+ 0000:033B       _Lpm_IrqThreeManager
+ 0000:0475       _Lpm_IrqFourManager
+ 0000:0498       _Lpm_IrqFiveManager
+ 0000:04C9       _Lpm_isrDivideErrorException
+ 0000:04DC       _Lpm_isrNonMaskableInterrupt
+ 0000:04FB       _Lpm_isrInt0Overflow
+ 0000:050E       _Lpm_isrArrayBoundsException
+ 0000:0521       _Lpm_isrUnusedOpcodeException
+ 0000:0534       _Lpm_isrEscOpcodeException
+ 0000:0547       _IsMissionPoweredUp
+ 0000:0557 idle  _MissionPowerUp
+ 0000:057E idle  _Lpm_ClearMailbox
+ 0000:0590       _Lpm_RedLedCtrl
+ 0000:0658 idle  _Lpm_MfpInit
+ 0000:0CC0 idle  _Lpm_SystemInit
+ 0000:0D2C       _Lpm_ResetLpmDevices
+ 0000:0DA4       _Lpm_SharedPBusSwitch
+ 0000:0DC2 idle  _Lpm_SharedPBusHandler
+ 0000:0DDB idle  _Lpm_SharedHostBusHandler
+ 0000:0E63 idle  _Lpm_CalibrationHandler
+ 0000:0EE0 idle  _Lpm_GpioControlHandler
+ 0000:0F4C idle  _Lpm_DebugCmdHandler
+ 0000:0F98 idle  _Lpm_CheckStatusCmdHandler
+ 0000:1000 idle  __PCINCR
+ 0000:1021 idle  _Lpm_MissionTaskHandler
+ 0000:1039 idle  _Lpm_StackMonitorInit
+ 0000:106D       _Lpm_Main
+ 0000:10E4 idle  _Lpm_TestHandler
+ 0000:10E5       _Lpm_CsmI2CMuxSelect
+ 0000:1250       _Lpm_ClockSwitch2RCOSC
+ 0000:137F       _Lpm_NvramCheckDevice
+ 0000:13AC       _Lpm_NvramReadByte
+ 0000:140B       _Lpm_NvramWriteByte
+ 0000:1470       _Lpm_NvramReadBuffer
+ 0000:14CE       _Lpm_NvramWriteBuffer
+ 0000:1598 idle  _Lpm_I2CMasterSetTimeout
+ 0000:15A3 idle  _Lpm_I2CMasterIsCmdStatusZero
+ 0000:15CE idle  _Lpm_I2CMasterAckReceived
+ 0000:15EC idle  _Lpm_I2CMasterStart
+ 0000:160D       _Lpm_I2CMasterCheck
+ 0000:1628 idle  _Lpm_I2CMasterStop
+ 0000:163C idle  _Lpm_I2CMasterGetByte
+ 0000:1674 idle  _Lpm_I2CMasterPutByte
+ 0000:169B       _Lpm_I2CMasterWriteAddrBuffer
+ 0000:1718       _Lpm_I2CMasterReadAddrBuffer
+ 0000:17B4 idle  _Lpm_I2CMasterWriteBlock
+ 0000:1804 idle  _Lpm_I2CMasterReadBlock
+ 0000:1866 idle  _Lpm_I2CMasterConfig
+ 0000:18E2 idle  _Lpm_I2CMasterSelectIdx
+ 0000:18E3       _Lpm_I2CMasterInit
+ 0000:18FC       _Lpm_I2CMasterCsmSel
+ 0000:1927       _Lpm_I2CMasterSetClock
+ 0000:1972       _Lpm_I2CSlaveInitAll
+ 0000:1A15 idle  _Lpm_I2CSlaveInit
+ 0000:1AC0       _Lpm_I2CSlaveGetAddrBuffer
+ 0000:1AD3       _Lpm_I2CSlaveSetChannel
+ 0000:1ADE idle  _Lpm_I2CSlaveGetChannel
+ 0000:1AE4 idle  _Lpm_I2CSlaveAddI2CAddress
+ 0000:1B78 idle  _Lpm_I2CSlaveRemoveI2CAddress
+ 0000:1C0E idle  _Lpm_I2CSlaveWriteToFifo
+ 0000:1CC5       _Lpm_I2CSlaveSetReply
+ 0000:1D28 idle  _Lpm_I2CSlaveReadFromFifo_new
+ 0000:1EC9 idle  _Lpm_I2CSlaveReadFromFifo
+ 0000:208F idle  _Lpm_I2CSlaveExecCommHandler
+ 0000:212D idle  _Lpm_I2CSlaveCreateNullMsg
+ 0000:219F idle  _Lpm_I2CSlaveDefaultHandler
+ 0000:2246       _Lpm_I2CSlaveHandler
+ 0000:2267 idle  _Lpm_I2CSlaveChannelHandler
+ 0000:22E6 idle  _Lpm_I2CSlaveSetExtHandler
+ 0000:22F8 idle  _Lpm_I2CSlaveIsrNew
+ 0000:2672 idle  _Lpm_I2CSlaveIsrOld
+ 0000:2A7F       _Lpm_I2CSlaveIsr
+ 0000:2ABD       _Lpm_I2CSlaveGetAddrMsgBuffer
+ 0000:2AD3 idle  _Lpm_I2CSlaveAddCommHandler
+ 0000:2B59 idle  _Lpm_I2CSlaveGProbeHandler
+ 0000:2C1F       _Lpm_I2CSlaveCheckCS
+ 0000:2C6E idle  _Lpm_I2CSlaveHLInit
+ 0000:2C89 idle  _Lpm_I2CSlaveHLAddCommHandler
+ 0000:2CF3       _Lpm_I2CSlaveHLFindCommHandler
+ 0000:2D54 idle  _Lpm_I2CSlaveHLGetAddrModuleData
+ 0000:2D62       _Lpm_AuxRxRequestISR
+ 0000:2DB9       _Lpm_AuxRxGetChunkData
+ 0000:2DFD       _Lpm_AuxRxSetReplyData
+ 0000:2E3A       _Lpm_AuxRxSetReplyCmd
+ 0000:2E4D       _Lpm_AuxRxBusReadByte
+ 0000:2E7C       _Lpm_AuxRxBusWriteByte
+ 0000:2EAE idle  _Lpm_AuxRxPhyInit
+ 0000:2EAF       _Lpm_AuxRxInit
+ 0000:309E       _Lpm_AuxRxEdidHandlerInit
+ 0000:30D1       _Lpm_AuxRxEdidHandler
+ 0000:3136 idle  _Lpm_AuxRxEdidReadHandler
+ 0000:320D idle  _Lpm_AuxRxEdidRead
+ 0000:3267 idle  _Lpm_AuxRxEdidWriteHandler
+ 0000:333B idle  _Lpm_AuxRxEdidWrite
+ 0000:34F6 idle  _Lpm_DprxVirtualEdidInit
+ 0000:352C       _Lpm_AuxRxI2CSwTransInit
+ 0000:356D idle  _Lpm_AuxRxI2CIsSwTransaction
+ 0000:35FB       _Lpm_AuxRxI2CAddSwDevId
+ 0000:3663 idle  _Lpm_AuxRxI2CClearSwDevIdTable
+ 0000:3688 idle  _Lpm_AuxRxI2CSwHandler
+ 0000:39EA       _Lpm_AuxRxI2CSwGetBuff
+ 0000:39FD       _Lpm_AuxRxI2CSwGetAddrModuleData
+ 0000:3A10 idle  _Lpm_AuxRxI2CSwCallback
+ 0000:3AAB       _Lpm_AuxRxI2CInit
+ 0000:3B18 idle  _Lpm_AuxRxI2CGetModuleData
+ 0000:3B2B       _Lpm_AuxRxLLI2CInit
+ 0000:3B86       _Lpm_AuxRxLLI2CRequest
+ 0000:3BE3       _Lpm_SignalDetectInit
+ 0000:3CDE       _Lpm_SignalDetectStop
+ 0000:3D40       _Lpm_SignalDetectHandler
+ 0000:3F30 idle  _Lpm_TmdsClkDetectInit
+ 0000:3FC3 idle  _Lpm_DigitalTmdsClkDetect
+ 0000:410B idle  _Lpm_AnalogSyncDetect
+ 0000:4370 idle  _Lpm_AutoWakePortSetup
+ 0000:43C6       _Lpm_AutoWakeISR
+ 0000:4415       _Lpm_IsWakeupPort
+ 0000:4664 idle  _Lpm_IsAllPortWakeup
+ 0000:4671 idle  _Lpm_IsWakeupTmdsCPhy
+ 0000:46A3       _Lpm_ExternalSwitchCheck
+ 0000:46E7       _Lpm_GetWakeupExtraInfo
+ 0000:473F       _Lpm_CableDetectHandlerInit
+ 0000:4771       _Lpm_CableDetectHandler
+ 0000:47D3       _Lpm_IsDPRxSrcPwrValid
+ 0000:482D       _Lpm_IsDPRxCablePlugged
+ 0000:4887       _Lpm_IsCPhySrcPwrValid
+ 0000:4908       _Lpm_IsCPhyCablePlugged
+ 0000:4A84       _Lpm_IsVGASrcPwrValid
+ 0000:4ABB       _Lpm_IsVGACablePlugged
+ 0000:4ABE       _Lpm_DdcciCmdHandler
+ 0000:4DD2       _Lpm_IsDdcciTransaction
+ 0000:4E92       _Lpm_PowerModeInit
+ 0000:4EA3       _Lpm_SetPowerKeyEvent
+ 0000:4ECC       _Lpm_SetAnyKeyWakeEvent
+ 0000:4EE3 idle  _Lpm_PowerModeStateChange
+ 0000:4FF0       _Lpm_PowerModeHandler
+ 0000:526F       _Lpm_PowerModeSetEvent2PwrHdr
+ 0000:527B       _Lpm_PowerModeGetState
+ 0000:527F       _Lpm_PowerModeCsmMuxSel
+ 0000:52E8       _Lpm_PowerDownLpmDevices
+ 0000:539D       _Lpm_PowerUpLpmDevices
+ 0000:53E6       _Lpm_WarmReset
+ 0000:5403       _Lpm_HpdControl
+ 0000:54DB       _Lpm_ForceDpHpdLow
+ 0000:5530       _Lpm_PowerDownMission
+ 0000:553B idle  _Lpm_TmdsSwitcherControl
+ 0000:557C idle  _IsMissionPowerON
+ 0000:5583 idle  _IsDCOffMode
+ 0000:558A       _Lpm_SystemDebug
+ 0000:558B       _Lpm_GprobeCmdParser
+ 0000:5C4A idle  _Lpm_AppstestCmdParser
+ 0000:6814       _Lpm_SendAckOrNack
+ 0000:6868 idle  _Lpm_WriteCmdPkt
+ 0000:6998       _gm_Print
+ 0000:6999       _gm_GetSystemTime
+ 0000:69BE       _gm_W_GetSystemTime
+ 0000:69C2 idle  _gm_Delay1ms
+ 0000:69DB idle  _isrSystemTimer
+ 0000:6A15       _Lpm_TimerInit
+ 0000:6A72       _Lpm_TimerStart
+ 0000:6A91       _Lpm_TimerTimeOut
+ 0000:6AB7       _Lpm_Delay1ms
+ 0000:6AD1       _Lpm_McuInit
+ 0000:6C45       _Lpm_KeypadHandler
+ 0000:6EB4       _Lpm_KeypadInit
+ 0000:6EC0       _Lpm_KeypadLbwAdcInit
+ 0000:6EF6 idle  _Lpm_KeypadGetKey
+ 0000:711C       _Lpm_IrHandler
+ 0000:7189       _Lpm_IrIsr
+ 0000:75D4       _Lpm_IrInit
+ 0000:7637       _gm_MessageInIsr
+ 0000:7833       _gm_MessageInit
+ 0000:78BB       _gm_MessageSend
+ 0000:79D8       _gm_MessageReceived
+ 0000:7AD7       _gm_RegMsgInit
+ 0000:7B25 idle  _gm_RegMsgSd
+ 0000:7B8D idle  _gm_RegMsgRv
+ 0000:7C37 idle  _RegMsgUpdate
+ 0000:7CAF       _RegMsgHandler
+ 0000:7D11       N_LXMUL@
+ 0000:7D28       N_LUDIV@
+ 0000:7D2B idle  F_LUDIV@
+ 0000:7D2B idle  LUDIV@
+ 0000:7D8A       N_LXURSH@
+ 0000:7D8D idle  LXURSH@
+ 0000:7D8D idle  F_LXURSH@
+ 0000:7DAC       __fmemcpy
+ 0000:7DDA       N_SCOPY@
+ 0000:7DF6       __fmemset
+ 0000:7E22       N_LXLSH@
+ 0000:7E25 idle  LXLSH@
+ 0000:7E25 idle  F_LXLSH@
+ 07E5:0000 idle  _romdata_end
+ 07E5:0000 idle  _romdata_start
+ 07E6:0060 idle  _initialized_data_start
+ 07E6:0060 idle  _Configuration
+ 07E6:0062 idle  _powerUpRequest
+ 07E6:0064       _RcOscTrim
+ 07E6:0066 idle  _MeasRcOscVal
+ 07E6:0068       _LpmRcOscClk
+ 07E6:006C       _LpmOcmClk
+ 07E6:0070       _PBusReqLock
+ 07E6:0072 idle  _aPf_HandlersRoutines
+ 07E6:0080 idle  _aB_HandlersFlags
+ 07E6:0092 idle  _B_ModeStatus
+ 07E6:0094       _Sp_I2CSlavePtrGlobal
+ 07E6:00A4 idle  _I2CSlaveExtHandlerFuncPtr
+ 07E6:00A8 idle  _Fp_CorrespondingFuncPtr
+ 07E6:00AC idle  _B_DDCToAuxStatus
+ 07E6:00AD idle  _B_SlvStatus
+ 07E6:00B1 idle  _B_SlvStatus2
+ 07E6:00B6 idle  _I2CSlaveTable
+ 07E6:03F6       _gB_I2cSlaveSel
+ 07E6:03F7 idle  _B_DevIdReady
+ 07E6:03F8 idle  _I2cBufOverflow
+ 07E6:03FA idle  _I2CSlaveHLModuleData
+ 07E6:0442 idle  _gB_AuxTransactionSize
+ 07E6:0443 idle  _gB_AuxRx_EdidWrOffsetSize
+ 07E6:0444 idle  _gB_AuxTransactionSize2
+ 07E6:0445 idle  _gB_AuxRx_EdidWrOffsetSize2
+ 07E6:0446       _P_AuxRxI2CInternalData
+ 07E6:0448 idle  _pSW_Transaction_ModuleData
+ 07E6:044A idle  _P_AuxRxI2CModuleData
+ 07E6:044C       _P_AuxRxI2CInternalData2
+ 07E6:044E idle  _pSW_Transaction_ModuleData2
+ 07E6:0450 idle  _P_AuxRxI2CModuleData2
+ 07E6:0452 idle  _ASDECT_State
+ 07E6:0456       _ExecuteMemTest
+ 07E6:0457       _ExecuteMemTest2
+ 07E6:0458       _gB_DDC2BiDevId
+ 07E6:045A       _gB_DdcciWaitForParsing
+ 07E6:0462       _Event2PwrHdr
+ 07E6:0464 idle  _LastLpmPwrStatus
+ 07E6:0465       _LpmPwrState
+ 07E6:046A idle  _DebugParam
+ 07E6:047A idle  _AckPkt
+ 07E6:047C idle  _NakPkt
+ 07E6:047E idle  _gDebugCmdPtr
+ 07E6:0480       _gB_GprobeCmdSet
+ 07E6:0482       _gW_ManufacturerID
+ 07E6:0484 idle  _gB_CheckSRAMLast16KB
+ 07E6:0485       _DebugOnly
+ 07E6:0486       _CableUpdateRequest
+ 07E6:0488       _BoardType
+ 07E6:048A       _ChipID4k2K
+ 07E6:048C       _HdmiDviHpdPin
+ 07E6:0492 idle  _HdmiDviCblDetPin
+ 07E6:0498       _DpRxSrcPwrPin
+ 07E6:049C       _DpRxCblDetPin
+ 07E6:04A0       _DpRxHpdPin
+ 07E6:04A4       _SigDetPortNum
+ 07E6:04A5       _CurInputPort
+ 07E6:04AD       _IsSyncDetected
+ 07E6:04AE       _WakeupFrom
+ 07E6:04AF       _ExternalSwitch
+ 07E6:04B0       _ProductId
+ 07E6:04B2       _ProductRev
+ 07E6:04B4       _IsDpSrcPwrWakeup
+ 07E6:04B6       _IsHdmiDviSrcPwrWakeup
+ 07E6:04B9       _IsVgaSrcPwrWakeup
+ 07E6:04BA idle  _uninitialized_data_start
+ 07E6:0540 idle  _IrPowerKey
+ 07E6:0542 idle  _gB_NVRamError
+ 07E6:0544       _gB_Ddc2Bi_I2C_Status
+ 07E6:0548 idle  _SW_Transaction_ModuleData
+ 07E6:05E6 idle  _AuxRxI2CModuleData
+ 07E6:05EE idle  _AuxRxI2CInternalData
+ 07E6:060A idle  _SW_Transaction_ModuleData2
+ 07E6:06A8 idle  _AuxRxI2CModuleData2
+ 07E6:06B0 idle  _AuxRxI2CInternalData2
+ 07E6:06CC idle  _DprxVirtualEdid
+ 07E6:06D6 idle  _DprxVirtualEdid2
+ 07E6:072C       _LbadcCableNowState
+ 07E6:0730       _CPhyType
+ 07E6:0736       _CsmI2cMuxCtrlBackup
+ 07E6:0738       _CsmHpdOutCtrlBackup
+ 07E6:073A       _CsmHpdPdInCtrlBackup
+ 07E6:073C idle  _REG_MSG_CONTENT
+ 07E6:077C idle  _REG_MSG_PTR
+ 07E6:077D idle  _REG_MSG_TOP
+ 07E6:077E idle  _RX_MONITOR
+ 07E6:0780 idle  _BACK_TX
+ 07E6:0782 idle  _BACK_RX
+ 07E6:0792 idle  _dateCounter
+ 07E6:0794 idle  _lpm_used_sdram_end
+
+
+Program entry point at 2144:0005
+

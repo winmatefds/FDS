@@ -1,0 +1,6 @@
+---- LPM_GPIO19_OUT Matches (5 in 3 files) ----
+gm_Register_Stdp93xx.h (libinc):    #define LPM_GPIO19_OUT                                  BIT3
+Lpm_PowerMode.c (lowpowermonitor):					if((LpmPwrState == LPM_NormalPowerMode) && !(gm_ReadRegWord(LPM_GPOUTPUT_1) & LPM_GPIO19_OUT))
+Lpm_PowerMode.c (lowpowermonitor):				if(gm_ReadRegWord(LPM_GPOUTPUT_1) & LPM_GPIO19_OUT)
+Lpm_PowerMode.c (lowpowermonitor):					gm_ClearRegBitsWord(LPM_GPOUTPUT_1, LPM_GPIO19_OUT);
+Lpm_SignalingDetect.c (lowpowermonitor):					gm_SetRegBitsWord(LPM_GPOUTPUT_1, LPM_GPIO19_OUT);
